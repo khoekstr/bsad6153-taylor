@@ -1,7 +1,7 @@
 # BSAD 6153 Project: &lt;your project name&gt;
 
-**Student:** &lt;your name&gt;
-**My decision:** &lt;the decision you make regularly that this project improves&gt;
+**Student:** Kara Taylor
+**My decision:** What AI news story is worth my time to read or watch
 **Website:** &lt;your domain, from Week 4&gt;
 
 This repository is one complete AI system, built over eight weeks: a real API, synced on a schedule into a
