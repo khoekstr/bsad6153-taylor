@@ -1,7 +1,7 @@
-# BSAD 6153 Project: &lt;your project name&gt;
+# BSAD 6153 Project: &lt;AI Research and Knowledge Management Agent&gt;
 
 **Student:** Kara Taylor
-**My decision:** What AI news story is worth my time to read or watch
+**My decision:** What AI material should I read or watch next, given my available time, learning interests, and what I have already consumed?
 **Website:** &lt;your domain, from Week 4&gt;
 
 This repository is one complete AI system, built over eight weeks: a real API, synced on a schedule into a
@@ -94,10 +94,34 @@ every command before you approve it, and keep auto-approve off.
 
 ---
 
-## Project proposal (Week 1)
+## Project Proposal (Week 1)
 
-<!-- About 300 words: data source and backup API, your decision and workflow (from your baseline log),
-     your first agent idea, and risks. See the Week 1 page. -->
+**Data source and backup.** My primary source is the [OpenAlex API](https://help.openalex.org/api/),
+which supplies scholarly works and related authors. The first successful run collected
+500 unique works and 1,451 author records. My backup is the
+[Crossref REST API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/),
+using works and related journal records. Switching would require a different importer;
+Crossref does not replace OpenAlex's author profiles directly, and abstract coverage varies.
+
+**Decision and workflow.** My decision is what AI material to read or watch next,
+given my available time, interests, and prior reading. My [baseline log](docs/baseline_log.md)
+documents browsing YouTube, LinkedIn, The Rundown AI, and OpenAlex. I struggle to judge
+unfamiliar sources, see beyond headlines, and recognize repeated information. The log
+also revealed an interest in retaining ideas and connecting readings for future research.
+The system should combine a broad AI reading library with private notes, reading status,
+and personal ratings. It should offer understandable summaries and distinguish newly
+published material from material that is new to me. I will assess improvement through
+selection time, abandoned or repetitive selections, and my usefulness ratings.
+
+**Agent idea, first draft.** By Week 6, I want an agent within my personal AI reading website that helps me choose what to read and connect my own thinking across readings. The database would hold source information alongside my private notes, questions, quotations, reading status, and personal ratings. Through a chatbot, I could ask “What should I read in 15 minutes?” or “How does this relate to questions I raised earlier?” The agent would create a proposed reading list, explain relevance and novelty, and identify connections between sources and thoughts I have recorded. It could bring back an earlier question when a new article offers supporting evidence, a conflicting finding, or another perspective. My ideas would remain clearly distinguished from AI suggestions, and I would decide which connections are useful. The first agent action would be to save a proposed reading-and-connections brief for my review, linking recommendations to my notes and the original sources. Over time, these reviewed connections could help me organize references and develop my own research questions or proposal.
+
+**Risks.** Rate limits, exhausted allowances, and expired or revoked keys could interrupt
+collection; bounded retries, clear errors, and private key replacement address these.
+Repeated downloads increase storage, so raw files stay outside Git. Missing metadata,
+version duplicates, and search bias can weaken recommendations. OpenAlex's CC0 metadata
+statement and broader service terms need reconciliation before public display; metadata
+access does not authorize redistributing articles. Personal notes must remain private.
+These limitations are documented in the [data dictionary](docs/data_dictionary.md).
 
 ## How to run this project
 

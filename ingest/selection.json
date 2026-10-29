@@ -1,0 +1,93 @@
+{
+  "groups": [
+    {
+      "name": "applications",
+      "target": 150,
+      "queries": [
+        "artificial intelligence education",
+        "human AI collaboration",
+        "AI tutoring",
+        "AI writing decision support"
+      ]
+    },
+    {
+      "name": "foundations",
+      "target": 100,
+      "queries": [
+        "artificial intelligence critical thinking",
+        "generative AI creativity",
+        "AI cognitive offloading",
+        "AI learning skill development"
+      ]
+    },
+    {
+      "name": "ethics",
+      "target": 90,
+      "queries": [
+        "artificial intelligence human agency",
+        "AI bias fairness",
+        "deepfakes misinformation",
+        "AI dependence"
+      ]
+    },
+    {
+      "name": "governance",
+      "target": 70,
+      "queries": [
+        "artificial intelligence governance",
+        "AI accountability regulation",
+        "AI education policy",
+        "AI content provenance"
+      ]
+    },
+    {
+      "name": "models",
+      "target": 60,
+      "queries": [
+        "large language models reasoning",
+        "language model reliability evaluation",
+        "AI agents limitations"
+      ]
+    },
+    {
+      "name": "organizations",
+      "target": 30,
+      "queries": [
+        "generative AI productivity work",
+        "artificial intelligence organizational adoption"
+      ]
+    }
+  ],
+  "required_titles": [
+    "Generative AI enhances individual creativity but reduces the collective diversity of novel content",
+    "Generative AI without guardrails can harm learning",
+    "Dissecting racial bias in an algorithm used to manage the health of populations",
+    "Generative AI at Work",
+    "Deepfakes and Disinformation",
+    "AI tutoring outperforms in-class active learning",
+    "ChatGPT for good? On opportunities and challenges of large language models for education",
+    "The global landscape of AI ethics guidelines",
+    "The ethics of AI ethics: An evaluation of guidelines",
+    "The Effects of an AI-Supported Gamified Learning Program on Elementary Students' Mathematics Anxiety, Learning Motivation, and Achievement",
+    "Borrowed or Kept? How Self-Generation-First and Direct-Adoption AI Workflows Shape Immediate Unaided Reasoning",
+    "C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries"
+  ],
+  "manual_additions": [
+    "An Alien Mind",
+    "We Must Pace the Frontier"
+  ],
+  "required_ids": {
+    "Generative AI enhances individual creativity but reduces the collective diversity of novel content": "https://openalex.org/W4400578758",
+    "ChatGPT for good? On opportunities and challenges of large language models for education": "https://openalex.org/W4323655724",
+    "The global landscape of AI ethics guidelines": "https://openalex.org/W2953522645",
+    "The Effects of an AI-Supported Gamified Learning Program on Elementary Students' Mathematics Anxiety, Learning Motivation, and Achievement": "https://openalex.org/W7218919442",
+    "Borrowed or Kept? How Self-Generation-First and Direct-Adoption AI Workflows Shape Immediate Unaided Reasoning": "https://openalex.org/W7213066515",
+    "C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries": "https://openalex.org/W7162304478",
+    "Generative AI without guardrails can harm learning": "https://openalex.org/W4411627694",
+    "Dissecting racial bias in an algorithm used to manage the health of populations": "https://openalex.org/W2981869278",
+    "Generative AI at Work": "https://openalex.org/W4407142724",
+    "Deepfakes and Disinformation": "https://openalex.org/W3007419529",
+    "AI tutoring outperforms in-class active learning": "https://openalex.org/W4411505840",
+    "The ethics of AI ethics: An evaluation of guidelines": "https://openalex.org/W3003385079"
+  }
+}

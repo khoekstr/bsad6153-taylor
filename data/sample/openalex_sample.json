@@ -1,0 +1,3498 @@
+{
+  "description": "Unmodified record excerpts from OpenAlex responses; not a complete API response.",
+  "records": {
+    "works": {
+      "id": "https://openalex.org/W4400578758",
+      "doi": "https://doi.org/10.1126/sciadv.adn5290",
+      "title": "Generative AI enhances individual creativity but reduces the collective diversity of novel content",
+      "display_name": "Generative AI enhances individual creativity but reduces the collective diversity of novel content",
+      "relevance_score": 558.9872,
+      "publication_year": 2024,
+      "publication_date": "2024-07-12",
+      "ids": {
+        "openalex": "https://openalex.org/W4400578758",
+        "doi": "https://doi.org/10.1126/sciadv.adn5290",
+        "pmid": "https://pubmed.ncbi.nlm.nih.gov/38996021",
+        "pmcid": "https://www.ncbi.nlm.nih.gov/pmc/articles/11244532"
+      },
+      "language": "en",
+      "primary_location": {
+        "id": "doi:10.1126/sciadv.adn5290",
+        "doi": "https://doi.org/10.1126/sciadv.adn5290",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1126/sciadv.adn5290",
+        "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.adn5290?download=true",
+        "source": {
+          "id": "https://openalex.org/S2737427234",
+          "display_name": "Science Advances",
+          "issn_l": "2375-2548",
+          "issn": [
+            "2375-2548"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315823",
+          "host_organization_name": "American Association for the Advancement of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315823"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for the Advancement of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Science Advances",
+        "raw_type": "journal-article"
+      },
+      "volume": null,
+      "type": "article",
+      "indexed_in": [
+        "arxiv",
+        "crossref",
+        "datacite",
+        "doaj",
+        "pubmed"
+      ],
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.science.org/doi/pdf/10.1126/sciadv.adn5290?download=true",
+        "any_repository_has_fulltext": true
+      },
+      "authorships": [
+        {
+          "author_position": "first",
+          "author": {
+            "id": "https://openalex.org/A5011170431",
+            "display_name": "Anil Rajnikant Doshi",
+            "orcid": "https://orcid.org/0000-0002-8489-3373",
+            "observed_orcids": [
+              "https://orcid.org/0000-0002-8489-3373"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I45129253",
+              "display_name": "University College London",
+              "ror": "https://ror.org/02jx3x895",
+              "country_code": "GB",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I124357947",
+                "https://openalex.org/I45129253"
+              ]
+            }
+          ],
+          "countries": [
+            "GB"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Anil R. Doshi",
+          "raw_affiliation_strings": [
+            "Department of Strategy and Entrepreneurship, UCL School of Management, London, UK"
+          ],
+          "raw_orcid": "https://orcid.org/0000-0002-8489-3373",
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Strategy and Entrepreneurship, UCL School of Management, London, UK",
+              "institution_ids": [
+                "https://openalex.org/I45129253"
+              ]
+            }
+          ]
+        },
+        {
+          "author_position": "last",
+          "author": {
+            "id": "https://openalex.org/A5027074094",
+            "display_name": "Oliver Hauser",
+            "orcid": "https://orcid.org/0000-0002-9282-0801",
+            "observed_orcids": [
+              "https://orcid.org/0000-0002-9282-0801"
+            ]
+          },
+          "institutions": [
+            {
+              "id": "https://openalex.org/I23923803",
+              "display_name": "University of Exeter",
+              "ror": "https://ror.org/03yghzc09",
+              "country_code": "GB",
+              "type": "education",
+              "lineage": [
+                "https://openalex.org/I23923803"
+              ]
+            }
+          ],
+          "countries": [
+            "GB"
+          ],
+          "is_corresponding": true,
+          "raw_author_name": "Oliver P. Hauser",
+          "raw_affiliation_strings": [
+            "Department of Economics, University of Exeter, Exeter, UK",
+            "Institute for Data Science and Artificial Intelligence, University of Exeter, Exeter, UK"
+          ],
+          "raw_orcid": "https://orcid.org/0000-0002-9282-0801",
+          "affiliations": [
+            {
+              "raw_affiliation_string": "Department of Economics, University of Exeter, Exeter, UK",
+              "institution_ids": [
+                "https://openalex.org/I23923803"
+              ]
+            },
+            {
+              "raw_affiliation_string": "Institute for Data Science and Artificial Intelligence, University of Exeter, Exeter, UK",
+              "institution_ids": [
+                "https://openalex.org/I23923803"
+              ]
+            }
+          ]
+        }
+      ],
+      "institutions": [],
+      "countries_distinct_count": 1,
+      "institutions_distinct_count": 2,
+      "corresponding_author_ids": [
+        "https://openalex.org/A5011170431",
+        "https://openalex.org/A5027074094"
+      ],
+      "corresponding_institution_ids": [
+        "https://openalex.org/I23923803",
+        "https://openalex.org/I45129253"
+      ],
+      "apc_list": {
+        "value": 4500,
+        "currency": "USD",
+        "value_usd": 4500
+      },
+      "apc_paid": {
+        "value": 4500,
+        "currency": "USD",
+        "value_usd": 4500
+      },
+      "fwci": 392.5605,
+      "has_fulltext": true,
+      "cited_by_count": 966,
+      "citation_normalized_percentile": {
+        "value": 0.99997689,
+        "is_in_top_1_percent": true,
+        "is_in_top_10_percent": true
+      },
+      "cited_by_percentile_year": {
+        "min": 99,
+        "max": 100
+      },
+      "biblio": {
+        "volume": "10",
+        "issue": "28",
+        "first_page": "eadn5290",
+        "last_page": "eadn5290"
+      },
+      "is_retracted": false,
+      "is_paratext": false,
+      "is_xpac": false,
+      "primary_topic": {
+        "id": "https://openalex.org/T11079",
+        "display_name": "Creativity in Education and Neuroscience",
+        "score": 0.7681000232696533,
+        "subfield": {
+          "id": "https://openalex.org/subfields/3205",
+          "display_name": "Experimental and Cognitive Psychology"
+        },
+        "field": {
+          "id": "https://openalex.org/fields/32",
+          "display_name": "Psychology"
+        },
+        "domain": {
+          "id": "https://openalex.org/domains/2",
+          "display_name": "Social Sciences"
+        }
+      },
+      "topics": [
+        {
+          "id": "https://openalex.org/T11079",
+          "display_name": "Creativity in Education and Neuroscience",
+          "score": 0.7681000232696533,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3205",
+            "display_name": "Experimental and Cognitive Psychology"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/32",
+            "display_name": "Psychology"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10883",
+          "display_name": "Ethics and Social Impacts of AI",
+          "score": 0.054999999701976776,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3311",
+            "display_name": "Safety Research"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/33",
+            "display_name": "Social Sciences"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/2",
+            "display_name": "Social Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11574",
+          "display_name": "Artificial Intelligence in Games",
+          "score": 0.021400000900030136,
+          "subfield": {
+            "id": "https://openalex.org/subfields/1702",
+            "display_name": "Artificial Intelligence"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/17",
+            "display_name": "Computer Science"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+          }
+        }
+      ],
+      "keywords": [
+        {
+          "id": "https://openalex.org/keywords/generative-ai",
+          "display_name": "generative AI",
+          "score": 0.9160000085830688
+        },
+        {
+          "id": "https://openalex.org/keywords/large-language-models",
+          "display_name": "large language models",
+          "score": 0.9459999799728394
+        },
+        {
+          "id": "https://openalex.org/keywords/creativity",
+          "display_name": "creativity",
+          "score": 0.7870000004768372
+        },
+        {
+          "id": "https://openalex.org/keywords/short-stories",
+          "display_name": "short stories",
+          "score": 0.6520000100135803
+        },
+        {
+          "id": "https://openalex.org/keywords/story-ideas",
+          "display_name": "story ideas",
+          "score": 0.42100000381469727
+        },
+        {
+          "id": "https://openalex.org/keywords/individual-creativity",
+          "display_name": "individual creativity",
+          "score": 0.6840000152587891
+        },
+        {
+          "id": "https://openalex.org/keywords/novelty",
+          "display_name": "novelty",
+          "score": 0.7940000295639038
+        },
+        {
+          "id": "https://openalex.org/keywords/social-dilemmas",
+          "display_name": "social dilemmas",
+          "score": 0.7839999794960022
+        }
+      ],
+      "concepts": [
+        {
+          "id": "https://openalex.org/C39890363",
+          "wikidata": "https://www.wikidata.org/wiki/Q36108",
+          "display_name": "Generative grammar",
+          "level": 2,
+          "score": 0.8998663425445557
+        },
+        {
+          "id": "https://openalex.org/C11012388",
+          "wikidata": "https://www.wikidata.org/wiki/Q170658",
+          "display_name": "Creativity",
+          "level": 2,
+          "score": 0.8802968263626099
+        },
+        {
+          "id": "https://openalex.org/C2778012447",
+          "wikidata": "https://www.wikidata.org/wiki/Q1034415",
+          "display_name": "Scope (computer science)",
+          "level": 2,
+          "score": 0.5534532070159912
+        },
+        {
+          "id": "https://openalex.org/C2781316041",
+          "wikidata": "https://www.wikidata.org/wiki/Q1230584",
+          "display_name": "Diversity (politics)",
+          "level": 2,
+          "score": 0.546725869178772
+        },
+        {
+          "id": "https://openalex.org/C2778738651",
+          "wikidata": "https://www.wikidata.org/wiki/Q16546687",
+          "display_name": "Novelty",
+          "level": 2,
+          "score": 0.5139605402946472
+        },
+        {
+          "id": "https://openalex.org/C167966045",
+          "wikidata": "https://www.wikidata.org/wiki/Q5532625",
+          "display_name": "Generative model",
+          "level": 3,
+          "score": 0.50945645570755
+        },
+        {
+          "id": "https://openalex.org/C2778496695",
+          "wikidata": "https://www.wikidata.org/wiki/Q254128",
+          "display_name": "Dilemma",
+          "level": 2,
+          "score": 0.48577550053596497
+        },
+        {
+          "id": "https://openalex.org/C52641369",
+          "wikidata": "https://www.wikidata.org/wiki/Q1426250",
+          "display_name": "Creativity technique",
+          "level": 3,
+          "score": 0.43887022137641907
+        },
+        {
+          "id": "https://openalex.org/C41008148",
+          "wikidata": "https://www.wikidata.org/wiki/Q21198",
+          "display_name": "Computer science",
+          "level": 0,
+          "score": 0.422787606716156
+        },
+        {
+          "id": "https://openalex.org/C144024400",
+          "wikidata": "https://www.wikidata.org/wiki/Q21201",
+          "display_name": "Sociology",
+          "level": 0,
+          "score": 0.38102230429649353
+        },
+        {
+          "id": "https://openalex.org/C15744967",
+          "wikidata": "https://www.wikidata.org/wiki/Q9418",
+          "display_name": "Psychology",
+          "level": 0,
+          "score": 0.37197259068489075
+        },
+        {
+          "id": "https://openalex.org/C111472728",
+          "wikidata": "https://www.wikidata.org/wiki/Q9471",
+          "display_name": "Epistemology",
+          "level": 1,
+          "score": 0.3238604664802551
+        },
+        {
+          "id": "https://openalex.org/C154945302",
+          "wikidata": "https://www.wikidata.org/wiki/Q11660",
+          "display_name": "Artificial intelligence",
+          "level": 1,
+          "score": 0.2902076542377472
+        },
+        {
+          "id": "https://openalex.org/C77805123",
+          "wikidata": "https://www.wikidata.org/wiki/Q161272",
+          "display_name": "Social psychology",
+          "level": 1,
+          "score": 0.2408234179019928
+        },
+        {
+          "id": "https://openalex.org/C19165224",
+          "wikidata": "https://www.wikidata.org/wiki/Q23404",
+          "display_name": "Anthropology",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C199360897",
+          "wikidata": "https://www.wikidata.org/wiki/Q9143",
+          "display_name": "Programming language",
+          "level": 1,
+          "score": 0.0
+        },
+        {
+          "id": "https://openalex.org/C138885662",
+          "wikidata": "https://www.wikidata.org/wiki/Q5891",
+          "display_name": "Philosophy",
+          "level": 0,
+          "score": 0.0
+        }
+      ],
+      "mesh": [
+        {
+          "descriptor_ui": "D001185",
+          "descriptor_name": "Artificial Intelligence",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D001185",
+          "descriptor_name": "Artificial Intelligence",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D001185",
+          "descriptor_name": "Artificial Intelligence",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D001185",
+          "descriptor_name": "Artificial Intelligence",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D001185",
+          "descriptor_name": "Artificial Intelligence",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D001185",
+          "descriptor_name": "Artificial Intelligence",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D003405",
+          "descriptor_name": "Creativity",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D003405",
+          "descriptor_name": "Creativity",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D003405",
+          "descriptor_name": "Creativity",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D003405",
+          "descriptor_name": "Creativity",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D003405",
+          "descriptor_name": "Creativity",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D003405",
+          "descriptor_name": "Creativity",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": true
+        },
+        {
+          "descriptor_ui": "D006801",
+          "descriptor_name": "Humans",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D006801",
+          "descriptor_name": "Humans",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D006801",
+          "descriptor_name": "Humans",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D006801",
+          "descriptor_name": "Humans",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D006801",
+          "descriptor_name": "Humans",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D006801",
+          "descriptor_name": "Humans",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D007802",
+          "descriptor_name": "Language",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D007802",
+          "descriptor_name": "Language",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D007802",
+          "descriptor_name": "Language",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D007802",
+          "descriptor_name": "Language",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D007802",
+          "descriptor_name": "Language",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D007802",
+          "descriptor_name": "Language",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D014956",
+          "descriptor_name": "Writing",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D014956",
+          "descriptor_name": "Writing",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D014956",
+          "descriptor_name": "Writing",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D014956",
+          "descriptor_name": "Writing",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D014956",
+          "descriptor_name": "Writing",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        },
+        {
+          "descriptor_ui": "D014956",
+          "descriptor_name": "Writing",
+          "qualifier_ui": null,
+          "qualifier_name": null,
+          "is_major_topic": false
+        }
+      ],
+      "locations_count": 9,
+      "locations": [
+        {
+          "id": "doi:10.1126/sciadv.adn5290",
+          "doi": "https://doi.org/10.1126/sciadv.adn5290",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.1126/sciadv.adn5290",
+          "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.adn5290?download=true",
+          "source": {
+            "id": "https://openalex.org/S2737427234",
+            "display_name": "Science Advances",
+            "issn_l": "2375-2548",
+            "issn": [
+              "2375-2548"
+            ],
+            "is_oa": true,
+            "is_in_doaj": true,
+            "is_core": true,
+            "listed_in": [
+              "cwts-core",
+              "doaj",
+              "dongbi-a",
+              "doyens",
+              "jufo-3",
+              "ki-jl-3",
+              "medline",
+              "norway-2",
+              "oarl",
+              "poland-200",
+              "russia-white-list-1",
+              "vabb-shw"
+            ],
+            "host_organization": "https://openalex.org/P4310315823",
+            "host_organization_name": "American Association for the Advancement of Science",
+            "host_organization_lineage": [
+              "https://openalex.org/P4310315823"
+            ],
+            "host_organization_lineage_names": [
+              "American Association for the Advancement of Science"
+            ],
+            "type": "journal"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Science Advances",
+          "raw_type": "journal-article"
+        },
+        {
+          "id": "doi:10.2139/ssrn.4535536",
+          "doi": "https://doi.org/10.2139/ssrn.4535536",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.2139/ssrn.4535536",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4210172589",
+            "display_name": "SSRN Electronic Journal",
+            "issn_l": "1556-5068",
+            "issn": [
+              "1556-5068"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1318003438",
+            "host_organization_name": "RELX Group (Netherlands)",
+            "host_organization_lineage": [
+              "https://openalex.org/I1318003438"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "acceptedVersion",
+          "is_accepted": true,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "posted-content"
+        },
+        {
+          "id": "pmh:oai:pubmedcentral.nih.gov:11244532",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11244532",
+          "pdf_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11244532/pdf/sciadv.adn5290.pdf",
+          "source": {
+            "id": "https://openalex.org/S2764455111",
+            "display_name": "PubMed Central",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Sci Adv",
+          "raw_type": "Text"
+        },
+        {
+          "id": "pmid:38996021",
+          "doi": null,
+          "is_oa": false,
+          "landing_page_url": "https://pubmed.ncbi.nlm.nih.gov/38996021",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306525036",
+            "display_name": "PubMed",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I1299303238",
+            "host_organization_name": "National Institutes of Health",
+            "host_organization_lineage": [
+              "https://openalex.org/I1299303238"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": "publishedVersion",
+          "is_accepted": true,
+          "is_published": true,
+          "raw_source_name": "Science advances",
+          "raw_type": "Journal Article"
+        },
+        {
+          "id": "pmh:oai:arXiv.org:2312.00506",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://arxiv.org/abs/2312.00506",
+          "pdf_url": "https://arxiv.org/pdf/2312.00506",
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by-nc-nd",
+          "license_id": "https://openalex.org/licenses/cc-by-nc-nd",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "text"
+        },
+        {
+          "id": "pmh:oai:eprints.ucl.ac.uk.OAI2:10195027",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://discovery.ucl.ac.uk/id/eprint/10195027/",
+          "pdf_url": "https://discovery.ucl.ac.uk/id/eprint/10195027/1/Generative%20AI%20enhances%20individual%20creativity%20but%20reduces%20the%20collective%20diversity%20of%20novel%20content.pdf",
+          "source": {
+            "id": "https://openalex.org/S4306400024",
+            "display_name": "UCL Discovery (University College London)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I45129253",
+            "host_organization_name": "University College London",
+            "host_organization_lineage": [
+              "https://openalex.org/I45129253"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": "Science Advances , 10 (28) , Article eadn5290. (2024)",
+          "raw_type": "Article"
+        },
+        {
+          "id": "pmh:oai:figshare.com:article/29809991",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "https://figshare.com/articles/journal_contribution/Generative_AI_enhances_individual_creativity_but_reduces_the_collective_diversity_of_novel_content/29809991",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4377196282",
+            "display_name": "Figshare",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I4210132348",
+            "host_organization_name": "Figshare (United Kingdom)",
+            "host_organization_lineage": [
+              "https://openalex.org/I4210132348"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Text"
+        },
+        {
+          "id": "pmh:oai:ore.exeter.ac.uk:10871/136740",
+          "doi": null,
+          "is_oa": true,
+          "landing_page_url": "http://hdl.handle.net/10871/136740",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306401998",
+            "display_name": "Open Research Exeter (University of Exeter)",
+            "issn_l": null,
+            "issn": null,
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I23923803",
+            "host_organization_name": "University of Exeter",
+            "host_organization_lineage": [
+              "https://openalex.org/I23923803"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": "cc-by",
+          "license_id": "https://openalex.org/licenses/cc-by",
+          "version": "submittedVersion",
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "Article"
+        },
+        {
+          "id": "doi:10.48550/arxiv.2312.00506",
+          "doi": "https://doi.org/10.48550/arxiv.2312.00506",
+          "is_oa": true,
+          "landing_page_url": "https://doi.org/10.48550/arxiv.2312.00506",
+          "pdf_url": null,
+          "source": {
+            "id": "https://openalex.org/S4306400194",
+            "display_name": "arXiv (Cornell University)",
+            "issn_l": "2331-8422",
+            "issn": [
+              "2331-8422"
+            ],
+            "is_oa": true,
+            "is_in_doaj": false,
+            "is_core": false,
+            "listed_in": [],
+            "host_organization": "https://openalex.org/I205783295",
+            "host_organization_name": "Cornell University",
+            "host_organization_lineage": [
+              "https://openalex.org/I205783295"
+            ],
+            "host_organization_lineage_names": [],
+            "type": "repository"
+          },
+          "license": null,
+          "license_id": null,
+          "version": null,
+          "is_accepted": false,
+          "is_published": false,
+          "raw_source_name": null,
+          "raw_type": "article-journal"
+        }
+      ],
+      "best_oa_location": {
+        "id": "doi:10.1126/sciadv.adn5290",
+        "doi": "https://doi.org/10.1126/sciadv.adn5290",
+        "is_oa": true,
+        "landing_page_url": "https://doi.org/10.1126/sciadv.adn5290",
+        "pdf_url": "https://www.science.org/doi/pdf/10.1126/sciadv.adn5290?download=true",
+        "source": {
+          "id": "https://openalex.org/S2737427234",
+          "display_name": "Science Advances",
+          "issn_l": "2375-2548",
+          "issn": [
+            "2375-2548"
+          ],
+          "is_oa": true,
+          "is_in_doaj": true,
+          "is_core": true,
+          "listed_in": [
+            "cwts-core",
+            "doaj",
+            "dongbi-a",
+            "doyens",
+            "jufo-3",
+            "ki-jl-3",
+            "medline",
+            "norway-2",
+            "oarl",
+            "poland-200",
+            "russia-white-list-1",
+            "vabb-shw"
+          ],
+          "host_organization": "https://openalex.org/P4310315823",
+          "host_organization_name": "American Association for the Advancement of Science",
+          "host_organization_lineage": [
+            "https://openalex.org/P4310315823"
+          ],
+          "host_organization_lineage_names": [
+            "American Association for the Advancement of Science"
+          ],
+          "type": "journal"
+        },
+        "license": "cc-by",
+        "license_id": "https://openalex.org/licenses/cc-by",
+        "version": "publishedVersion",
+        "is_accepted": true,
+        "is_published": true,
+        "raw_source_name": "Science Advances",
+        "raw_type": "journal-article"
+      },
+      "sustainable_development_goals": [],
+      "sustainable_development_goals_aurora": [
+        {
+          "score": 0.4699999988079071,
+          "id": "https://metadata.un.org/sdg/4",
+          "display_name": "Quality education"
+        }
+      ],
+      "study_designs": [],
+      "awards": [],
+      "funders": [
+        {
+          "id": "https://openalex.org/F4320309674",
+          "display_name": "Harvard Business School",
+          "ror": null
+        },
+        {
+          "id": "https://openalex.org/F4320320275",
+          "display_name": "University of Exeter",
+          "ror": "https://ror.org/03yghzc09"
+        },
+        {
+          "id": "https://openalex.org/F4320320290",
+          "display_name": "University of Oxford",
+          "ror": "https://ror.org/052gg0110"
+        }
+      ],
+      "has_content": {
+        "pdf": true,
+        "grobid_xml": true
+      },
+      "content_urls": {
+        "pdf": "https://content.openalex.org/works/W4400578758.pdf",
+        "grobid_xml": "https://content.openalex.org/works/W4400578758.grobid-xml"
+      },
+      "referenced_works_count": 42,
+      "referenced_works": [
+        "https://openalex.org/W1409033418",
+        "https://openalex.org/W1698516015",
+        "https://openalex.org/W1972681749",
+        "https://openalex.org/W1978837112",
+        "https://openalex.org/W2025510654",
+        "https://openalex.org/W2038333915",
+        "https://openalex.org/W2041351660",
+        "https://openalex.org/W2226396244",
+        "https://openalex.org/W2320592638",
+        "https://openalex.org/W2611983139",
+        "https://openalex.org/W2779206865",
+        "https://openalex.org/W2791317835",
+        "https://openalex.org/W2908422755",
+        "https://openalex.org/W2924260403",
+        "https://openalex.org/W3009471069",
+        "https://openalex.org/W3029851199",
+        "https://openalex.org/W3082653114",
+        "https://openalex.org/W3166509103",
+        "https://openalex.org/W3167951974",
+        "https://openalex.org/W3173986481",
+        "https://openalex.org/W4221038577",
+        "https://openalex.org/W4283789234",
+        "https://openalex.org/W4310251927",
+        "https://openalex.org/W4320481230",
+        "https://openalex.org/W4320499376",
+        "https://openalex.org/W4322709923",
+        "https://openalex.org/W4323345726",
+        "https://openalex.org/W4361019934",
+        "https://openalex.org/W4366817968",
+        "https://openalex.org/W4380769213",
+        "https://openalex.org/W4383198328",
+        "https://openalex.org/W4383744587",
+        "https://openalex.org/W4384154918",
+        "https://openalex.org/W4384155299",
+        "https://openalex.org/W4385381485",
+        "https://openalex.org/W4385447813",
+        "https://openalex.org/W4385490607",
+        "https://openalex.org/W4386840320",
+        "https://openalex.org/W4392153984",
+        "https://openalex.org/W4399848789",
+        "https://openalex.org/W4404389403",
+        "https://openalex.org/W6851269602"
+      ],
+      "related_works": [
+        "https://openalex.org/W7113772747",
+        "https://openalex.org/W4416195306",
+        "https://openalex.org/W4414311502",
+        "https://openalex.org/W4414497210",
+        "https://openalex.org/W4412901176",
+        "https://openalex.org/W7171856208",
+        "https://openalex.org/W6966752608",
+        "https://openalex.org/W4410743748",
+        "https://openalex.org/W4360103907",
+        "https://openalex.org/W7207683854"
+      ],
+      "abstract_inverted_index": {
+        "Creativity": [
+          0
+        ],
+        "is": [
+          1,
+          142
+        ],
+        "core": [
+          2
+        ],
+        "to": [
+          3,
+          18,
+          67,
+          73,
+          96,
+          107
+        ],
+        "being": [
+          4
+        ],
+        "human.": [
+          5
+        ],
+        "Generative": [
+          6
+        ],
+        "artificial": [
+          7
+        ],
+        "intelligence": [
+          8
+        ],
+        "(AI)-including": [
+          9
+        ],
+        "powerful": [
+          10
+        ],
+        "large": [
+          11
+        ],
+        "language": [
+          12
+        ],
+        "models": [
+          13
+        ],
+        "(LLMs)-holds": [
+          14
+        ],
+        "promise": [
+          15
+        ],
+        "for": [
+          16,
+          148
+        ],
+        "humans": [
+          17,
+          102
+        ],
+        "be": [
+          19,
+          74
+        ],
+        "more": [
+          20,
+          77,
+          82,
+          94
+        ],
+        "creative": [
+          21,
+          28,
+          87
+        ],
+        "by": [
+          22,
+          29,
+          101
+        ],
+        "offering": [
+          23
+        ],
+        "new": [
+          24
+        ],
+        "ideas,": [
+          25
+        ],
+        "or": [
+          26
+        ],
+        "less": [
+          27,
+          86
+        ],
+        "anchoring": [
+          30
+        ],
+        "on": [
+          31,
+          44
+        ],
+        "generative": [
+          32,
+          41,
+          68,
+          90,
+          127
+        ],
+        "AI": [
+          33,
+          42,
+          69
+        ],
+        "ideas.": [
+          34
+        ],
+        "We": [
+          35,
+          63
+        ],
+        "study": [
+          36
+        ],
+        "the": [
+          37,
+          45,
+          114
+        ],
+        "causal": [
+          38
+        ],
+        "impact": [
+          39
+        ],
+        "of": [
+          40,
+          47,
+          116,
+          139
+        ],
+        "ideas": [
+          43,
+          59,
+          70
+        ],
+        "production": [
+          46
+        ],
+        "short": [
+          48
+        ],
+        "stories": [
+          49,
+          72,
+          92,
+          100
+        ],
+        "in": [
+          50,
+          110,
+          154
+        ],
+        "an": [
+          51,
+          61,
+          108
+        ],
+        "online": [
+          52
+        ],
+        "experiment": [
+          53
+        ],
+        "where": [
+          54
+        ],
+        "some": [
+          55
+        ],
+        "writers": [
+          56,
+          129
+        ],
+        "obtained": [
+          57
+        ],
+        "story": [
+          58
+        ],
+        "from": [
+          60
+        ],
+        "LLM.": [
+          62
+        ],
+        "find": [
+          64
+        ],
+        "that": [
+          65
+        ],
+        "access": [
+          66
+        ],
+        "causes": [
+          71
+        ],
+        "evaluated": [
+          75
+        ],
+        "as": [
+          76
+        ],
+        "creative,": [
+          78
+        ],
+        "better": [
+          79,
+          132
+        ],
+        "written,": [
+          80
+        ],
+        "and": [
+          81,
+          151
+        ],
+        "enjoyable,": [
+          83
+        ],
+        "especially": [
+          84
+        ],
+        "among": [
+          85
+        ],
+        "writers.": [
+          88
+        ],
+        "However,": [
+          89
+        ],
+        "AI-enabled": [
+          91
+        ],
+        "are": [
+          93,
+          130
+        ],
+        "similar": [
+          95
+        ],
+        "each": [
+          97
+        ],
+        "other": [
+          98
+        ],
+        "than": [
+          99
+        ],
+        "alone.": [
+          103
+        ],
+        "These": [
+          104
+        ],
+        "results": [
+          105,
+          145
+        ],
+        "point": [
+          106
+        ],
+        "increase": [
+          109
+        ],
+        "individual": [
+          111
+        ],
+        "creativity": [
+          112
+        ],
+        "at": [
+          113
+        ],
+        "risk": [
+          115
+        ],
+        "losing": [
+          117
+        ],
+        "collective": [
+          118
+        ],
+        "novelty.": [
+          119
+        ],
+        "This": [
+          120
+        ],
+        "dynamic": [
+          121
+        ],
+        "resembles": [
+          122
+        ],
+        "a": [
+          123,
+          136
+        ],
+        "social": [
+          124
+        ],
+        "dilemma:": [
+          125
+        ],
+        "With": [
+          126
+        ],
+        "AI,": [
+          128
+        ],
+        "individually": [
+          131
+        ],
+        "off,": [
+          133
+        ],
+        "but": [
+          134
+        ],
+        "collectively": [
+          135
+        ],
+        "narrower": [
+          137
+        ],
+        "scope": [
+          138
+        ],
+        "novel": [
+          140
+        ],
+        "content": [
+          141
+        ],
+        "produced.": [
+          143
+        ],
+        "Our": [
+          144
+        ],
+        "have": [
+          146
+        ],
+        "implications": [
+          147
+        ],
+        "researchers,": [
+          149
+        ],
+        "policy-makers,": [
+          150
+        ],
+        "practitioners": [
+          152
+        ],
+        "interested": [
+          153
+        ],
+        "bolstering": [
+          155
+        ],
+        "creativity.": [
+          156
+        ]
+      },
+      "counts_by_year": [
+        {
+          "year": 2026,
+          "cited_by_count": 560
+        },
+        {
+          "year": 2025,
+          "cited_by_count": 323
+        },
+        {
+          "year": 2024,
+          "cited_by_count": 75
+        },
+        {
+          "year": 2023,
+          "cited_by_count": 8
+        }
+      ],
+      "updated_date": "2026-10-29T09:56:32.521200",
+      "created_date": "2024-07-13T00:00:00"
+    },
+    "authors": {
+      "id": "https://openalex.org/A5000934027",
+      "orcid": "https://orcid.org/0000-0003-2899-2294",
+      "observed_orcids": [
+        "https://orcid.org/0000-0003-2899-2294"
+      ],
+      "display_name": "Lee A. Fleisher",
+      "raw_author_names": [
+        "Fleisher Lee A.",
+        "Fleisher, Lee",
+        "Fleisher, Lee A.",
+        "L A Fleisher",
+        "L. A. FLEISHER",
+        "L. A. Fleisher",
+        "L. Fleisher",
+        "L.A. Fleisher",
+        "L. A. Fleisher",
+        "LEE A. FLEISHER",
+        "Lee A Fleisher",
+        "Lee A. Fleisher",
+        "Lee Fleisher",
+        "Lee. A. Fleisher",
+        "Lee A. Fleisher",
+        "L A Fleisher"
+      ],
+      "full_name": "Fleisher, Lee A.",
+      "works_count": 748,
+      "cited_by_count": 51762,
+      "summary_stats": {
+        "2yr_mean_citedness": 15.384615384615385,
+        "h_index": 98,
+        "i10_index": 333
+      },
+      "ids": {
+        "openalex": "https://openalex.org/A5000934027",
+        "orcid": "https://orcid.org/0000-0003-2899-2294",
+        "observed_orcids": [
+          "https://orcid.org/0000-0003-2899-2294"
+        ]
+      },
+      "affiliations": [
+        {
+          "institution": {
+            "id": "https://openalex.org/I109654844",
+            "ror": "https://ror.org/03pgm1r86",
+            "display_name": "American College of Cardiology",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I109654844"
+            ]
+          },
+          "years": [
+            2021,
+            2015,
+            2014,
+            2008,
+            2006,
+            2002
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I114027177",
+            "ror": "https://ror.org/0130frc33",
+            "display_name": "University of North Carolina at Chapel Hill",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I114027177"
+            ]
+          },
+          "years": [
+            2002
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I12097938",
+            "ror": "https://ror.org/011vxgd24",
+            "display_name": "West Virginia University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I12097938"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I121797337",
+            "ror": "https://ror.org/027bh9e22",
+            "display_name": "Leiden University",
+            "country_code": "NL",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I121797337"
+            ]
+          },
+          "years": [
+            2003
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I126307644",
+            "ror": "https://ror.org/036jqmy94",
+            "display_name": "University of Iowa",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I126307644"
+            ]
+          },
+          "years": [
+            2024,
+            2014,
+            2002
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1281833243",
+            "ror": "https://ror.org/013kjyp64",
+            "display_name": "American Heart Association",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I1281833243"
+            ]
+          },
+          "years": [
+            2021,
+            2015,
+            2008,
+            2006,
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1283280774",
+            "ror": "https://ror.org/04b6nzv94",
+            "display_name": "Brigham and Women's Hospital",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I121934306",
+              "https://openalex.org/I1283280774",
+              "https://openalex.org/I48633490"
+            ]
+          },
+          "years": [
+            2020,
+            2015
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1285119806",
+            "ror": "https://ror.org/035m9ft70",
+            "display_name": "Heart Rhythm Society",
+            "country_code": "US",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I1285119806"
+            ]
+          },
+          "years": [
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1285301757",
+            "ror": "https://ror.org/01j7c0b24",
+            "display_name": "Rush University Medical Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I1285301757"
+            ]
+          },
+          "years": [
+            1997
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1289490764",
+            "ror": "https://ror.org/042twtr12",
+            "display_name": "Centers for Disease Control and Prevention",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1289490764",
+              "https://openalex.org/I1299022934"
+            ]
+          },
+          "years": [
+            2022
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1297026177",
+            "ror": "https://ror.org/045r8zm03",
+            "display_name": "American Sociological Association",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I1297026177"
+            ]
+          },
+          "years": [
+            2019
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1297363086",
+            "ror": "https://ror.org/04skqfp25",
+            "display_name": "St. Michael's Hospital",
+            "country_code": "CA",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I1297363086",
+              "https://openalex.org/I4399598460"
+            ]
+          },
+          "years": [
+            2012
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1299303238",
+            "ror": "https://ror.org/01cwqze88",
+            "display_name": "National Institutes of Health",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1299022934",
+              "https://openalex.org/I1299303238"
+            ]
+          },
+          "years": [
+            2008,
+            2006,
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1316535847",
+            "ror": "https://ror.org/04drvxt59",
+            "display_name": "Beth Israel Deaconess Medical Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I1316535847"
+            ]
+          },
+          "years": [
+            2008
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1323778983",
+            "ror": "https://ror.org/05tszed37",
+            "display_name": "Yale New Haven Hospital",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I1323778983",
+              "https://openalex.org/I4210117499"
+            ]
+          },
+          "years": [
+            1993,
+            1992,
+            1991,
+            1990
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1327163397",
+            "ror": "https://ror.org/01q1z8k08",
+            "display_name": "State University of New York",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I1327163397"
+            ]
+          },
+          "years": [
+            2016,
+            2015
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1335321130",
+            "ror": "https://ror.org/01z7r7q48",
+            "display_name": "Children's Hospital of Philadelphia",
+            "country_code": "US",
+            "type": "funder",
+            "lineage": [
+              "https://openalex.org/I1335321130"
+            ]
+          },
+          "years": [
+            2014,
+            2013
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I136199984",
+            "ror": "https://ror.org/03vek6s52",
+            "display_name": "Harvard University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I136199984"
+            ]
+          },
+          "years": [
+            2016,
+            2015,
+            2008,
+            2006
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I139669409",
+            "ror": "https://ror.org/01wjz9118",
+            "display_name": "Nizam's Institute of Medical Sciences",
+            "country_code": "IN",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I139669409"
+            ]
+          },
+          "years": [
+            1998
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I145311948",
+            "ror": "https://ror.org/00za53h95",
+            "display_name": "Johns Hopkins University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I145311948"
+            ]
+          },
+          "years": [
+            2008,
+            2006,
+            2004,
+            2003,
+            2002,
+            2001,
+            2000,
+            1999,
+            1998,
+            1997,
+            1996,
+            1995,
+            1994,
+            1993,
+            1992
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I145608581",
+            "ror": "https://ror.org/02dgjyy92",
+            "display_name": "University of Miami",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I145608581"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I148314036",
+            "ror": "https://ror.org/04r3kq386",
+            "display_name": "Uniformed Services University of the Health Sciences",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I148314036"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I150468666",
+            "ror": "https://ror.org/03czfpz43",
+            "display_name": "Emory University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I150468666"
+            ]
+          },
+          "years": [
+            2000
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I161318765",
+            "ror": "https://ror.org/046rm7j60",
+            "display_name": "University of California, Los Angeles",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I161318765"
+            ]
+          },
+          "years": [
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I170201317",
+            "ror": "https://ror.org/01an3r305",
+            "display_name": "University of Pittsburgh",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I170201317"
+            ]
+          },
+          "years": [
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I170897317",
+            "ror": "https://ror.org/00py81415",
+            "display_name": "Duke University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I170897317"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I180670191",
+            "ror": "https://ror.org/043mz5j54",
+            "display_name": "University of California, San Francisco",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I180670191"
+            ]
+          },
+          "years": [
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I184565670",
+            "ror": "https://ror.org/05vzafd60",
+            "display_name": "Georgetown University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I184565670"
+            ]
+          },
+          "years": [
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I185261750",
+            "ror": "https://ror.org/03dbr7087",
+            "display_name": "University of Toronto",
+            "country_code": "CA",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I185261750"
+            ]
+          },
+          "years": [
+            2012
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I201448701",
+            "ror": "https://ror.org/00cvxb145",
+            "display_name": "University of Washington",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I201448701"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I202276237",
+            "ror": "https://ror.org/02n0bts35",
+            "display_name": "Medical University of Graz",
+            "country_code": "AT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I202276237"
+            ]
+          },
+          "years": [
+            2009
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I204465549",
+            "ror": "https://ror.org/01yc7t268",
+            "display_name": "Washington University in St. Louis",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I204465549"
+            ]
+          },
+          "years": [
+            2005,
+            1996,
+            1994
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I205783295",
+            "ror": "https://ror.org/05bnh6r87",
+            "display_name": "Cornell University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I205783295"
+            ]
+          },
+          "years": [
+            2011
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I25399158",
+            "ror": "https://ror.org/01znkr924",
+            "display_name": "Mahidol University",
+            "country_code": "TH",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I25399158"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I27837315",
+            "ror": "https://ror.org/00jmfr291",
+            "display_name": "University of Michigan",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I27837315"
+            ]
+          },
+          "years": [
+            2002,
+            2000,
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2799810409",
+            "ror": "https://ror.org/02917wp91",
+            "display_name": "Hospital of the University of Pennsylvania",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799810409",
+              "https://openalex.org/I4210143392"
+            ]
+          },
+          "years": [
+            2023,
+            2022,
+            2019,
+            2016,
+            2014,
+            2013,
+            2012,
+            2008,
+            2007
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2799853436",
+            "ror": "https://ror.org/037zgn354",
+            "display_name": "Johns Hopkins Medicine",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799853436"
+            ]
+          },
+          "years": [
+            2006,
+            2004,
+            2003,
+            2002,
+            2001,
+            2000,
+            1999,
+            1998,
+            1997,
+            1996,
+            1995,
+            1994,
+            1993,
+            1992
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2800006345",
+            "ror": "https://ror.org/05xvt9f17",
+            "display_name": "Leiden University Medical Center",
+            "country_code": "NL",
+            "type": "funder",
+            "lineage": [
+              "https://openalex.org/I2800006345"
+            ]
+          },
+          "years": [
+            2007
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2800282886",
+            "ror": "https://ror.org/05mg61p80",
+            "display_name": "Englewood Hospital and Medical Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2800282886"
+            ]
+          },
+          "years": [
+            2011
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2801671727",
+            "ror": "https://ror.org/04v00sg98",
+            "display_name": "VA Boston Healthcare System",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I1322918889",
+              "https://openalex.org/I2799886695",
+              "https://openalex.org/I2801671727",
+              "https://openalex.org/I4210095851"
+            ]
+          },
+          "years": [
+            2011
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2801845744",
+            "ror": "https://ror.org/026pg9j08",
+            "display_name": "Toronto General Hospital",
+            "country_code": "CA",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I1325899441",
+              "https://openalex.org/I2801845744"
+            ]
+          },
+          "years": [
+            2012
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2801952686",
+            "ror": "https://ror.org/018906e22",
+            "display_name": "Erasmus MC",
+            "country_code": "NL",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2801952686"
+            ]
+          },
+          "years": [
+            2007,
+            2003
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2801993434",
+            "ror": "https://ror.org/01wddqe20",
+            "display_name": "The Alfred Hospital",
+            "country_code": "AU",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2801993434",
+              "https://openalex.org/I4210163178"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2802697821",
+            "ror": "https://ror.org/04pwc8466",
+            "display_name": "Johns Hopkins Bayview Medical Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799853436",
+              "https://openalex.org/I2802697821"
+            ]
+          },
+          "years": [
+            2003
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2802742190",
+            "ror": "https://ror.org/03g3kfn65",
+            "display_name": "American Society of Anesthesiologists",
+            "country_code": "US",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I2802742190"
+            ]
+          },
+          "years": [
+            2019,
+            2018,
+            2012,
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2802928900",
+            "ror": "https://ror.org/03t4gr691",
+            "display_name": "Amsterdam UMC Location University of Amsterdam",
+            "country_code": "NL",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2802928900",
+              "https://openalex.org/I4210151833"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I28792581",
+            "ror": "https://ror.org/00trqv719",
+            "display_name": "University of Rochester Medicine",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I28792581",
+              "https://openalex.org/I5388228"
+            ]
+          },
+          "years": [
+            2016,
+            2015,
+            2013,
+            2003
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I308269434",
+            "ror": "https://ror.org/02ahe3232",
+            "display_name": "European Society of Cardiology",
+            "country_code": "FR",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I308269434"
+            ]
+          },
+          "years": [
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I32971472",
+            "ror": "https://ror.org/03v76x132",
+            "display_name": "Yale University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I32971472"
+            ]
+          },
+          "years": [
+            2003,
+            2000,
+            1996,
+            1995,
+            1994,
+            1993,
+            1992,
+            1991,
+            1990
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I392282",
+            "ror": "https://ror.org/012zs8222",
+            "display_name": "University at Albany, State University of New York",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I392282"
+            ]
+          },
+          "years": [
+            2016,
+            2015
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I40034438",
+            "ror": "https://ror.org/0198v2949",
+            "display_name": "Universidade do Estado do Rio de Janeiro",
+            "country_code": "BR",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I40034438"
+            ]
+          },
+          "years": [
+            2008
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I40347166",
+            "ror": "https://ror.org/024mw5h28",
+            "display_name": "University of Chicago",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I40347166"
+            ]
+          },
+          "years": [
+            1998,
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210087915",
+            "ror": "https://ror.org/002pd6e78",
+            "display_name": "Massachusetts General Hospital",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210087915",
+              "https://openalex.org/I48633490"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210088555",
+            "ror": "https://ror.org/0052svj16",
+            "display_name": "Abbott (United States)",
+            "country_code": "US",
+            "type": "company",
+            "lineage": [
+              "https://openalex.org/I4210088555"
+            ]
+          },
+          "years": [
+            1999
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210095655",
+            "ror": "https://ror.org/00qejpg20",
+            "display_name": "Anesthesia Quality Institute",
+            "country_code": "US",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I4210095655"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210097447",
+            "ror": "https://ror.org/00xgaya81",
+            "display_name": "Bipartisan Policy Center",
+            "country_code": "US",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I4210097447"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210105740",
+            "ror": "https://ror.org/01cqwmh55",
+            "display_name": "First People's Hospital of Foshan",
+            "country_code": "CN",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210105740"
+            ]
+          },
+          "years": [
+            2013
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210114445",
+            "ror": "https://ror.org/01zcpa714",
+            "display_name": "Michigan Medicine",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210114445"
+            ]
+          },
+          "years": [
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210117499",
+            "ror": "https://ror.org/01s1hsq14",
+            "display_name": "Yale New Haven Health System",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210117499"
+            ]
+          },
+          "years": [
+            2011
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210123879",
+            "ror": "https://ror.org/02vptss42",
+            "display_name": "Hebrew SeniorLife",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210123879"
+            ]
+          },
+          "years": [
+            2008,
+            2006
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210126604",
+            "ror": "https://ror.org/03fs9z545",
+            "display_name": "Mahidol Oxford Tropical Medicine Research Unit",
+            "country_code": "TH",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I25399158",
+              "https://openalex.org/I40120149",
+              "https://openalex.org/I4210126604",
+              "https://openalex.org/I87048295"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210135191",
+            "ror": "https://ror.org/04r3ebn54",
+            "display_name": "Oklahoma Foundation for Medical Quality",
+            "country_code": "US",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I4210135191"
+            ]
+          },
+          "years": [
+            2014
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210136897",
+            "ror": "https://ror.org/049v75w11",
+            "display_name": "National Institute on Aging",
+            "country_code": "US",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I1299022934",
+              "https://openalex.org/I1299303238",
+              "https://openalex.org/I4210136897"
+            ]
+          },
+          "years": [
+            2008,
+            2006
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210137306",
+            "ror": "https://ror.org/03mtd9a03",
+            "display_name": "Stanford Medicine",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210137306",
+              "https://openalex.org/I97018004"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210143392",
+            "ror": "https://ror.org/04h81rw26",
+            "display_name": "University of Pennsylvania Health System",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210143392"
+            ]
+          },
+          "years": [
+            2024,
+            2020,
+            2019,
+            2018,
+            2017,
+            2016,
+            2015,
+            2014,
+            2013,
+            2012,
+            2011,
+            2010,
+            2009,
+            2008,
+            2007,
+            2006,
+            2005,
+            2004
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210147079",
+            "ror": "https://ror.org/05p6rhy72",
+            "display_name": "Institute for Clinical Evaluative Sciences",
+            "country_code": "CA",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210147079"
+            ]
+          },
+          "years": [
+            2012
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210148091",
+            "ror": "https://ror.org/04pk2pv78",
+            "display_name": "Educational Service District 105",
+            "country_code": "US",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I4210148091"
+            ]
+          },
+          "years": [
+            2002
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210150714",
+            "ror": "https://ror.org/05cb1k848",
+            "display_name": "Johns Hopkins Hospital",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799853436",
+              "https://openalex.org/I4210150714"
+            ]
+          },
+          "years": [
+            2004,
+            2003,
+            2002,
+            2001,
+            2000,
+            1999,
+            1998,
+            1997,
+            1994
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210152918",
+            "ror": "https://ror.org/04nbx4a76",
+            "display_name": "Society of Cardiovascular Anesthesiologists",
+            "country_code": "US",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I4210152918"
+            ]
+          },
+          "years": [
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210153594",
+            "ror": "https://ror.org/04bsc0v25",
+            "display_name": "Society for Cardiovascular Angiography and Interventions",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210153594"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210155647",
+            "ror": "https://ror.org/04vfsmv21",
+            "display_name": "National Institutes of Health Clinical Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I1299022934",
+              "https://openalex.org/I1299303238",
+              "https://openalex.org/I4210155647"
+            ]
+          },
+          "years": [
+            1996
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210155676",
+            "ror": "https://ror.org/04d16a047",
+            "display_name": "Foundation for Anesthesia Education and Research",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210155676"
+            ]
+          },
+          "years": [
+            2021,
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4387153466",
+            "ror": "https://ror.org/02r109517",
+            "display_name": "Weill Cornell Medicine",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I205783295",
+              "https://openalex.org/I4387153466"
+            ]
+          },
+          "years": [
+            2011
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4405271814",
+            "ror": "https://ror.org/033gy9j95",
+            "display_name": "Leonard Davis Institute of Health Economics",
+            "country_code": "US",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I4405271814"
+            ]
+          },
+          "years": [
+            2025,
+            2024,
+            2023,
+            2022,
+            2021,
+            2020,
+            2019,
+            2018,
+            2017,
+            2016,
+            2015,
+            2014,
+            2013,
+            2012,
+            2010,
+            2009
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I46968129",
+            "ror": "https://ror.org/02ymmdj85",
+            "display_name": "Robert Wood Johnson Foundation",
+            "country_code": "US",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I46968129"
+            ]
+          },
+          "years": [
+            2009
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I49332381",
+            "ror": "https://ror.org/0457zbj98",
+            "display_name": "University of Oklahoma Health Sciences Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I49332381"
+            ]
+          },
+          "years": [
+            2014
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I49886154",
+            "ror": "https://ror.org/01k9xac83",
+            "display_name": "Rush University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I49886154"
+            ]
+          },
+          "years": [
+            1997
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I50959184",
+            "ror": "https://ror.org/02g02rq35",
+            "display_name": "Centers for Medicare and Medicaid Services",
+            "country_code": "US",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I1299022934",
+              "https://openalex.org/I50959184"
+            ]
+          },
+          "years": [
+            2026,
+            2024,
+            2023,
+            2022,
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I5388228",
+            "ror": "https://ror.org/022kthw22",
+            "display_name": "University of Rochester",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I5388228"
+            ]
+          },
+          "years": [
+            2016,
+            2015,
+            2013
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I56590836",
+            "ror": "https://ror.org/02bfwt286",
+            "display_name": "Monash University",
+            "country_code": "AU",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I56590836"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I57328836",
+            "ror": "https://ror.org/05h1bnb22",
+            "display_name": "North Dakota State University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I57328836"
+            ]
+          },
+          "years": [
+            2002
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I78577930",
+            "ror": "https://ror.org/00hj8s172",
+            "display_name": "Columbia University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I78577930"
+            ]
+          },
+          "years": [
+            2024,
+            2011,
+            2008
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I79576946",
+            "ror": "https://ror.org/00b30xv10",
+            "display_name": "University of Pennsylvania",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79576946"
+            ]
+          },
+          "years": [
+            2026,
+            2025,
+            2024,
+            2023,
+            2022,
+            2021,
+            2020,
+            2019,
+            2018,
+            2017,
+            2016,
+            2015,
+            2014,
+            2013,
+            2012,
+            2011,
+            2010,
+            2009,
+            2008,
+            2007,
+            2006,
+            2005,
+            2004,
+            1997
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I887064364",
+            "ror": "https://ror.org/04dkp9463",
+            "display_name": "University of Amsterdam",
+            "country_code": "NL",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I887064364"
+            ]
+          },
+          "years": [
+            2003
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I901861585",
+            "ror": "https://ror.org/05dq2gs74",
+            "display_name": "Vanderbilt University Medical Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210162197",
+              "https://openalex.org/I901861585"
+            ]
+          },
+          "years": [
+            1998,
+            1997
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I97018004",
+            "ror": "https://ror.org/00f54p054",
+            "display_name": "Stanford University",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I97018004"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        }
+      ],
+      "last_known_institutions": [
+        {
+          "id": "https://openalex.org/I50959184",
+          "ror": "https://ror.org/02g02rq35",
+          "display_name": "Centers for Medicare and Medicaid Services",
+          "country_code": "US",
+          "type": "government",
+          "lineage": [
+            "https://openalex.org/I1299022934",
+            "https://openalex.org/I50959184"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I79576946",
+          "ror": "https://ror.org/00b30xv10",
+          "display_name": "University of Pennsylvania",
+          "country_code": "US",
+          "type": "education",
+          "lineage": [
+            "https://openalex.org/I79576946"
+          ]
+        }
+      ],
+      "topics": [
+        {
+          "id": "https://openalex.org/T11930",
+          "display_name": "Cardiac, Anesthesia and Surgical Outcomes",
+          "count": 285,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2705",
+            "display_name": "Cardiology and Cardiovascular Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11700",
+          "display_name": "Hemodynamic Monitoring and Therapy",
+          "count": 188,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2746",
+            "display_name": "Surgery"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10189",
+          "display_name": "Anesthesia and Pain Management",
+          "count": 132,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2746",
+            "display_name": "Surgery"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11055",
+          "display_name": "Cardiac and Coronary Surgery Techniques",
+          "count": 122,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2746",
+            "display_name": "Surgery"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T10436",
+          "display_name": "Anesthesia and Sedative Agents",
+          "count": 87,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2703",
+            "display_name": "Anesthesiology and Pain Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "topic_share": [
+        {
+          "id": "https://openalex.org/T11930",
+          "display_name": "Cardiac, Anesthesia and Surgical Outcomes",
+          "value": 0.001939,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2705",
+            "display_name": "Cardiology and Cardiovascular Medicine"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11700",
+          "display_name": "Hemodynamic Monitoring and Therapy",
+          "value": 0.0006146,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2746",
+            "display_name": "Surgery"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T11055",
+          "display_name": "Cardiac and Coronary Surgery Techniques",
+          "value": 0.0004133,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2746",
+            "display_name": "Surgery"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T12020",
+          "display_name": "Enhanced Recovery After Surgery",
+          "value": 0.0002423,
+          "subfield": {
+            "id": "https://openalex.org/subfields/2746",
+            "display_name": "Surgery"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        },
+        {
+          "id": "https://openalex.org/T13555",
+          "display_name": "Healthcare cost, quality, practices",
+          "value": 0.0002371,
+          "subfield": {
+            "id": "https://openalex.org/subfields/3600",
+            "display_name": "General Health Professions"
+          },
+          "field": {
+            "id": "https://openalex.org/fields/36",
+            "display_name": "Health Professions"
+          },
+          "domain": {
+            "id": "https://openalex.org/domains/4",
+            "display_name": "Health Sciences"
+          }
+        }
+      ],
+      "x_concepts": [
+        {
+          "id": "71924100",
+          "wikidata": "https://www.wikidata.org/wiki/Q11190",
+          "display_name": "Medicine",
+          "score": 0.9922211170196533
+        },
+        {
+          "id": "42219234",
+          "wikidata": "https://www.wikidata.org/wiki/Q131130",
+          "display_name": "Anesthesia",
+          "score": 0.8621151447296143
+        },
+        {
+          "id": "126322002",
+          "wikidata": "https://www.wikidata.org/wiki/Q11180",
+          "display_name": "Internal medicine",
+          "score": 0.7476406097412109
+        },
+        {
+          "id": "177713679",
+          "wikidata": "https://www.wikidata.org/wiki/Q679690",
+          "display_name": "Intensive care medicine",
+          "score": 0.6930999755859375
+        },
+        {
+          "id": "141071460",
+          "wikidata": "https://www.wikidata.org/wiki/Q40821",
+          "display_name": "Surgery",
+          "score": 0.6822260618209839
+        }
+      ],
+      "counts_by_year": [
+        {
+          "year": 1990,
+          "works_count": 4,
+          "oa_works_count": 0,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1991,
+          "works_count": 5,
+          "oa_works_count": 3,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1992,
+          "works_count": 7,
+          "oa_works_count": 2,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1993,
+          "works_count": 9,
+          "oa_works_count": 2,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1994,
+          "works_count": 11,
+          "oa_works_count": 2,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1995,
+          "works_count": 8,
+          "oa_works_count": 1,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1996,
+          "works_count": 16,
+          "oa_works_count": 5,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1997,
+          "works_count": 11,
+          "oa_works_count": 2,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1998,
+          "works_count": 9,
+          "oa_works_count": 4,
+          "cited_by_count": 0
+        },
+        {
+          "year": 1999,
+          "works_count": 12,
+          "oa_works_count": 4,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2000,
+          "works_count": 22,
+          "oa_works_count": 5,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2001,
+          "works_count": 18,
+          "oa_works_count": 2,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2002,
+          "works_count": 18,
+          "oa_works_count": 4,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2003,
+          "works_count": 13,
+          "oa_works_count": 2,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2004,
+          "works_count": 13,
+          "oa_works_count": 1,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2005,
+          "works_count": 18,
+          "oa_works_count": 3,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2006,
+          "works_count": 24,
+          "oa_works_count": 6,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2007,
+          "works_count": 18,
+          "oa_works_count": 10,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2008,
+          "works_count": 24,
+          "oa_works_count": 7,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2009,
+          "works_count": 28,
+          "oa_works_count": 8,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2010,
+          "works_count": 22,
+          "oa_works_count": 6,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2011,
+          "works_count": 33,
+          "oa_works_count": 2,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2012,
+          "works_count": 34,
+          "oa_works_count": 15,
+          "cited_by_count": 1367
+        },
+        {
+          "year": 2013,
+          "works_count": 25,
+          "oa_works_count": 8,
+          "cited_by_count": 1419
+        },
+        {
+          "year": 2014,
+          "works_count": 35,
+          "oa_works_count": 17,
+          "cited_by_count": 1499
+        },
+        {
+          "year": 2015,
+          "works_count": 26,
+          "oa_works_count": 11,
+          "cited_by_count": 1536
+        },
+        {
+          "year": 2016,
+          "works_count": 37,
+          "oa_works_count": 16,
+          "cited_by_count": 1918
+        },
+        {
+          "year": 2017,
+          "works_count": 27,
+          "oa_works_count": 13,
+          "cited_by_count": 2598
+        },
+        {
+          "year": 2018,
+          "works_count": 30,
+          "oa_works_count": 9,
+          "cited_by_count": 3192
+        },
+        {
+          "year": 2019,
+          "works_count": 41,
+          "oa_works_count": 23,
+          "cited_by_count": 3533
+        },
+        {
+          "year": 2020,
+          "works_count": 30,
+          "oa_works_count": 23,
+          "cited_by_count": 4403
+        },
+        {
+          "year": 2021,
+          "works_count": 36,
+          "oa_works_count": 20,
+          "cited_by_count": 4129
+        },
+        {
+          "year": 2022,
+          "works_count": 20,
+          "oa_works_count": 6,
+          "cited_by_count": 3260
+        },
+        {
+          "year": 2023,
+          "works_count": 25,
+          "oa_works_count": 15,
+          "cited_by_count": 3217
+        },
+        {
+          "year": 2024,
+          "works_count": 22,
+          "oa_works_count": 13,
+          "cited_by_count": 2793
+        },
+        {
+          "year": 2025,
+          "works_count": 11,
+          "oa_works_count": 10,
+          "cited_by_count": 2375
+        },
+        {
+          "year": 2026,
+          "works_count": 6,
+          "oa_works_count": 4,
+          "cited_by_count": 1669
+        }
+      ],
+      "display_name_alternatives": [
+        "Fleisher Lee A.",
+        "Fleisher, Lee",
+        "Fleisher, Lee A.",
+        "L A Fleisher",
+        "L. A. FLEISHER",
+        "L. A. Fleisher",
+        "L. Fleisher",
+        "L.A. Fleisher",
+        "L. A. Fleisher",
+        "LEE A. FLEISHER",
+        "Lee A Fleisher",
+        "Lee A. Fleisher",
+        "Lee Fleisher",
+        "Lee. A. Fleisher",
+        "Lee A. Fleisher",
+        "L A Fleisher"
+      ],
+      "block_key": "l fleisher",
+      "works_api_url": "https://api.openalex.org/works?filter=author.id:A5000934027",
+      "updated_date": "2026-10-29T12:27:34",
+      "created_date": "2016-06-24T00:00:00"
+    }
+  }
+}
