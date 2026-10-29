@@ -1,4 +1,4 @@
-# BSAD 6153 Project: &lt;your project name&gt;
+# BSAD 6153 Project: &lt;AI Research and Knowledge Management Agent&gt;
 
 **Student:** Kara Taylor
 **My decision:** What AI material should I read or watch next, given my available time, learning interests, and what I have already consumed?
