@@ -1,0 +1,147 @@
+{
+  "as_of": "2026-11-07",
+  "authorship_credits": 1516,
+  "date_year_mismatches": [],
+  "distinct_credited_author_ids": 1464,
+  "distributions": {
+    "language": {
+      "en": 504
+    },
+    "open_access": {
+      "True": 504
+    },
+    "type": {
+      "article": 503,
+      "conference-paper": 1
+    },
+    "year": {
+      "2015": 1,
+      "2017": 1,
+      "2019": 8,
+      "2020": 12,
+      "2021": 7,
+      "2022": 21,
+      "2023": 47,
+      "2024": 88,
+      "2025": 129,
+      "2026": 188,
+      "None": 2
+    }
+  },
+  "duplicate_doi_groups": {},
+  "duplicate_normalized_title_groups": {
+    "a hybrid deep learning approach for deepfake and misinformation detection": [
+      "https://openalex.org/W7161574422",
+      "https://openalex.org/W7171145619"
+    ],
+    "adaptive ai-tutors for theatre and drama education": [
+      "https://openalex.org/W7130515951",
+      "https://openalex.org/W7130857784"
+    ],
+    "ai agents vs. agentic ai: a conceptual taxonomy, applications and challenges": [
+      "https://openalex.org/W4413427262",
+      "https://openalex.org/W4412505619"
+    ],
+    "exploring ethical dimensions in ai: navigating bias and fairness in the field": [
+      "https://openalex.org/W4392162601",
+      "https://openalex.org/W4394063064"
+    ],
+    "impact of ai dependence on procrastination among university students": [
+      "https://openalex.org/W4407202213",
+      "https://openalex.org/W4406943695"
+    ],
+    "impact of deepfake technology on social media: detection, misinformation and societal implications": [
+      "https://openalex.org/W4387672129",
+      "https://openalex.org/W4409002416"
+    ],
+    "role of ai-based training tools in enhancing employee learning, engagement and skill development": [
+      "https://openalex.org/W7213411166",
+      "https://openalex.org/W7213396686"
+    ],
+    "the algorithmic leviathan: artificial intelligence, the reshaping of political power, and the existential threat to human agency": [
+      "https://openalex.org/W7142342816",
+      "https://openalex.org/W7129057853"
+    ],
+    "the impact of ai tutors on academic performance: a systematic review": [
+      "https://openalex.org/W7171352599",
+      "https://openalex.org/W7197023658"
+    ]
+  },
+  "duplicate_work_ids": 0,
+  "future_publication_dates": [],
+  "incomplete_raw_author_credits": 79,
+  "loader_validation": "passed",
+  "missing": {
+    "abstract": 16,
+    "authorships": 21,
+    "doi": 35,
+    "language": 0,
+    "pdf_url": 174,
+    "primary_topic": 0,
+    "publication_date": 2
+  },
+  "missing_examples": {
+    "abstract": [
+      "https://openalex.org/W2953522645",
+      "https://openalex.org/W4399332613",
+      "https://openalex.org/W7162667931"
+    ],
+    "authorships": [
+      "https://openalex.org/W4399919380",
+      "https://openalex.org/W2954555759",
+      "https://openalex.org/W7153533387"
+    ],
+    "doi": [
+      "https://openalex.org/W7167858544",
+      "https://openalex.org/W7166260442",
+      "https://openalex.org/W7164708805"
+    ],
+    "pdf_url": [
+      "https://openalex.org/W4323655724",
+      "https://openalex.org/W2953522645",
+      "https://openalex.org/W7218919442"
+    ],
+    "publication_date": [
+      "https://openalex.org/W7222366843",
+      "https://openalex.org/W7222907389"
+    ]
+  },
+  "missing_required_ids": [],
+  "raw_authorship_entries": 1595,
+  "required_works": 12,
+  "scope": "Reviewed local snapshot; not a live database or full-text audit",
+  "selection_groups": {
+    "applications": {
+      "missing_abstracts": 6,
+      "works": 149
+    },
+    "ethics": {
+      "missing_abstracts": 2,
+      "works": 90
+    },
+    "foundations": {
+      "missing_abstracts": 2,
+      "works": 100
+    },
+    "governance": {
+      "missing_abstracts": 2,
+      "works": 70
+    },
+    "models": {
+      "missing_abstracts": 3,
+      "works": 60
+    },
+    "organizations": {
+      "missing_abstracts": 0,
+      "works": 23
+    },
+    "required": {
+      "missing_abstracts": 1,
+      "works": 12
+    }
+  },
+  "source_run": "20261029T155716Z_d357540f",
+  "unique_work_ids": 504,
+  "works": 504,
+  "works_without_raw_authorships": 9
+}
