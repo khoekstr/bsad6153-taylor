@@ -51,6 +51,8 @@ the JOINs, GROUP BY, ORDER BY, and LIMIT clauses I had requested.
 
 ### Verify: the evidence that it works
 
+**Schema:** I reviewed the schema document in both GitHub and Supabase.
+
 **Database and loader:** I ran the database connection check and got a successful
 connection. The AI created the tables and checked the schema and diagram against
 the design. I asked it to rerun the load verification; it reported zero new rows
