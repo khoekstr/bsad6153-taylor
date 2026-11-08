@@ -6,7 +6,6 @@
       "doi": "https://doi.org/10.1126/sciadv.adn5290",
       "title": "Generative AI enhances individual creativity but reduces the collective diversity of novel content",
       "display_name": "Generative AI enhances individual creativity but reduces the collective diversity of novel content",
-      "relevance_score": 558.9872,
       "publication_year": 2024,
       "publication_date": "2024-07-12",
       "ids": {
@@ -1012,8 +1011,8 @@
       "sustainable_development_goals": [],
       "sustainable_development_goals_aurora": [
         {
-          "score": 0.4699999988079071,
           "id": "https://metadata.un.org/sdg/4",
+          "score": 0.4699999988079071,
           "display_name": "Quality education"
         }
       ],
@@ -1506,412 +1505,92 @@
       "created_date": "2024-07-13T00:00:00"
     },
     "authors": {
-      "id": "https://openalex.org/A5000934027",
-      "orcid": "https://orcid.org/0000-0003-2899-2294",
+      "id": "https://openalex.org/A5010158984",
+      "orcid": "https://orcid.org/0000-0001-7167-1459",
       "observed_orcids": [
-        "https://orcid.org/0000-0003-2899-2294"
+        "https://orcid.org/0000-0001-7167-1459"
       ],
-      "display_name": "Lee A. Fleisher",
+      "display_name": "Cesare Hassan",
       "raw_author_names": [
-        "Fleisher Lee A.",
-        "Fleisher, Lee",
-        "Fleisher, Lee A.",
-        "L A Fleisher",
-        "L. A. FLEISHER",
-        "L. A. Fleisher",
-        "L. Fleisher",
-        "L.A. Fleisher",
-        "L. A. Fleisher",
-        "LEE A. FLEISHER",
-        "Lee A Fleisher",
-        "Lee A. Fleisher",
-        "Lee Fleisher",
-        "Lee. A. Fleisher",
-        "Lee A. Fleisher",
-        "L A Fleisher"
+        "C HASSAN",
+        "C Hassan",
+        "C. Cesare Hassan",
+        "C. HASSAN",
+        "C. Hassan",
+        "C.M. Hassan",
+        "CESARE HASSAN",
+        "Casare Hassan",
+        "Cesare HASSAN",
+        "Cesare Hassan",
+        "Cessare Hassan",
+        "Chamsan Daher-Hassan",
+        "Hassan",
+        "Hassan Cesare",
+        "Hassan, C",
+        "Hassan, Cesare"
       ],
-      "full_name": "Fleisher, Lee A.",
-      "works_count": 748,
-      "cited_by_count": 51762,
+      "full_name": "Cesare Hassan",
+      "works_count": 1723,
+      "cited_by_count": 55119,
       "summary_stats": {
-        "2yr_mean_citedness": 15.384615384615385,
-        "h_index": 98,
-        "i10_index": 333
+        "2yr_mean_citedness": 6.175059952038369,
+        "h_index": 112,
+        "i10_index": 617
       },
       "ids": {
-        "openalex": "https://openalex.org/A5000934027",
-        "orcid": "https://orcid.org/0000-0003-2899-2294",
+        "openalex": "https://openalex.org/A5010158984",
+        "orcid": "https://orcid.org/0000-0001-7167-1459",
         "observed_orcids": [
-          "https://orcid.org/0000-0003-2899-2294"
+          "https://orcid.org/0000-0001-7167-1459"
         ]
       },
       "affiliations": [
         {
           "institution": {
-            "id": "https://openalex.org/I109654844",
-            "ror": "https://ror.org/03pgm1r86",
-            "display_name": "American College of Cardiology",
-            "country_code": "US",
+            "id": "https://openalex.org/I103320735",
+            "ror": "https://ror.org/03h7r5v07",
+            "display_name": "Università Cattolica del Sacro Cuore",
+            "country_code": "IT",
             "type": "education",
             "lineage": [
-              "https://openalex.org/I109654844"
-            ]
-          },
-          "years": [
-            2021,
-            2015,
-            2014,
-            2008,
-            2006,
-            2002
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I114027177",
-            "ror": "https://ror.org/0130frc33",
-            "display_name": "University of North Carolina at Chapel Hill",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I114027177"
-            ]
-          },
-          "years": [
-            2002
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I12097938",
-            "ror": "https://ror.org/011vxgd24",
-            "display_name": "West Virginia University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I12097938"
-            ]
-          },
-          "years": [
-            2016
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I121797337",
-            "ror": "https://ror.org/027bh9e22",
-            "display_name": "Leiden University",
-            "country_code": "NL",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I121797337"
-            ]
-          },
-          "years": [
-            2003
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I126307644",
-            "ror": "https://ror.org/036jqmy94",
-            "display_name": "University of Iowa",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I126307644"
-            ]
-          },
-          "years": [
-            2024,
-            2014,
-            2002
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1281833243",
-            "ror": "https://ror.org/013kjyp64",
-            "display_name": "American Heart Association",
-            "country_code": "US",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I1281833243"
-            ]
-          },
-          "years": [
-            2021,
-            2015,
-            2008,
-            2006,
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1283280774",
-            "ror": "https://ror.org/04b6nzv94",
-            "display_name": "Brigham and Women's Hospital",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I121934306",
-              "https://openalex.org/I1283280774",
-              "https://openalex.org/I48633490"
-            ]
-          },
-          "years": [
-            2020,
-            2015
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1285119806",
-            "ror": "https://ror.org/035m9ft70",
-            "display_name": "Heart Rhythm Society",
-            "country_code": "US",
-            "type": "other",
-            "lineage": [
-              "https://openalex.org/I1285119806"
-            ]
-          },
-          "years": [
-            2021
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1285301757",
-            "ror": "https://ror.org/01j7c0b24",
-            "display_name": "Rush University Medical Center",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I1285301757"
-            ]
-          },
-          "years": [
-            1997
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1289490764",
-            "ror": "https://ror.org/042twtr12",
-            "display_name": "Centers for Disease Control and Prevention",
-            "country_code": "US",
-            "type": "government",
-            "lineage": [
-              "https://openalex.org/I1289490764",
-              "https://openalex.org/I1299022934"
-            ]
-          },
-          "years": [
-            2022
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1297026177",
-            "ror": "https://ror.org/045r8zm03",
-            "display_name": "American Sociological Association",
-            "country_code": "US",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I1297026177"
-            ]
-          },
-          "years": [
-            2019
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1297363086",
-            "ror": "https://ror.org/04skqfp25",
-            "display_name": "St. Michael's Hospital",
-            "country_code": "CA",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I1297363086",
-              "https://openalex.org/I4399598460"
-            ]
-          },
-          "years": [
-            2012
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1299303238",
-            "ror": "https://ror.org/01cwqze88",
-            "display_name": "National Institutes of Health",
-            "country_code": "US",
-            "type": "government",
-            "lineage": [
-              "https://openalex.org/I1299022934",
-              "https://openalex.org/I1299303238"
-            ]
-          },
-          "years": [
-            2008,
-            2006,
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1316535847",
-            "ror": "https://ror.org/04drvxt59",
-            "display_name": "Beth Israel Deaconess Medical Center",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I1316535847"
-            ]
-          },
-          "years": [
-            2008
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1323778983",
-            "ror": "https://ror.org/05tszed37",
-            "display_name": "Yale New Haven Hospital",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I1323778983",
-              "https://openalex.org/I4210117499"
-            ]
-          },
-          "years": [
-            1993,
-            1992,
-            1991,
-            1990
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1327163397",
-            "ror": "https://ror.org/01q1z8k08",
-            "display_name": "State University of New York",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I1327163397"
-            ]
-          },
-          "years": [
-            2016,
-            2015
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I1335321130",
-            "ror": "https://ror.org/01z7r7q48",
-            "display_name": "Children's Hospital of Philadelphia",
-            "country_code": "US",
-            "type": "funder",
-            "lineage": [
-              "https://openalex.org/I1335321130"
-            ]
-          },
-          "years": [
-            2014,
-            2013
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I136199984",
-            "ror": "https://ror.org/03vek6s52",
-            "display_name": "Harvard University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I136199984"
+              "https://openalex.org/I103320735"
             ]
           },
           "years": [
             2016,
             2015,
-            2008,
+            2014,
+            2013,
+            2012,
+            2011,
+            2010
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I106296451",
+            "ror": "https://ror.org/01xtv3204",
+            "display_name": "University of Foggia",
+            "country_code": "IT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I106296451"
+            ]
+          },
+          "years": [
+            2012,
             2006
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I139669409",
-            "ror": "https://ror.org/01wjz9118",
-            "display_name": "Nizam's Institute of Medical Sciences",
-            "country_code": "IN",
-            "type": "education",
+            "id": "https://openalex.org/I1281400175",
+            "ror": "https://ror.org/00j9c2840",
+            "display_name": "Oslo University Hospital",
+            "country_code": "NO",
+            "type": "healthcare",
             "lineage": [
-              "https://openalex.org/I139669409"
-            ]
-          },
-          "years": [
-            1998
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I145311948",
-            "ror": "https://ror.org/00za53h95",
-            "display_name": "Johns Hopkins University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I145311948"
-            ]
-          },
-          "years": [
-            2008,
-            2006,
-            2004,
-            2003,
-            2002,
-            2001,
-            2000,
-            1999,
-            1998,
-            1997,
-            1996,
-            1995,
-            1994,
-            1993,
-            1992
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I145608581",
-            "ror": "https://ror.org/02dgjyy92",
-            "display_name": "University of Miami",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I145608581"
-            ]
-          },
-          "years": [
-            2024
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I148314036",
-            "ror": "https://ror.org/04r3kq386",
-            "display_name": "Uniformed Services University of the Health Sciences",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I148314036"
+              "https://openalex.org/I1281400175"
             ]
           },
           "years": [
@@ -1920,180 +1599,38 @@
         },
         {
           "institution": {
-            "id": "https://openalex.org/I150468666",
-            "ror": "https://ror.org/03czfpz43",
-            "display_name": "Emory University",
+            "id": "https://openalex.org/I1339471597",
+            "ror": "https://ror.org/020dggs04",
+            "display_name": "Humanitas University",
+            "country_code": "IT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I1339471597"
+            ]
+          },
+          "years": [
+            2026,
+            2025,
+            2024,
+            2023,
+            2022,
+            2021,
+            2020,
+            2019,
+            2018,
+            2017,
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I1343052199",
+            "ror": "https://ror.org/00t60zh31",
+            "display_name": "Kaiser Permanente",
             "country_code": "US",
-            "type": "education",
+            "type": "nonprofit",
             "lineage": [
-              "https://openalex.org/I150468666"
-            ]
-          },
-          "years": [
-            2000
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I161318765",
-            "ror": "https://ror.org/046rm7j60",
-            "display_name": "University of California, Los Angeles",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I161318765"
-            ]
-          },
-          "years": [
-            2021
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I170201317",
-            "ror": "https://ror.org/01an3r305",
-            "display_name": "University of Pittsburgh",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I170201317"
-            ]
-          },
-          "years": [
-            2021
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I170897317",
-            "ror": "https://ror.org/00py81415",
-            "display_name": "Duke University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I170897317"
-            ]
-          },
-          "years": [
-            2024
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I180670191",
-            "ror": "https://ror.org/043mz5j54",
-            "display_name": "University of California, San Francisco",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I180670191"
-            ]
-          },
-          "years": [
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I184565670",
-            "ror": "https://ror.org/05vzafd60",
-            "display_name": "Georgetown University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I184565670"
-            ]
-          },
-          "years": [
-            2021
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I185261750",
-            "ror": "https://ror.org/03dbr7087",
-            "display_name": "University of Toronto",
-            "country_code": "CA",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I185261750"
-            ]
-          },
-          "years": [
-            2012
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I201448701",
-            "ror": "https://ror.org/00cvxb145",
-            "display_name": "University of Washington",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I201448701"
-            ]
-          },
-          "years": [
-            2024
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I202276237",
-            "ror": "https://ror.org/02n0bts35",
-            "display_name": "Medical University of Graz",
-            "country_code": "AT",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I202276237"
-            ]
-          },
-          "years": [
-            2009
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I204465549",
-            "ror": "https://ror.org/01yc7t268",
-            "display_name": "Washington University in St. Louis",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I204465549"
-            ]
-          },
-          "years": [
-            2005,
-            1996,
-            1994
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I205783295",
-            "ror": "https://ror.org/05bnh6r87",
-            "display_name": "Cornell University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I205783295"
-            ]
-          },
-          "years": [
-            2011
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I25399158",
-            "ror": "https://ror.org/01znkr924",
-            "display_name": "Mahidol University",
-            "country_code": "TH",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I25399158"
+              "https://openalex.org/I1343052199"
             ]
           },
           "years": [
@@ -2102,71 +1639,279 @@
         },
         {
           "institution": {
-            "id": "https://openalex.org/I27837315",
-            "ror": "https://ror.org/00jmfr291",
-            "display_name": "University of Michigan",
+            "id": "https://openalex.org/I135310074",
+            "ror": "https://ror.org/01y2jtd41",
+            "display_name": "University of Wisconsin–Madison",
             "country_code": "US",
             "type": "education",
             "lineage": [
-              "https://openalex.org/I27837315"
+              "https://openalex.org/I135310074"
             ]
           },
           "years": [
-            2002,
-            2000,
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I2799810409",
-            "ror": "https://ror.org/02917wp91",
-            "display_name": "Hospital of the University of Pennsylvania",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I2799810409",
-              "https://openalex.org/I4210143392"
-            ]
-          },
-          "years": [
-            2023,
-            2022,
-            2019,
-            2016,
-            2014,
-            2013,
-            2012,
-            2008,
+            2024,
+            2020,
+            2010,
+            2009,
             2007
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I2799853436",
-            "ror": "https://ror.org/037zgn354",
-            "display_name": "Johns Hopkins Medicine",
-            "country_code": "US",
-            "type": "healthcare",
+            "id": "https://openalex.org/I138689650",
+            "ror": "https://ror.org/00240q980",
+            "display_name": "University of Padua",
+            "country_code": "IT",
+            "type": "education",
             "lineage": [
-              "https://openalex.org/I2799853436"
+              "https://openalex.org/I138689650"
             ]
           },
           "years": [
-            2006,
-            2004,
-            2003,
-            2002,
-            2001,
-            2000,
-            1999,
-            1998,
-            1997,
-            1996,
-            1995,
-            1994,
-            1993,
-            1992
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I154526488",
+            "ror": "https://ror.org/02vjkv261",
+            "display_name": "Inserm",
+            "country_code": "FR",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I154526488"
+            ]
+          },
+          "years": [
+            2023
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I166182418",
+            "ror": "https://ror.org/005k7hp45",
+            "display_name": "Medical University of Silesia",
+            "country_code": "PL",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I166182418"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I166401450",
+            "ror": "https://ror.org/056tb7j80",
+            "display_name": "Universidad Nacional de Córdoba",
+            "country_code": "AR",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I166401450"
+            ]
+          },
+          "years": [
+            2009
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I168635309",
+            "ror": "https://ror.org/03yjb2x39",
+            "display_name": "University of Calgary",
+            "country_code": "CA",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I168635309"
+            ]
+          },
+          "years": [
+            2014
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I174306211",
+            "ror": "https://ror.org/03qryx823",
+            "display_name": "Technion – Israel Institute of Technology",
+            "country_code": "IL",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I174306211"
+            ]
+          },
+          "years": [
+            2025
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I182534213",
+            "ror": "https://ror.org/043pwc612",
+            "display_name": "Universidade do Porto",
+            "country_code": "PT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I182534213"
+            ]
+          },
+          "years": [
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I184942183",
+            "ror": "https://ror.org/01xtthb56",
+            "display_name": "University of Oslo",
+            "country_code": "NO",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I184942183"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I193662353",
+            "ror": "https://ror.org/04pp8hn57",
+            "display_name": "Utrecht University",
+            "country_code": "NL",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I193662353"
+            ]
+          },
+          "years": [
+            2010
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I204730241",
+            "ror": "https://ror.org/05f82e368",
+            "display_name": "Université Paris Cité",
+            "country_code": "FR",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I204730241"
+            ]
+          },
+          "years": [
+            2023
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I219193219",
+            "ror": "https://ror.org/02dqehb95",
+            "display_name": "Purdue University West Lafayette",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I219193219"
+            ]
+          },
+          "years": [
+            2000
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I27897274",
+            "ror": "https://ror.org/02hssy432",
+            "display_name": "Istituto Superiore di Sanità",
+            "country_code": "IT",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I27897274"
+            ]
+          },
+          "years": [
+            2000
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2799343972",
+            "ror": "https://ror.org/0130jk839",
+            "display_name": "University Hospitals of Cleveland",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799343972"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2799358833",
+            "ror": "https://ror.org/04pr9pz75",
+            "display_name": "Azienda Ospedaliera San Giovanni Addolorata",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799358833"
+            ]
+          },
+          "years": [
+            2008
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2799391451",
+            "ror": "https://ror.org/01xnwqx93",
+            "display_name": "University Hospital Bonn",
+            "country_code": "DE",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799391451"
+            ]
+          },
+          "years": [
+            2002
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2799502834",
+            "ror": "https://ror.org/03jyzk483",
+            "display_name": "Hôpital Beaujon",
+            "country_code": "FR",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799502834",
+              "https://openalex.org/I4210097159"
+            ]
+          },
+          "years": [
+            2023
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I2799905417",
+            "ror": "https://ror.org/02mqqhj42",
+            "display_name": "UW Health University Hospital",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I135310074",
+              "https://openalex.org/I2799905417",
+              "https://openalex.org/I4210132596"
+            ]
+          },
+          "years": [
+            2020
           ]
         },
         {
@@ -2181,52 +1926,19 @@
             ]
           },
           "years": [
-            2007
+            2014
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I2800282886",
-            "ror": "https://ror.org/05mg61p80",
-            "display_name": "Englewood Hospital and Medical Center",
+            "id": "https://openalex.org/I2801052491",
+            "ror": "https://ror.org/04hjn8p44",
+            "display_name": "Staten Island University Hospital",
             "country_code": "US",
             "type": "healthcare",
             "lineage": [
-              "https://openalex.org/I2800282886"
-            ]
-          },
-          "years": [
-            2011
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I2801671727",
-            "ror": "https://ror.org/04v00sg98",
-            "display_name": "VA Boston Healthcare System",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I1322918889",
-              "https://openalex.org/I2799886695",
-              "https://openalex.org/I2801671727",
-              "https://openalex.org/I4210095851"
-            ]
-          },
-          "years": [
-            2011
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I2801845744",
-            "ror": "https://ror.org/026pg9j08",
-            "display_name": "Toronto General Hospital",
-            "country_code": "CA",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I1325899441",
-              "https://openalex.org/I2801845744"
+              "https://openalex.org/I1302444339",
+              "https://openalex.org/I2801052491"
             ]
           },
           "years": [
@@ -2235,665 +1947,109 @@
         },
         {
           "institution": {
-            "id": "https://openalex.org/I2801952686",
-            "ror": "https://ror.org/018906e22",
-            "display_name": "Erasmus MC",
-            "country_code": "NL",
+            "id": "https://openalex.org/I2801926401",
+            "ror": "https://ror.org/03kr30n36",
+            "display_name": "Manchester Royal Infirmary",
+            "country_code": "GB",
             "type": "healthcare",
             "lineage": [
-              "https://openalex.org/I2801952686"
+              "https://openalex.org/I2801926401",
+              "https://openalex.org/I4210092852"
             ]
           },
           "years": [
-            2007,
-            2003
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I2801993434",
-            "ror": "https://ror.org/01wddqe20",
-            "display_name": "The Alfred Hospital",
-            "country_code": "AU",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I2801993434",
-              "https://openalex.org/I4210163178"
-            ]
-          },
-          "years": [
-            2018
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I2802697821",
-            "ror": "https://ror.org/04pwc8466",
-            "display_name": "Johns Hopkins Bayview Medical Center",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I2799853436",
-              "https://openalex.org/I2802697821"
-            ]
-          },
-          "years": [
-            2003
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I2802742190",
-            "ror": "https://ror.org/03g3kfn65",
-            "display_name": "American Society of Anesthesiologists",
-            "country_code": "US",
-            "type": "other",
-            "lineage": [
-              "https://openalex.org/I2802742190"
-            ]
-          },
-          "years": [
-            2019,
-            2018,
-            2012,
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I2802928900",
-            "ror": "https://ror.org/03t4gr691",
-            "display_name": "Amsterdam UMC Location University of Amsterdam",
-            "country_code": "NL",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I2802928900",
-              "https://openalex.org/I4210151833"
-            ]
-          },
-          "years": [
-            2018
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I28792581",
-            "ror": "https://ror.org/00trqv719",
-            "display_name": "University of Rochester Medicine",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I28792581",
-              "https://openalex.org/I5388228"
-            ]
-          },
-          "years": [
-            2016,
-            2015,
-            2013,
-            2003
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I308269434",
-            "ror": "https://ror.org/02ahe3232",
-            "display_name": "European Society of Cardiology",
-            "country_code": "FR",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I308269434"
-            ]
-          },
-          "years": [
-            2021
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I32971472",
-            "ror": "https://ror.org/03v76x132",
-            "display_name": "Yale University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I32971472"
-            ]
-          },
-          "years": [
-            2003,
-            2000,
-            1996,
-            1995,
-            1994,
-            1993,
-            1992,
-            1991,
-            1990
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I392282",
-            "ror": "https://ror.org/012zs8222",
-            "display_name": "University at Albany, State University of New York",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I392282"
-            ]
-          },
-          "years": [
-            2016,
-            2015
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I40034438",
-            "ror": "https://ror.org/0198v2949",
-            "display_name": "Universidade do Estado do Rio de Janeiro",
-            "country_code": "BR",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I40034438"
-            ]
-          },
-          "years": [
-            2008
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I40347166",
-            "ror": "https://ror.org/024mw5h28",
-            "display_name": "University of Chicago",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I40347166"
-            ]
-          },
-          "years": [
-            1998,
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210087915",
-            "ror": "https://ror.org/002pd6e78",
-            "display_name": "Massachusetts General Hospital",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I4210087915",
-              "https://openalex.org/I48633490"
-            ]
-          },
-          "years": [
-            2016
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210088555",
-            "ror": "https://ror.org/0052svj16",
-            "display_name": "Abbott (United States)",
-            "country_code": "US",
-            "type": "company",
-            "lineage": [
-              "https://openalex.org/I4210088555"
-            ]
-          },
-          "years": [
-            1999
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210095655",
-            "ror": "https://ror.org/00qejpg20",
-            "display_name": "Anesthesia Quality Institute",
-            "country_code": "US",
-            "type": "other",
-            "lineage": [
-              "https://openalex.org/I4210095655"
-            ]
-          },
-          "years": [
-            2016
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210097447",
-            "ror": "https://ror.org/00xgaya81",
-            "display_name": "Bipartisan Policy Center",
-            "country_code": "US",
-            "type": "other",
-            "lineage": [
-              "https://openalex.org/I4210097447"
-            ]
-          },
-          "years": [
-            2024
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210105740",
-            "ror": "https://ror.org/01cqwmh55",
-            "display_name": "First People's Hospital of Foshan",
-            "country_code": "CN",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I4210105740"
-            ]
-          },
-          "years": [
-            2013
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210114445",
-            "ror": "https://ror.org/01zcpa714",
-            "display_name": "Michigan Medicine",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I4210114445"
-            ]
-          },
-          "years": [
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210117499",
-            "ror": "https://ror.org/01s1hsq14",
-            "display_name": "Yale New Haven Health System",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I4210117499"
-            ]
-          },
-          "years": [
-            2011
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210123879",
-            "ror": "https://ror.org/02vptss42",
-            "display_name": "Hebrew SeniorLife",
-            "country_code": "US",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I4210123879"
-            ]
-          },
-          "years": [
-            2008,
-            2006
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210126604",
-            "ror": "https://ror.org/03fs9z545",
-            "display_name": "Mahidol Oxford Tropical Medicine Research Unit",
-            "country_code": "TH",
-            "type": "facility",
-            "lineage": [
-              "https://openalex.org/I25399158",
-              "https://openalex.org/I40120149",
-              "https://openalex.org/I4210126604",
-              "https://openalex.org/I87048295"
-            ]
-          },
-          "years": [
-            2018
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210135191",
-            "ror": "https://ror.org/04r3ebn54",
-            "display_name": "Oklahoma Foundation for Medical Quality",
-            "country_code": "US",
-            "type": "other",
-            "lineage": [
-              "https://openalex.org/I4210135191"
-            ]
-          },
-          "years": [
-            2014
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210136897",
-            "ror": "https://ror.org/049v75w11",
-            "display_name": "National Institute on Aging",
-            "country_code": "US",
-            "type": "facility",
-            "lineage": [
-              "https://openalex.org/I1299022934",
-              "https://openalex.org/I1299303238",
-              "https://openalex.org/I4210136897"
-            ]
-          },
-          "years": [
-            2008,
-            2006
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210137306",
-            "ror": "https://ror.org/03mtd9a03",
-            "display_name": "Stanford Medicine",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I4210137306",
-              "https://openalex.org/I97018004"
-            ]
-          },
-          "years": [
-            2024
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210143392",
-            "ror": "https://ror.org/04h81rw26",
-            "display_name": "University of Pennsylvania Health System",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I4210143392"
-            ]
-          },
-          "years": [
-            2024,
-            2020,
-            2019,
-            2018,
-            2017,
-            2016,
-            2015,
-            2014,
-            2013,
-            2012,
-            2011,
-            2010,
-            2009,
-            2008,
-            2007,
-            2006,
-            2005,
             2004
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I4210147079",
-            "ror": "https://ror.org/05p6rhy72",
-            "display_name": "Institute for Clinical Evaluative Sciences",
-            "country_code": "CA",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I4210147079"
-            ]
-          },
-          "years": [
-            2012
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210148091",
-            "ror": "https://ror.org/04pk2pv78",
-            "display_name": "Educational Service District 105",
-            "country_code": "US",
-            "type": "other",
-            "lineage": [
-              "https://openalex.org/I4210148091"
-            ]
-          },
-          "years": [
-            2002
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210150714",
-            "ror": "https://ror.org/05cb1k848",
-            "display_name": "Johns Hopkins Hospital",
-            "country_code": "US",
+            "id": "https://openalex.org/I2802557943",
+            "ror": "https://ror.org/00rg70c39",
+            "display_name": "Agostino Gemelli University Polyclinic",
+            "country_code": "IT",
             "type": "healthcare",
             "lineage": [
-              "https://openalex.org/I2799853436",
-              "https://openalex.org/I4210150714"
-            ]
-          },
-          "years": [
-            2004,
-            2003,
-            2002,
-            2001,
-            2000,
-            1999,
-            1998,
-            1997,
-            1994
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210152918",
-            "ror": "https://ror.org/04nbx4a76",
-            "display_name": "Society of Cardiovascular Anesthesiologists",
-            "country_code": "US",
-            "type": "other",
-            "lineage": [
-              "https://openalex.org/I4210152918"
-            ]
-          },
-          "years": [
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210153594",
-            "ror": "https://ror.org/04bsc0v25",
-            "display_name": "Society for Cardiovascular Angiography and Interventions",
-            "country_code": "US",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I4210153594"
-            ]
-          },
-          "years": [
-            2016
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210155647",
-            "ror": "https://ror.org/04vfsmv21",
-            "display_name": "National Institutes of Health Clinical Center",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I1299022934",
-              "https://openalex.org/I1299303238",
-              "https://openalex.org/I4210155647"
-            ]
-          },
-          "years": [
-            1996
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4210155676",
-            "ror": "https://ror.org/04d16a047",
-            "display_name": "Foundation for Anesthesia Education and Research",
-            "country_code": "US",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I4210155676"
-            ]
-          },
-          "years": [
-            2021,
-            2016
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4387153466",
-            "ror": "https://ror.org/02r109517",
-            "display_name": "Weill Cornell Medicine",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I205783295",
-              "https://openalex.org/I4387153466"
-            ]
-          },
-          "years": [
-            2011
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I4405271814",
-            "ror": "https://ror.org/033gy9j95",
-            "display_name": "Leonard Davis Institute of Health Economics",
-            "country_code": "US",
-            "type": "facility",
-            "lineage": [
-              "https://openalex.org/I4405271814"
-            ]
-          },
-          "years": [
-            2025,
-            2024,
-            2023,
-            2022,
-            2021,
-            2020,
-            2019,
-            2018,
-            2017,
-            2016,
-            2015,
-            2014,
-            2013,
-            2012,
-            2010,
-            2009
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I46968129",
-            "ror": "https://ror.org/02ymmdj85",
-            "display_name": "Robert Wood Johnson Foundation",
-            "country_code": "US",
-            "type": "nonprofit",
-            "lineage": [
-              "https://openalex.org/I46968129"
-            ]
-          },
-          "years": [
-            2009
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I49332381",
-            "ror": "https://ror.org/0457zbj98",
-            "display_name": "University of Oklahoma Health Sciences Center",
-            "country_code": "US",
-            "type": "healthcare",
-            "lineage": [
-              "https://openalex.org/I49332381"
-            ]
-          },
-          "years": [
-            2014
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I49886154",
-            "ror": "https://ror.org/01k9xac83",
-            "display_name": "Rush University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I49886154"
-            ]
-          },
-          "years": [
-            1997
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I50959184",
-            "ror": "https://ror.org/02g02rq35",
-            "display_name": "Centers for Medicare and Medicaid Services",
-            "country_code": "US",
-            "type": "government",
-            "lineage": [
-              "https://openalex.org/I1299022934",
-              "https://openalex.org/I50959184"
-            ]
-          },
-          "years": [
-            2026,
-            2024,
-            2023,
-            2022,
-            2021
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I5388228",
-            "ror": "https://ror.org/022kthw22",
-            "display_name": "University of Rochester",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I5388228"
+              "https://openalex.org/I2802557943"
             ]
           },
           "years": [
             2016,
             2015,
+            2014,
             2013
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I56590836",
-            "ror": "https://ror.org/02bfwt286",
-            "display_name": "Monash University",
-            "country_code": "AU",
+            "id": "https://openalex.org/I2803066834",
+            "ror": "https://ror.org/016zn0y21",
+            "display_name": "Fondazione IRCCS Ca' Granda Ospedale Maggiore Policlinico",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I189158943",
+              "https://openalex.org/I2803066834",
+              "https://openalex.org/I4210153126"
+            ]
+          },
+          "years": [
+            2025
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I28166907",
+            "ror": "https://ror.org/056d84691",
+            "display_name": "Karolinska Institutet",
+            "country_code": "SE",
             "type": "education",
             "lineage": [
-              "https://openalex.org/I56590836"
+              "https://openalex.org/I28166907"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I3018075036",
+            "ror": "https://ror.org/02n6c9837",
+            "display_name": "Sanofi (France)",
+            "country_code": "FR",
+            "type": "company",
+            "lineage": [
+              "https://openalex.org/I3018075036"
+            ]
+          },
+          "years": [
+            2025
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I3018483916",
+            "ror": "https://ror.org/0575yy874",
+            "display_name": "University Medical Center Utrecht",
+            "country_code": "NL",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I3018483916"
+            ]
+          },
+          "years": [
+            2010
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210086903",
+            "ror": "https://ror.org/001f7a930",
+            "display_name": "Azienda Ospedaliera Citta' della Salute e della Scienza di Torino",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210086903"
             ]
           },
           "years": [
@@ -2902,13 +2058,125 @@
         },
         {
           "institution": {
-            "id": "https://openalex.org/I57328836",
-            "ror": "https://ror.org/05h1bnb22",
-            "display_name": "North Dakota State University",
+            "id": "https://openalex.org/I4210087865",
+            "ror": "https://ror.org/0076kfe04",
+            "display_name": "University of Chicago Medical Center",
             "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210087865"
+            ]
+          },
+          "years": [
+            2010
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210091363",
+            "ror": "https://ror.org/00eq8n589",
+            "display_name": "ASL Roma",
+            "country_code": "IT",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I4210091363"
+            ]
+          },
+          "years": [
+            2017
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210092209",
+            "ror": "https://ror.org/00g0x9d29",
+            "display_name": "Ospedali Riuniti di Foggia",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210092209",
+              "https://openalex.org/I4210099368",
+              "https://openalex.org/I4210117053"
+            ]
+          },
+          "years": [
+            2013,
+            2012,
+            2009,
+            2006,
+            2001
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210094195",
+            "ror": "https://ror.org/00htrxv69",
+            "display_name": "Azienda Socio Sanitaria Territoriale Grande Ospedale Metropolitano Niguarda",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210094195"
+            ]
+          },
+          "years": [
+            2017
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210096318",
+            "ror": "https://ror.org/00n6rde07",
+            "display_name": "Institute of Haematology and Blood Transfusion",
+            "country_code": "CZ",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I4210096318"
+            ]
+          },
+          "years": [
+            2014
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210097083",
+            "ror": "https://ror.org/00t4vnv68",
+            "display_name": "IRCCS Azienda Ospedliero-Universitaria di Bologna Policlinico di Sant'Orsola",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210097083"
+            ]
+          },
+          "years": [
+            2017
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210097159",
+            "ror": "https://ror.org/00pg5jh14",
+            "display_name": "Assistance Publique – Hôpitaux de Paris",
+            "country_code": "FR",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210097159"
+            ]
+          },
+          "years": [
+            2023
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210100047",
+            "ror": "https://ror.org/00ysvbp68",
+            "display_name": "Institute of Post Graduate Medical Education and Research",
+            "country_code": "IN",
             "type": "education",
             "lineage": [
-              "https://openalex.org/I57328836"
+              "https://openalex.org/I226431899",
+              "https://openalex.org/I4210100047"
             ]
           },
           "years": [
@@ -2917,37 +2185,193 @@
         },
         {
           "institution": {
-            "id": "https://openalex.org/I78577930",
-            "ror": "https://ror.org/00hj8s172",
-            "display_name": "Columbia University",
-            "country_code": "US",
-            "type": "education",
+            "id": "https://openalex.org/I4210100061",
+            "ror": "https://ror.org/010mjn423",
+            "display_name": "Hong Kong Sanatorium and Hospital",
+            "country_code": "HK",
+            "type": "funder",
             "lineage": [
-              "https://openalex.org/I78577930"
+              "https://openalex.org/I4210100061"
             ]
           },
           "years": [
-            2024,
-            2011,
-            2008
+            2025
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I79576946",
-            "ror": "https://ror.org/00b30xv10",
-            "display_name": "University of Pennsylvania",
-            "country_code": "US",
-            "type": "education",
+            "id": "https://openalex.org/I4210101944",
+            "ror": "https://ror.org/010hq5p48",
+            "display_name": "Ospedale Sacro Cuore Don Calabria",
+            "country_code": "IT",
+            "type": "healthcare",
             "lineage": [
-              "https://openalex.org/I79576946"
+              "https://openalex.org/I4210101944"
             ]
           },
           "years": [
-            2026,
-            2025,
-            2024,
-            2023,
+            2013
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210108791",
+            "ror": "https://ror.org/01gc0wp38",
+            "display_name": "University Hospitals Cleveland Medical Center",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2799343972",
+              "https://openalex.org/I4210108791"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210117575",
+            "ror": "https://ror.org/02fafrk51",
+            "display_name": "Telemark Hospital",
+            "country_code": "NO",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210117575",
+              "https://openalex.org/I4210123979"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210125092",
+            "ror": "https://ror.org/03jd4q354",
+            "display_name": "Ospedale G.B. Morgagni - L.Pierantoni",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210125092"
+            ]
+          },
+          "years": [
+            2013
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210125574",
+            "ror": "https://ror.org/032298f51",
+            "display_name": "Azienda Ospedaliera Sant'Andrea",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210125574"
+            ]
+          },
+          "years": [
+            2018,
+            2010,
+            2009
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210129856",
+            "ror": "https://ror.org/03sm1ej59",
+            "display_name": "Cancer Registry of Norway",
+            "country_code": "NO",
+            "type": "archive",
+            "lineage": [
+              "https://openalex.org/I1333353642",
+              "https://openalex.org/I4210129856",
+              "https://openalex.org/I4210149801",
+              "https://openalex.org/I4210163359"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210130096",
+            "ror": "https://ror.org/02gn50d10",
+            "display_name": "Centre de Recherche sur l'Inflammation",
+            "country_code": "FR",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I1294671590",
+              "https://openalex.org/I154526488",
+              "https://openalex.org/I204730241",
+              "https://openalex.org/I4210096427",
+              "https://openalex.org/I4210130096"
+            ]
+          },
+          "years": [
+            2023
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210130874",
+            "ror": "https://ror.org/03a8gac78",
+            "display_name": "Hospital Del Mar",
+            "country_code": "ES",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210130874"
+            ]
+          },
+          "years": [
+            2020
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210131959",
+            "ror": "https://ror.org/02n85j827",
+            "display_name": "National Research Centre",
+            "country_code": "EG",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I4210131959"
+            ]
+          },
+          "years": [
+            2012
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210132596",
+            "ror": "https://ror.org/03e3qgk42",
+            "display_name": "University of Wisconsin Health",
+            "country_code": "US",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210132596"
+            ]
+          },
+          "years": [
+            2020,
+            2010
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210136185",
+            "ror": "https://ror.org/04e857469",
+            "display_name": "Ospedale Regina Margherita",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210136185"
+            ]
+          },
+          "years": [
             2022,
             2021,
             2020,
@@ -2967,88 +2391,517 @@
             2006,
             2005,
             2004,
-            1997
+            2003,
+            2001
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I887064364",
-            "ror": "https://ror.org/04dkp9463",
-            "display_name": "University of Amsterdam",
-            "country_code": "NL",
-            "type": "education",
+            "id": "https://openalex.org/I4210136873",
+            "ror": "https://ror.org/04kgp1379",
+            "display_name": "Azienda-Unita' Sanitaria Locale Di Cesena",
+            "country_code": "IT",
+            "type": "government",
             "lineage": [
-              "https://openalex.org/I887064364"
+              "https://openalex.org/I4210136873"
             ]
           },
           "years": [
-            2003
+            2014
           ]
         },
         {
           "institution": {
-            "id": "https://openalex.org/I901861585",
-            "ror": "https://ror.org/05dq2gs74",
-            "display_name": "Vanderbilt University Medical Center",
+            "id": "https://openalex.org/I4210137384",
+            "ror": "https://ror.org/0434vme59",
+            "display_name": "Centre for Health Technology and Services Research",
+            "country_code": "PT",
+            "type": "facility",
+            "lineage": [
+              "https://openalex.org/I4210137384"
+            ]
+          },
+          "years": [
+            2021
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210141342",
+            "ror": "https://ror.org/037xafn82",
+            "display_name": "William S. Middleton Memorial Veterans Hospital",
             "country_code": "US",
             "type": "healthcare",
             "lineage": [
-              "https://openalex.org/I4210162197",
-              "https://openalex.org/I901861585"
-            ]
-          },
-          "years": [
-            1998,
-            1997
-          ]
-        },
-        {
-          "institution": {
-            "id": "https://openalex.org/I97018004",
-            "ror": "https://ror.org/00f54p054",
-            "display_name": "Stanford University",
-            "country_code": "US",
-            "type": "education",
-            "lineage": [
-              "https://openalex.org/I97018004"
+              "https://openalex.org/I1322918889",
+              "https://openalex.org/I2799886695",
+              "https://openalex.org/I4210115976",
+              "https://openalex.org/I4210141342"
             ]
           },
           "years": [
             2024
           ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210141803",
+            "ror": "https://ror.org/046zgtw08",
+            "display_name": "Norgine (United Kingdom)",
+            "country_code": "GB",
+            "type": "company",
+            "lineage": [
+              "https://openalex.org/I4210136628",
+              "https://openalex.org/I4210141803"
+            ]
+          },
+          "years": [
+            2018
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210150880",
+            "ror": "https://ror.org/04qcjsm24",
+            "display_name": "The Maria Sklodowska-Curie National Research Institute of Oncology",
+            "country_code": "PL",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210150880"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210151091",
+            "ror": "https://ror.org/04wadq306",
+            "display_name": "Candiolo Cancer Institute",
+            "country_code": "IT",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210151091",
+              "https://openalex.org/I4210153126",
+              "https://openalex.org/I4210167100"
+            ]
+          },
+          "years": [
+            2017
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210151625",
+            "ror": "https://ror.org/05v0e5774",
+            "display_name": "Piedmont Reference Center for Epidemiology and Cancer Prevention",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210151625"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210152645",
+            "ror": "https://ror.org/05fa04208",
+            "display_name": "Fondazione Humanitas per la Ricerca",
+            "country_code": "IT",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4210152645"
+            ]
+          },
+          "years": [
+            2026,
+            2025,
+            2024,
+            2023,
+            2014
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210153126",
+            "ror": "https://ror.org/04tfzc498",
+            "display_name": "Istituti di Ricovero e Cura a Carattere Scientifico",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210153126"
+            ]
+          },
+          "years": [
+            2023
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210155710",
+            "ror": "https://ror.org/05pfy5w65",
+            "display_name": "Gastroenterology Hospital \"Saverio de Bellis\"",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210099368",
+              "https://openalex.org/I4210117053",
+              "https://openalex.org/I4210153126",
+              "https://openalex.org/I4210155710"
+            ]
+          },
+          "years": [
+            2006
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210160290",
+            "ror": "https://ror.org/055a6nt34",
+            "display_name": "Servizio Sanitario Nazionale",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210160290"
+            ]
+          },
+          "years": [
+            2018,
+            2017,
+            2013
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210160583",
+            "ror": "https://ror.org/05nhzbw35",
+            "display_name": "Ospedale Valduce",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210160583"
+            ]
+          },
+          "years": [
+            2001
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210162879",
+            "ror": "https://ror.org/05yn9cj95",
+            "display_name": "Sørlandet Sykehus",
+            "country_code": "NO",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I2803097592",
+              "https://openalex.org/I4210162879"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210163047",
+            "ror": "https://ror.org/05d538656",
+            "display_name": "IRCCS Humanitas Research Hospital",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210153126",
+              "https://openalex.org/I4210163047"
+            ]
+          },
+          "years": [
+            2026,
+            2025,
+            2024,
+            2023,
+            2022,
+            2021,
+            2019,
+            2018,
+            2017,
+            2016,
+            2015,
+            2014,
+            2013,
+            2012,
+            2011
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4210164839",
+            "ror": "https://ror.org/05mshxb09",
+            "display_name": "Sheffield Children's Hospital",
+            "country_code": "GB",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210121472",
+              "https://openalex.org/I4210164839"
+            ]
+          },
+          "years": [
+            2016
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4387154206",
+            "ror": "https://ror.org/008hssd09",
+            "display_name": "Regione Lazio",
+            "country_code": "IT",
+            "type": "government",
+            "lineage": [
+              "https://openalex.org/I4387154206"
+            ]
+          },
+          "years": [
+            2012
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4387154660",
+            "ror": "https://ror.org/01s2mxg92",
+            "display_name": "European Association for the Study of the Liver",
+            "country_code": "CH",
+            "type": "other",
+            "lineage": [
+              "https://openalex.org/I4387154660"
+            ]
+          },
+          "years": [
+            2023
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4388446366",
+            "ror": "https://ror.org/03eftgw80",
+            "display_name": "Indiana University Indianapolis",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I4388446366",
+              "https://openalex.org/I592451"
+            ]
+          },
+          "years": [
+            2011
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4405260337",
+            "ror": "https://ror.org/03kjmz544",
+            "display_name": "Université de Nantes",
+            "country_code": "FR",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I4405260337",
+              "https://openalex.org/I97188460"
+            ]
+          },
+          "years": [
+            2012
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4405266610",
+            "ror": "https://ror.org/046asd979",
+            "display_name": "Gujranwala Medical College",
+            "country_code": "PK",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I2803096283",
+              "https://openalex.org/I4405266610"
+            ]
+          },
+          "years": [
+            2025
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I4405269845",
+            "ror": "https://ror.org/05d7nzm42",
+            "display_name": "European Society of Gastrointestinal Endoscopy",
+            "country_code": "DE",
+            "type": "nonprofit",
+            "lineage": [
+              "https://openalex.org/I4405269845"
+            ]
+          },
+          "years": [
+            2021,
+            2019,
+            2014
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I5561750",
+            "ror": "https://ror.org/027ynra39",
+            "display_name": "University of Bari Aldo Moro",
+            "country_code": "IT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I5561750"
+            ]
+          },
+          "years": [
+            2006
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I6141010",
+            "ror": "https://ror.org/02vr0ne26",
+            "display_name": "European Institute of Oncology",
+            "country_code": "IT",
+            "type": "healthcare",
+            "lineage": [
+              "https://openalex.org/I4210153126",
+              "https://openalex.org/I6141010"
+            ]
+          },
+          "years": [
+            2014
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I79940851",
+            "ror": "https://ror.org/02q2d2610",
+            "display_name": "University of Brescia",
+            "country_code": "IT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I79940851"
+            ]
+          },
+          "years": [
+            2007
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I861853513",
+            "ror": "https://ror.org/02be6w209",
+            "display_name": "Sapienza University of Rome",
+            "country_code": "IT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I861853513"
+            ]
+          },
+          "years": [
+            2021,
+            2018,
+            2014,
+            2010,
+            2009,
+            2000,
+            1999,
+            1998
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I919571938",
+            "ror": "https://ror.org/03gds6c39",
+            "display_name": "The University of Texas Health Science Center at Houston",
+            "country_code": "US",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I919571938"
+            ]
+          },
+          "years": [
+            2024
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I9360294",
+            "ror": "https://ror.org/01111rn36",
+            "display_name": "University of Bologna",
+            "country_code": "IT",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I9360294"
+            ]
+          },
+          "years": [
+            2007
+          ]
+        },
+        {
+          "institution": {
+            "id": "https://openalex.org/I97188460",
+            "ror": "https://ror.org/03gnr7b55",
+            "display_name": "Nantes Université",
+            "country_code": "FR",
+            "type": "education",
+            "lineage": [
+              "https://openalex.org/I97188460"
+            ]
+          },
+          "years": [
+            2012
+          ]
         }
       ],
       "last_known_institutions": [
         {
-          "id": "https://openalex.org/I50959184",
-          "ror": "https://ror.org/02g02rq35",
-          "display_name": "Centers for Medicare and Medicaid Services",
-          "country_code": "US",
-          "type": "government",
+          "id": "https://openalex.org/I1339471597",
+          "ror": "https://ror.org/020dggs04",
+          "display_name": "Humanitas University",
+          "country_code": "IT",
+          "type": "education",
           "lineage": [
-            "https://openalex.org/I1299022934",
-            "https://openalex.org/I50959184"
+            "https://openalex.org/I1339471597"
           ]
         },
         {
-          "id": "https://openalex.org/I79576946",
-          "ror": "https://ror.org/00b30xv10",
-          "display_name": "University of Pennsylvania",
-          "country_code": "US",
-          "type": "education",
+          "id": "https://openalex.org/I4210152645",
+          "ror": "https://ror.org/05fa04208",
+          "display_name": "Fondazione Humanitas per la Ricerca",
+          "country_code": "IT",
+          "type": "nonprofit",
           "lineage": [
-            "https://openalex.org/I79576946"
+            "https://openalex.org/I4210152645"
+          ]
+        },
+        {
+          "id": "https://openalex.org/I4210163047",
+          "ror": "https://ror.org/05d538656",
+          "display_name": "IRCCS Humanitas Research Hospital",
+          "country_code": "IT",
+          "type": "healthcare",
+          "lineage": [
+            "https://openalex.org/I4210153126",
+            "https://openalex.org/I4210163047"
           ]
         }
       ],
       "topics": [
         {
-          "id": "https://openalex.org/T11930",
-          "display_name": "Cardiac, Anesthesia and Surgical Outcomes",
-          "count": 285,
+          "id": "https://openalex.org/T10552",
+          "display_name": "Colorectal Cancer Screening and Detection",
+          "count": 940,
           "subfield": {
-            "id": "https://openalex.org/subfields/2705",
-            "display_name": "Cardiology and Cardiovascular Medicine"
+            "id": "https://openalex.org/subfields/2730",
+            "display_name": "Oncology"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3060,12 +2913,12 @@
           }
         },
         {
-          "id": "https://openalex.org/T11700",
-          "display_name": "Hemodynamic Monitoring and Therapy",
-          "count": 188,
+          "id": "https://openalex.org/T10335",
+          "display_name": "Colorectal Cancer Surgical Treatments",
+          "count": 540,
           "subfield": {
-            "id": "https://openalex.org/subfields/2746",
-            "display_name": "Surgery"
+            "id": "https://openalex.org/subfields/2730",
+            "display_name": "Oncology"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3077,12 +2930,12 @@
           }
         },
         {
-          "id": "https://openalex.org/T10189",
-          "display_name": "Anesthesia and Pain Management",
-          "count": 132,
+          "id": "https://openalex.org/T11378",
+          "display_name": "Gastrointestinal Bleeding Diagnosis and Treatment",
+          "count": 467,
           "subfield": {
-            "id": "https://openalex.org/subfields/2746",
-            "display_name": "Surgery"
+            "id": "https://openalex.org/subfields/2715",
+            "display_name": "Gastroenterology"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3094,12 +2947,12 @@
           }
         },
         {
-          "id": "https://openalex.org/T11055",
-          "display_name": "Cardiac and Coronary Surgery Techniques",
-          "count": 122,
+          "id": "https://openalex.org/T11369",
+          "display_name": "Genetic factors in colorectal cancer",
+          "count": 248,
           "subfield": {
-            "id": "https://openalex.org/subfields/2746",
-            "display_name": "Surgery"
+            "id": "https://openalex.org/subfields/2734",
+            "display_name": "Pathology and Forensic Medicine"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3111,31 +2964,31 @@
           }
         },
         {
-          "id": "https://openalex.org/T10436",
-          "display_name": "Anesthesia and Sedative Agents",
-          "count": 87,
+          "id": "https://openalex.org/T10862",
+          "display_name": "AI in cancer detection",
+          "count": 236,
           "subfield": {
-            "id": "https://openalex.org/subfields/2703",
-            "display_name": "Anesthesiology and Pain Medicine"
+            "id": "https://openalex.org/subfields/1702",
+            "display_name": "Artificial Intelligence"
           },
           "field": {
-            "id": "https://openalex.org/fields/27",
-            "display_name": "Medicine"
+            "id": "https://openalex.org/fields/17",
+            "display_name": "Computer Science"
           },
           "domain": {
-            "id": "https://openalex.org/domains/4",
-            "display_name": "Health Sciences"
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
           }
         }
       ],
       "topic_share": [
         {
-          "id": "https://openalex.org/T11930",
-          "display_name": "Cardiac, Anesthesia and Surgical Outcomes",
-          "value": 0.001939,
+          "id": "https://openalex.org/T10552",
+          "display_name": "Colorectal Cancer Screening and Detection",
+          "value": 0.0041078,
           "subfield": {
-            "id": "https://openalex.org/subfields/2705",
-            "display_name": "Cardiology and Cardiovascular Medicine"
+            "id": "https://openalex.org/subfields/2730",
+            "display_name": "Oncology"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3147,12 +3000,12 @@
           }
         },
         {
-          "id": "https://openalex.org/T11700",
-          "display_name": "Hemodynamic Monitoring and Therapy",
-          "value": 0.0006146,
+          "id": "https://openalex.org/T10335",
+          "display_name": "Colorectal Cancer Surgical Treatments",
+          "value": 0.001549,
           "subfield": {
-            "id": "https://openalex.org/subfields/2746",
-            "display_name": "Surgery"
+            "id": "https://openalex.org/subfields/2730",
+            "display_name": "Oncology"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3164,12 +3017,12 @@
           }
         },
         {
-          "id": "https://openalex.org/T11055",
-          "display_name": "Cardiac and Coronary Surgery Techniques",
-          "value": 0.0004133,
+          "id": "https://openalex.org/T11378",
+          "display_name": "Gastrointestinal Bleeding Diagnosis and Treatment",
+          "value": 0.0012444,
           "subfield": {
-            "id": "https://openalex.org/subfields/2746",
-            "display_name": "Surgery"
+            "id": "https://openalex.org/subfields/2715",
+            "display_name": "Gastroenterology"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3181,12 +3034,12 @@
           }
         },
         {
-          "id": "https://openalex.org/T12020",
-          "display_name": "Enhanced Recovery After Surgery",
-          "value": 0.0002423,
+          "id": "https://openalex.org/T11369",
+          "display_name": "Genetic factors in colorectal cancer",
+          "value": 0.0012249,
           "subfield": {
-            "id": "https://openalex.org/subfields/2746",
-            "display_name": "Surgery"
+            "id": "https://openalex.org/subfields/2734",
+            "display_name": "Pathology and Forensic Medicine"
           },
           "field": {
             "id": "https://openalex.org/fields/27",
@@ -3198,16 +3051,16 @@
           }
         },
         {
-          "id": "https://openalex.org/T13555",
-          "display_name": "Healthcare cost, quality, practices",
-          "value": 0.0002371,
+          "id": "https://openalex.org/T13569",
+          "display_name": "Microscopic Colitis",
+          "value": 0.0010514,
           "subfield": {
-            "id": "https://openalex.org/subfields/3600",
-            "display_name": "General Health Professions"
+            "id": "https://openalex.org/subfields/2713",
+            "display_name": "Epidemiology"
           },
           "field": {
-            "id": "https://openalex.org/fields/36",
-            "display_name": "Health Professions"
+            "id": "https://openalex.org/fields/27",
+            "display_name": "Medicine"
           },
           "domain": {
             "id": "https://openalex.org/domains/4",
@@ -3220,277 +3073,241 @@
           "id": "71924100",
           "wikidata": "https://www.wikidata.org/wiki/Q11190",
           "display_name": "Medicine",
-          "score": 0.9922211170196533
+          "score": 0.991100013256073
         },
         {
-          "id": "42219234",
-          "wikidata": "https://www.wikidata.org/wiki/Q131130",
-          "display_name": "Anesthesia",
-          "score": 0.8621151447296143
+          "id": "526805850",
+          "wikidata": "https://www.wikidata.org/wiki/Q188874",
+          "display_name": "Colorectal cancer",
+          "score": 0.8392912149429321
         },
         {
           "id": "126322002",
           "wikidata": "https://www.wikidata.org/wiki/Q11180",
           "display_name": "Internal medicine",
-          "score": 0.7476406097412109
-        },
-        {
-          "id": "177713679",
-          "wikidata": "https://www.wikidata.org/wiki/Q679690",
-          "display_name": "Intensive care medicine",
-          "score": 0.6930999755859375
+          "score": 0.7993260622024536
         },
         {
           "id": "141071460",
           "wikidata": "https://www.wikidata.org/wiki/Q40821",
           "display_name": "Surgery",
-          "score": 0.6822260618209839
+          "score": 0.770799994468689
+        },
+        {
+          "id": "121608353",
+          "wikidata": "https://www.wikidata.org/wiki/Q12078",
+          "display_name": "Cancer",
+          "score": 0.7121385335922241
         }
       ],
       "counts_by_year": [
         {
-          "year": 1990,
-          "works_count": 4,
+          "year": 1970,
+          "works_count": 1,
           "oa_works_count": 0,
           "cited_by_count": 0
         },
         {
-          "year": 1991,
-          "works_count": 5,
-          "oa_works_count": 3,
-          "cited_by_count": 0
-        },
-        {
-          "year": 1992,
-          "works_count": 7,
-          "oa_works_count": 2,
-          "cited_by_count": 0
-        },
-        {
-          "year": 1993,
-          "works_count": 9,
-          "oa_works_count": 2,
-          "cited_by_count": 0
-        },
-        {
           "year": 1994,
-          "works_count": 11,
-          "oa_works_count": 2,
-          "cited_by_count": 0
-        },
-        {
-          "year": 1995,
-          "works_count": 8,
-          "oa_works_count": 1,
-          "cited_by_count": 0
-        },
-        {
-          "year": 1996,
-          "works_count": 16,
-          "oa_works_count": 5,
-          "cited_by_count": 0
-        },
-        {
-          "year": 1997,
-          "works_count": 11,
-          "oa_works_count": 2,
+          "works_count": 1,
+          "oa_works_count": 0,
           "cited_by_count": 0
         },
         {
           "year": 1998,
-          "works_count": 9,
-          "oa_works_count": 4,
+          "works_count": 5,
+          "oa_works_count": 0,
           "cited_by_count": 0
         },
         {
           "year": 1999,
-          "works_count": 12,
-          "oa_works_count": 4,
+          "works_count": 9,
+          "oa_works_count": 1,
           "cited_by_count": 0
         },
         {
           "year": 2000,
-          "works_count": 22,
+          "works_count": 15,
           "oa_works_count": 5,
           "cited_by_count": 0
         },
         {
           "year": 2001,
-          "works_count": 18,
-          "oa_works_count": 2,
+          "works_count": 16,
+          "oa_works_count": 1,
           "cited_by_count": 0
         },
         {
           "year": 2002,
-          "works_count": 18,
-          "oa_works_count": 4,
+          "works_count": 9,
+          "oa_works_count": 1,
           "cited_by_count": 0
         },
         {
           "year": 2003,
-          "works_count": 13,
+          "works_count": 15,
           "oa_works_count": 2,
           "cited_by_count": 0
         },
         {
           "year": 2004,
-          "works_count": 13,
+          "works_count": 10,
           "oa_works_count": 1,
           "cited_by_count": 0
         },
         {
           "year": 2005,
-          "works_count": 18,
-          "oa_works_count": 3,
+          "works_count": 10,
+          "oa_works_count": 1,
           "cited_by_count": 0
         },
         {
           "year": 2006,
-          "works_count": 24,
-          "oa_works_count": 6,
+          "works_count": 21,
+          "oa_works_count": 3,
           "cited_by_count": 0
         },
         {
           "year": 2007,
-          "works_count": 18,
-          "oa_works_count": 10,
+          "works_count": 20,
+          "oa_works_count": 4,
           "cited_by_count": 0
         },
         {
           "year": 2008,
-          "works_count": 24,
-          "oa_works_count": 7,
-          "cited_by_count": 0
-        },
-        {
-          "year": 2009,
-          "works_count": 28,
-          "oa_works_count": 8,
-          "cited_by_count": 0
-        },
-        {
-          "year": 2010,
-          "works_count": 22,
-          "oa_works_count": 6,
-          "cited_by_count": 0
-        },
-        {
-          "year": 2011,
-          "works_count": 33,
+          "works_count": 23,
           "oa_works_count": 2,
           "cited_by_count": 0
         },
         {
+          "year": 2009,
+          "works_count": 43,
+          "oa_works_count": 12,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2010,
+          "works_count": 55,
+          "oa_works_count": 7,
+          "cited_by_count": 0
+        },
+        {
+          "year": 2011,
+          "works_count": 42,
+          "oa_works_count": 11,
+          "cited_by_count": 0
+        },
+        {
           "year": 2012,
-          "works_count": 34,
-          "oa_works_count": 15,
-          "cited_by_count": 1367
+          "works_count": 54,
+          "oa_works_count": 21,
+          "cited_by_count": 932
         },
         {
           "year": 2013,
-          "works_count": 25,
-          "oa_works_count": 8,
-          "cited_by_count": 1419
+          "works_count": 50,
+          "oa_works_count": 17,
+          "cited_by_count": 1059
         },
         {
           "year": 2014,
-          "works_count": 35,
-          "oa_works_count": 17,
-          "cited_by_count": 1499
+          "works_count": 61,
+          "oa_works_count": 29,
+          "cited_by_count": 1357
         },
         {
           "year": 2015,
-          "works_count": 26,
-          "oa_works_count": 11,
-          "cited_by_count": 1536
+          "works_count": 65,
+          "oa_works_count": 22,
+          "cited_by_count": 1692
         },
         {
           "year": 2016,
-          "works_count": 37,
-          "oa_works_count": 16,
-          "cited_by_count": 1918
+          "works_count": 68,
+          "oa_works_count": 26,
+          "cited_by_count": 1900
         },
         {
           "year": 2017,
-          "works_count": 27,
-          "oa_works_count": 13,
-          "cited_by_count": 2598
+          "works_count": 61,
+          "oa_works_count": 22,
+          "cited_by_count": 2418
         },
         {
           "year": 2018,
-          "works_count": 30,
-          "oa_works_count": 9,
-          "cited_by_count": 3192
+          "works_count": 88,
+          "oa_works_count": 41,
+          "cited_by_count": 2782
         },
         {
           "year": 2019,
-          "works_count": 41,
-          "oa_works_count": 23,
-          "cited_by_count": 3533
+          "works_count": 99,
+          "oa_works_count": 33,
+          "cited_by_count": 3383
         },
         {
           "year": 2020,
-          "works_count": 30,
-          "oa_works_count": 23,
-          "cited_by_count": 4403
+          "works_count": 119,
+          "oa_works_count": 51,
+          "cited_by_count": 4595
         },
         {
           "year": 2021,
-          "works_count": 36,
-          "oa_works_count": 20,
-          "cited_by_count": 4129
+          "works_count": 96,
+          "oa_works_count": 44,
+          "cited_by_count": 5315
         },
         {
           "year": 2022,
-          "works_count": 20,
-          "oa_works_count": 6,
-          "cited_by_count": 3260
+          "works_count": 105,
+          "oa_works_count": 39,
+          "cited_by_count": 5050
         },
         {
           "year": 2023,
-          "works_count": 25,
-          "oa_works_count": 15,
-          "cited_by_count": 3217
+          "works_count": 145,
+          "oa_works_count": 51,
+          "cited_by_count": 5109
         },
         {
           "year": 2024,
-          "works_count": 22,
-          "oa_works_count": 13,
-          "cited_by_count": 2793
+          "works_count": 167,
+          "oa_works_count": 65,
+          "cited_by_count": 5217
         },
         {
           "year": 2025,
-          "works_count": 11,
-          "oa_works_count": 10,
-          "cited_by_count": 2375
+          "works_count": 135,
+          "oa_works_count": 45,
+          "cited_by_count": 6121
         },
         {
           "year": 2026,
-          "works_count": 6,
-          "oa_works_count": 4,
-          "cited_by_count": 1669
+          "works_count": 115,
+          "oa_works_count": 40,
+          "cited_by_count": 4952
         }
       ],
       "display_name_alternatives": [
-        "Fleisher Lee A.",
-        "Fleisher, Lee",
-        "Fleisher, Lee A.",
-        "L A Fleisher",
-        "L. A. FLEISHER",
-        "L. A. Fleisher",
-        "L. Fleisher",
-        "L.A. Fleisher",
-        "L. A. Fleisher",
-        "LEE A. FLEISHER",
-        "Lee A Fleisher",
-        "Lee A. Fleisher",
-        "Lee Fleisher",
-        "Lee. A. Fleisher",
-        "Lee A. Fleisher",
-        "L A Fleisher"
+        "C HASSAN",
+        "C Hassan",
+        "C. Cesare Hassan",
+        "C. HASSAN",
+        "C. Hassan",
+        "C.M. Hassan",
+        "CESARE HASSAN",
+        "Casare Hassan",
+        "Cesare HASSAN",
+        "Cesare Hassan",
+        "Cessare Hassan",
+        "Chamsan Daher-Hassan",
+        "Hassan",
+        "Hassan Cesare",
+        "Hassan, C",
+        "Hassan, Cesare"
       ],
-      "block_key": "l fleisher",
-      "works_api_url": "https://api.openalex.org/works?filter=author.id:A5000934027",
+      "block_key": "c hassan",
+      "works_api_url": "https://api.openalex.org/works?filter=author.id:A5010158984",
       "updated_date": "2026-10-29T12:27:34",
       "created_date": "2016-06-24T00:00:00"
     }

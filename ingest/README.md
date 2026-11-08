@@ -1,5 +1,49 @@
 # ingest/
 
+## Part C: run the database load
+
+From the repository folder, using the Session pooler configured in local `.env`:
+
+```powershell
+.\.venv\Scripts\python.exe ingest/load.py --dry-run
+.\.venv\Scripts\python.exe ingest/load.py
+```
+
+For the private assessment batches, use each batch's stable path on reruns:
+
+```powershell
+.\.venv\Scripts\python.exe ingest/load.py --assessments C:/BSAD6153/planning/assessments/pilot_10.json
+.\.venv\Scripts\python.exe ingest/load.py --assessments C:/BSAD6153/planning/assessments/remaining_assessments.json
+```
+
+Only for the FIRST setup of an empty database, add `--init-schema`. It refuses existing
+public tables and never drops them. Schema creation commits separately; data loading
+uses one transaction so a failure cannot leave half a batch loaded. Do not use
+`--init-schema` for the duplicate-check run.
+
+Works load before their author credits; approved assessments load after works. All
+record values use query parameters. Unique source IDs, work/author pairs, and assessment
+import keys support `ON CONFLICT DO NOTHING`. The command prints new-row and total-row
+counts; the second identical run should insert zero rows. It does not generate AI
+assessments or populate personal notes. Saved AI connection suggestions can also be
+imported using the command below. Private assessment data remains
+outside the public course repository. The completed pass contains 481 assessments;
+23 works lack usable abstracts. See `docs/assessment_process.md` for coverage,
+rating interpretation, and the proposed weekly workflow.
+
+For the completed connection batch:
+
+```powershell
+.\.venv\Scripts\python.exe ingest/load.py --connections C:/BSAD6153/planning/assessments/connections.json
+```
+
+The existing Supabase database already has the additive connection-key migration.
+For another preexisting database, apply `db/migrations/001_connection_import_key.sql`
+once before using this option. New databases get the field and unique index from
+`db/schema.sql`. Connections remain `suggested` and require no human approval.
+Both abstract hashes are checked, and existing connection keys are skipped without
+changing status or comments. No model calls occur during loading or reruns.
+
 Code that moves data from your API into your database. You build it with your AI agent, one piece per week:
 
 | Week | File | What it does |
@@ -8,7 +52,24 @@ Code that moves data from your API into your database. You build it with your AI
 | 2 | `load.py` | Turns the raw JSON into rows in your tables, using parameterized queries. Running it twice must not create duplicates. |
 | 3 | `sync.py` | Combines fetch and load into one incremental, idempotent sync that GitHub Actions runs on a schedule and records in `sync_runs`. |
 
-Only the sync connects as the database owner (`DATABASE_URL`). Everything else uses a limited role.
+Local setup/loading and the later sync use `DATABASE_URL`. Future application access
+must use limited roles rather than the owner connection.
+
+## Milestone 2 loading
+
+The five-table design is documented in `docs/schema.md`. `load.py --dry-run` validates
+the reviewed selection without a database connection. `load.py` imports works with
+`source = 'openalex'`, then author credits. Parameterized inserts skip existing unique
+keys. The optional `--assessments` argument imports approved AI assessments after
+their parent works; it never invents personal notes or connections. Categories are controlled
+text lists on assessments; there are no category tables to seed. Search groups stay
+in the selection manifest, not the works table or category selections.
+
+The loader uses `reviewed_selection.json` in the selected run folder; downloaded author
+profiles are retained as raw evidence, while credits come from each work's authorships.
+Author order follows the source array. Apply `db/schema.sql` only to a new database;
+it is not a migration from the prior draft. Live row counts and duplicate-free reruns
+were verified November 7, 2026; see `docs/load_verification.md`.
 
 ## Part B: OpenAlex retrieval
 

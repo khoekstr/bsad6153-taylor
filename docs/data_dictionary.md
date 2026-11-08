@@ -1,7 +1,9 @@
 # Data dictionary: personal AI reading library
 
-Prepared October 29, 2026. This document describes downloaded OpenAlex metadata;
-the PostgreSQL database and personal reading features have not been built yet.
+Prepared October 29, 2026; database design updated November 7, 2026. This document
+describes downloaded OpenAlex metadata. The five-table schema is defined in
+`db/schema.sql` and `docs/schema.md`; live database loading and duplicate-free
+reruns are verified in `docs/load_verification.md`.
 Examples and observations below come from the local collection, not invented records.
 
 ## 1. Source and collection scope
@@ -101,24 +103,36 @@ is not a credibility rating.
 
 ## 4. Identifiers and relationships
 
-Keep each OpenAlex `id` as a unique source identifier: works start with `W`, authors
-with `A`. The future database will also generate its own bigint identity primary keys
-(`work_id`, `author_id`), retaining unique provider IDs so repeated imports update
-existing rows. Manual items can then have local IDs without pretending to be OpenAlex works.
+Works use local bigint primary keys and a unique, nullable OpenAlex ID. OpenAlex
+imports require that ID; uploads instead require a file reference and may leave
+publication details blank. Milestone 2 skips existing imported rows rather than updating them.
 
-`work.authorships[].author.id` refers to `author.id`. Works and authors have a
-many-to-many relationship: one work can have many authors, and an author can write
-many works. A planned `authorships` table will hold foreign keys to both tables;
-affiliations belong to the authorship context rather than being assumed permanent.
+The agreed design uses `authorships` for credits, without a separate author-profile
+table. Each credit references a work and stores a name, optional OpenAlex author ID,
+and optional positive author order. Source IDs are unique per work, not across all
+credits. Downloaded author profiles remain raw evidence, not a fourth imported entity.
+The loader derives order from the source authorship array; raw metadata retains
+the provider's first/middle/last label and affiliation information.
+
+The other three tables are `reading_notes`, `work_assessments`, and `work_connections`.
+A work has multiple editable notes, at most one editable user assessment, and a history
+of AI assessments. Personal value rating, favorite, current reading status, and revisit
+intention live on the user assessment. AI rows store predicted value, novelty, summaries,
+and explanations. Multiple categories are a controlled text list on assessments; user
+choices override AI suggestions. Connections reference two different works. See
+`schema.md` for the complete diagram, types, constraints, and privacy boundaries.
 
 DOIs provide a second matching signal. Titles are not unique: versions, corrections,
 and different publications can share wording. Do not merge solely by title or name.
 OpenAlex IDs can be merged upstream; retain a mapping to a surviving ID and review
 unexpected replacements rather than silently deleting local notes.
 
-Our six category labels record the search that selected an item. They are provisional
-local labels, distinct from OpenAlex topics. Required papers are marked `required`
-in the reviewed selection; that is a selection reason, not a seventh subject category.
+The original six search groups remain provenance in the local selection manifest,
+not a works column. Library categories are Learning, Work, Information, Society,
+Technology, and Discovery, distinct from `works.openalex_topic`. No lookup or linking
+tables are used for categories. NULL personal categories means use the latest AI
+suggestions; an empty list means the user explicitly chose none. The loader never
+assigns library categories.
 
 ## 5. Update behavior
 
@@ -205,7 +219,7 @@ planned, not yet implemented.
 
 ## 8. Future personal fields are not API facts
 
-Reading status, usefulness/interest ratings, notes, quotations, pins, and collections
+Reading status, the combined personal value rating, notes, quotations, pins, and collections
 will be private user-generated records linked to works. Relevance, novelty, credibility
 assessments, and plain-language summaries will be separately labeled AI outputs with
 an explanation, evidence basis, and timestamp; none exists in the imported metadata.
