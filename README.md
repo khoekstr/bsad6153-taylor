@@ -1,4 +1,4 @@
-# BSAD 6153 Project: &lt;your project name&gt;
+# BSAD 6153 Project: &lt;AI Research and Knowledge Management Agent;
 
 **Student:** Kara Taylor
 **My decision:** What AI material should I read or watch next, given my available time, learning interests, and what I have already consumed?
@@ -125,7 +125,37 @@ These limitations are documented in the [data dictionary](docs/data_dictionary.m
 
 ## How to run this project
 
-<!-- Keep this current: how to run the sync, the website, and the evaluations. -->
+The [database design](docs/schema.md) defines five tables: works, authorships,
+reading_notes, work_assessments, and work_connections.
+It supports uploads, multiple editable notes, one current user assessment per work,
+AI assessment history, and multiple category choices with user overrides.
+
+To validate the existing reviewed OpenAlex selection without connecting to a database:
+
+```powershell
+.\.venv\Scripts\python.exe ingest/load.py --dry-run
+```
+
+After configuring the Session pooler in local `.env`, check the connection with
+`python scripts/check_db.py`. Apply `db/schema.sql` once to a **new** database before
+running `python ingest/load.py`. The schema is not a migration for an existing draft.
+The loader imports works and author credits, plus an approved private assessment batch
+when supplied with `--assessments`. It does not generate assessments or invent personal
+notes or generate work connections. Saved suggestions can be imported with
+`--connections`. See [load instructions](ingest/README.md) for batch commands.
+The database contains 570 works (504 OpenAlex and 66 manual references), 1,520
+author credits, 481 abstract-only AI assessments, 65 excerpt-based AI assessments
+(63 course cases, one reading-list summary, and one consultancy article), 11 user reading-status rows,
+and 18 personal notes. Within the original 504 works, 23 have missing
+or unusable abstracts; one now has a summary-based assessment and 22 remain
+unassessed. The two personal-note references have no AI
+assessment. See [assessment coverage and workflow](docs/assessment_process.md)
+and [live verification](docs/load_verification.md). There are 60 original
+[AI-suggested connections](docs/connections.md) across 61 works, covering all 46
+highest-rated works, plus 80 course-source connections representing 32 case
+comparisons, including all eight weekly success/failure pairs. Suggestions are
+usable immediately without user approval. Course assessments use the supplied
+brief summaries, not independently reviewed linked articles.
 
 ## Credits
 
