@@ -235,5 +235,6 @@ verification confirmed all rows and audit timestamps unchanged across all five
 tables. Counts remain 570 works, 1,520 credits, 557 assessments, 18 notes, and 140
 connections. Source-field, supplied pilot/connection, and RLS checks passed; all
 five connection unit tests passed. The existing incomplete-credit warning remains
-documented and its original payload retained. Submission status is recorded in
-`milestone_2_checklist.md`; the AI review log is in `ai_review_log.md`.
+documented and its original payload retained. The completed AI review log and
+submission checklist are in [Milestone 2 PR #4](https://github.com/khoekstr/bsad6153-taylor/pull/4),
+merged November 8, 2026. The screencast link remains to be added.

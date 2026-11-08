@@ -5,7 +5,7 @@ Your project's written evidence. Each file is described on its week's Canvas pag
 | Week | File |
 |---|---|
 | 1 | `data_dictionary.md`, `baseline_log.md` (template provided) |
-| 2 | `schema.md` (ER diagram and access roles), `data_quality.md`, `implementation_brief.md` |
+| 2 | `schema.md` (ER diagram and access roles), `data_quality.md`, `load_verification.md`, `questions.md` |
 | 3 | `sync_tests.md` |
 | 4 | `app_spec.md`, `code_tour.md`, `app_verification.md`, `peer_review.md`, `usage_log.md` (template provided) |
 | 5 | `chatbot_rules.md`, `eval_week5.md` |
@@ -14,3 +14,7 @@ Your project's written evidence. Each file is described on its week's Canvas pag
 | 8 | `business_case.md` |
 
 Logs are research data: record entries when things happen, and never invent or adjust them.
+
+The completed Milestone 2 AI review log and design challenges are recorded in
+[PR #4](https://github.com/khoekstr/bsad6153-taylor/pull/4). Working drafts are kept
+locally outside the repository.
