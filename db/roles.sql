@@ -1,27 +1,64 @@
--- db/roles.sql: who may do what in your database (Week 2, extended in Week 6).
---
--- NEVER PUT A PASSWORD IN THIS FILE. It is committed to GitHub.
--- Create each role here without a password, then set the password separately
--- in the Supabase SQL editor (and nowhere in your repository):
---
---     alter role app_reader with password '...long random password...';
---
--- Then put the role's connection string in .env as APP_DATABASE_URL.
---
--- Week 2: a read-only role for the website, chatbot, and golden-question checker.
--- create role app_reader login;
--- grant usage on schema public to app_reader;
--- grant select on <your data tables> to app_reader;
---
--- Week 3: add sync_runs to the grant above when you create it.
---
--- Week 6: the agent's own role (see the Week 6 page for the exact grants).
--- create role agent_writer login;
--- grant usage on schema public to agent_writer;
--- grant select on <your data tables>, sync_runs, agent_runs, agent_proposals to agent_writer;
--- grant insert on agent_runs, agent_proposals to agent_writer;
--- grant update on agent_runs to agent_writer;
---
--- Week 6: the one write your website may do, which covers only the review columns.
--- grant select on agent_runs, agent_proposals to app_reader;
--- grant update (status, reviewed_at, reviewer_note) on agent_proposals to app_reader;
+-- Run as postgres. Safe to rerun; never put a password in this file.
+-- Set the login password separately in the Supabase SQL editor.
+BEGIN;
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'app_reader') THEN
+    CREATE ROLE app_reader LOGIN NOINHERIT;
+  END IF;
+END
+$$;
+-- New roles default to no elevated privileges. Supabase's postgres role cannot
+-- explicitly alter superuser/replication/bypass flags, even to turn them off.
+ALTER ROLE app_reader LOGIN NOINHERIT;
+-- Fail rather than silently retain unexpected membership or ownership.
+DO $$
+BEGIN
+  IF EXISTS (SELECT FROM pg_roles WHERE rolname = 'app_reader'
+             AND (rolsuper OR rolcreatedb OR rolcreaterole OR rolreplication OR rolbypassrls))
+     OR EXISTS (SELECT FROM pg_auth_members WHERE member = 'app_reader'::regrole)
+     OR EXISTS (SELECT FROM pg_class WHERE relowner = 'app_reader'::regrole)
+     OR EXISTS (SELECT FROM pg_namespace WHERE nspowner = 'app_reader'::regrole)
+  THEN
+    RAISE EXCEPTION 'app_reader must not own objects or belong to other roles';
+  END IF;
+END
+$$;
+REVOKE ALL ON SCHEMA public FROM app_reader;
+GRANT USAGE ON SCHEMA public TO app_reader;
+REVOKE ALL ON ALL TABLES IN SCHEMA public FROM app_reader;
+REVOKE ALL ON ALL SEQUENCES IN SCHEMA public FROM app_reader;
+GRANT SELECT ON public.works, public.authorships, public.reading_notes,
+  public.work_assessments, public.work_connections TO app_reader;
+
+-- RLS remains enabled. Only this private application role gets read policies.
+DROP POLICY IF EXISTS app_reader_select ON public.works;
+CREATE POLICY app_reader_select ON public.works FOR SELECT TO app_reader USING (true);
+DROP POLICY IF EXISTS app_reader_select ON public.authorships;
+CREATE POLICY app_reader_select ON public.authorships FOR SELECT TO app_reader USING (true);
+DROP POLICY IF EXISTS app_reader_select ON public.reading_notes;
+CREATE POLICY app_reader_select ON public.reading_notes FOR SELECT TO app_reader USING (true);
+DROP POLICY IF EXISTS app_reader_select ON public.work_assessments;
+CREATE POLICY app_reader_select ON public.work_assessments FOR SELECT TO app_reader USING (true);
+DROP POLICY IF EXISTS app_reader_select ON public.work_connections;
+CREATE POLICY app_reader_select ON public.work_connections FOR SELECT TO app_reader USING (true);
+
+-- Add an explicit SELECT grant for each new data table, starting with sync_runs,
+-- sync_state is introduced by migration 005; skip it on pre-migration databases.
+DO $$
+BEGIN
+  IF to_regclass('public.sync_runs') IS NOT NULL THEN
+    GRANT SELECT ON public.sync_runs TO app_reader;
+    DROP POLICY IF EXISTS app_reader_select ON public.sync_runs;
+    CREATE POLICY app_reader_select ON public.sync_runs FOR SELECT TO app_reader USING (true);
+  END IF;
+  IF to_regclass('public.sync_state') IS NOT NULL THEN
+    GRANT SELECT ON public.sync_state TO app_reader;
+    DROP POLICY IF EXISTS app_reader_select ON public.sync_state;
+    CREATE POLICY app_reader_select ON public.sync_state FOR SELECT TO app_reader USING (true);
+  END IF;
+END
+$$;
+-- and a matching SELECT policy if RLS is enabled. Then rerun this file.
+-- No blanket grants on future tables: they require an explicit access decision.
+COMMIT;

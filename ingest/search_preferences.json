@@ -1,0 +1,42 @@
+{
+  "max_additions": 5,
+  "max_requests": 40,
+  "max_pages_per_topic": 2,
+  "sync_filter_access": "free",
+  "topics": [
+    {
+      "query": "artificial intelligence parenting",
+      "priority": 1,
+      "enabled": true,
+      "match_terms": [
+        "parenting"
+      ]
+    },
+    {
+      "query": "artificial intelligence pilot evaluation costs benefits",
+      "priority": 2,
+      "enabled": true,
+      "match_terms": [
+        "pilot evaluation"
+      ]
+    },
+    {
+      "query": "generative AI critical thinking learning",
+      "priority": 3,
+      "enabled": true,
+      "match_terms": [
+        "critical thinking",
+        "AI learning"
+      ]
+    },
+    {
+      "query": "artificial intelligence human agency",
+      "priority": 4,
+      "enabled": true,
+      "match_terms": [
+        "human agency"
+      ]
+    }
+  ],
+  "excluded_terms": []
+}

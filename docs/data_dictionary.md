@@ -225,3 +225,32 @@ assessments, and plain-language summaries will be separately labeled AI outputs 
 an explanation, evidence basis, and timestamp; none exists in the imported metadata.
 Novelty requires actual reading history, and discussing a paper does not establish that
 it was fully read. The two personal essays remain planned manual additions.
+
+
+## Part B sync progress (November 11, 2026)
+
+`sync_state`: one row per named pipeline. `pipeline` is its text primary key;
+`state` stores the last successful start time, completed UTC day, discovery
+cursors, preferences hash, new IDs and latest counts. `last_updated_at` records
+when progress was committed. Per-run history is in `sync_runs` (Part C).
+Only the owner writes; app_reader may SELECT. New papers remain assessment-pending.
+For transformations and limitations, see [Part B implementation](sync_implementation.md).
+
+## Revised discovery-only policy
+
+Routine sync no longer maintains a refresh position or checks existing papers.
+Old refresh fields, if present, are unused. Explicit one-article maintenance stores
+its reason and result under a separate `refresh:<OpenAlex ID>` sync_state key.
+Changed-abstract IDs in that result flag a need for reassessment; daily discovery
+does not examine old abstracts or modify existing records.
+
+## Part C run history (November 12, 2026)
+
+`sync_runs` stores one attempted invocation per run_id, including start/finish,
+status, fetched candidates, committed work insert/update counts, safe error,
+and manual/schedule trigger. dry_run/mode/outcome prevent previews and skipped
+runs from being treated as live discoveries. details holds numeric supplementary
+counts, including proposed counts for previews. See [field definitions](sync_runs.md).
+Lineage: sync entry point -> durable started row -> transactional discovery/data/
+progress + successful final row; on failure data rolls back and the error row
+is finalized separately. app_reader reads this table through scripts/status.py.

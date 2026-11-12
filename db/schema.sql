@@ -116,4 +116,32 @@ ALTER TABLE authorships ENABLE ROW LEVEL SECURITY;
 ALTER TABLE reading_notes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE work_assessments ENABLE ROW LEVEL SECURITY;
 ALTER TABLE work_connections ENABLE ROW LEVEL SECURITY;
+-- Part B: database-backed sync progress (migration 005 for existing databases).
+CREATE TABLE sync_state (
+ pipeline text PRIMARY KEY,
+ state jsonb NOT NULL DEFAULT '{}'::jsonb CHECK (jsonb_typeof(state) = 'object'),
+ last_updated_at timestamptz NOT NULL DEFAULT now()
+);
+ALTER TABLE sync_state ENABLE ROW LEVEL SECURITY;
+-- Part C: durable per-invocation history.
+CREATE TABLE sync_runs (
+ run_id uuid PRIMARY KEY,
+ started_at timestamptz NOT NULL DEFAULT clock_timestamp(),
+ finished_at timestamptz,
+ status text NOT NULL CHECK (status IN ('success','partial','failed')),
+ records_fetched integer NOT NULL DEFAULT 0 CHECK (records_fetched >= 0),
+ records_inserted integer NOT NULL DEFAULT 0 CHECK (records_inserted >= 0),
+ records_updated integer NOT NULL DEFAULT 0 CHECK (records_updated >= 0),
+ error_message text,
+ trigger text NOT NULL CHECK (trigger IN ('schedule','manual')),
+ dry_run boolean NOT NULL DEFAULT false,
+ mode text NOT NULL CHECK (mode IN ('discovery_only','targeted_refresh')),
+ outcome text NOT NULL DEFAULT 'unfinished',
+ details jsonb NOT NULL DEFAULT '{}'::jsonb,
+ CHECK (finished_at IS NULL OR finished_at >= started_at),
+ CHECK (finished_at IS NOT NULL OR status = 'failed'),
+ CHECK (NOT dry_run OR (records_inserted = 0 AND records_updated = 0))
+);
+CREATE INDEX sync_runs_started_idx ON sync_runs(started_at DESC);
+ALTER TABLE sync_runs ENABLE ROW LEVEL SECURITY;
 COMMIT;

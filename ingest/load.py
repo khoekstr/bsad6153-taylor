@@ -22,6 +22,42 @@ def abstract_text(index):
     return " ".join(positions[i] for i in sorted(positions)) or None
 
 
+def prepare_record(work):
+    """Validate and normalize one OpenAlex work for both load and sync."""
+    source_id = work.get('id', '')
+    if not re.fullmatch(r'https://openalex.org/W[0-9]+', source_id):
+        raise ValueError('Invalid work ID')
+    title = work.get('display_name')
+    if not title or not title.strip() or not work.get('type'):
+        raise ValueError('Selected work lacks title or type')
+    published = date.fromisoformat(work['publication_date']) if work.get('publication_date') else None
+    year = work.get('publication_year')
+    if year is not None and (type(year) is not int or not 1 <= year <= 9999):
+        raise ValueError('Invalid publication year')
+    credits = {}
+    for author_order, credit in enumerate(work.get('authorships') or [], start=1):
+        author = credit.get('author') or {}
+        author_id, name = author.get('id'), author.get('display_name')
+        if not author_id or not name or not name.strip():
+            warnings.warn('Skipped incomplete author credit; original retained in works.raw')
+            continue
+        if not re.fullmatch(r'https://openalex.org/A[0-9]+', author_id):
+            raise ValueError('Invalid author ID')
+        value = (author_id, name, author_order)
+        if author_id in credits:
+            if credits[author_id][1] != name:
+                raise ValueError('Conflicting duplicate author credits')
+            continue  # Keep the first credited order for a repeated source ID.
+        credits[author_id] = value
+    values = (source_id, title, work.get('doi'), published, year, work['type'],
+              work.get('language'), abstract_text(work.get('abstract_inverted_index')),
+              (work.get('primary_topic') or {}).get('display_name'),
+              (work.get('open_access') or {}).get('is_oa'),
+              (work.get('best_oa_location') or {}).get('pdf_url'),
+              (work.get('primary_location') or {}).get('landing_page_url'))
+    return values, work, list(credits.values())
+
+
 def prepare(folder):
     manifest = json.loads((folder / 'reviewed_selection.json').read_text(encoding='utf-8-sig'))
     cache, rows = {}, []
@@ -34,37 +70,9 @@ def prepare(folder):
             payload = json.loads(path.read_text(encoding='utf-8-sig'))
             cache[filename] = {w['id']: w for w in payload['results']}
         work = cache[filename][source_id]
-        if not re.fullmatch(r'https://openalex.org/W[0-9]+', source_id):
-            raise ValueError('Invalid work ID')
-        title = work.get('display_name')
-        if not title or not title.strip() or not work.get('type'):
-            raise ValueError('Selected work lacks title or type')
-        published = date.fromisoformat(work['publication_date']) if work.get('publication_date') else None
-        year = work.get('publication_year')
-        if year is not None and (type(year) is not int or not 1 <= year <= 9999):
-            raise ValueError('Invalid publication year')
-        credits = {}
-        for author_order, credit in enumerate(work.get('authorships') or [], start=1):
-            author = credit.get('author') or {}
-            author_id, name = author.get('id'), author.get('display_name')
-            if not author_id or not name or not name.strip():
-                warnings.warn('Skipped incomplete author credit; original retained in works.raw')
-                continue
-            if not re.fullmatch(r'https://openalex.org/A[0-9]+', author_id):
-                raise ValueError('Invalid author ID')
-            value = (author_id, name, author_order)
-            if author_id in credits:
-                if credits[author_id][1] != name:
-                    raise ValueError('Conflicting duplicate author credits')
-                continue  # Keep the first credited order for a repeated source ID.
-            credits[author_id] = value
-        values = (source_id, title, work.get('doi'), published, year, work['type'],
-                  work.get('language'), abstract_text(work.get('abstract_inverted_index')),
-                  (work.get('primary_topic') or {}).get('display_name'),
-                  (work.get('open_access') or {}).get('is_oa'),
-                  (work.get('best_oa_location') or {}).get('pdf_url'),
-                  (work.get('primary_location') or {}).get('landing_page_url'))
-        rows.append((values, work, list(credits.values())))
+        if work.get('id') != source_id:
+            raise ValueError('Manifest and source work IDs differ')
+        rows.append(prepare_record(work))
     return rows
 
 
