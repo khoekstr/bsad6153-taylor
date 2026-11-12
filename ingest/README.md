@@ -1,5 +1,20 @@
 # ingest/
 
+## Milestone 3: daily sync (Part B)
+
+`python ingest/sync.py --dry-run` previews a bounded sync and rolls back all
+data/progress writes. Omit `--dry-run` to commit. It adds at most five papers per
+UTC day and leaves existing articles and personal contributions untouched.
+Rare source corrections require --refresh-id and --reason; see the documentation.
+Read [sync behavior and evidence](../docs/sync_implementation.md) and
+[editable search preferences](../docs/search_preferences.md) before running.
+Migration 005 and the sync_state reader grant are already applied locally.
+Part C now records each invocation in `sync_runs`; migration 006 and its reader
+grant are applied. Use `python scripts/status.py` for freshness and seven-day
+changes. Previews keep an audit row but no library/progress changes.
+[Run-history details](../docs/sync_runs.md). Scheduling and AI assessments remain
+separate steps; no schedule or model calls have been enabled.
+
 ## Part C: run the database load
 
 From the repository folder, using the Session pooler configured in local `.env`:
@@ -139,3 +154,6 @@ Official documentation checked October 29, 2026:
 
 The student confirmed completing the documentation review in chat. Record personal
 verification details in the course AI review log in your own words.
+
+Part D configures a four-day scheduled trial for November 13-16, 2026; see the
+repository README for time, stop conditions, secrets, and manual-run instructions.

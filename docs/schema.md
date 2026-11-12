@@ -226,3 +226,117 @@ row counts. Live setup and duplicate-free loading are now documented in
 `load_verification.md`. Seven business queries now run successfully; results and
 interpretation are in `questions.md`. Future application-role permissions and
 the student's final submission review remain separate work.
+
+
+## Access roles
+
+Part B addition (November 11, 2026): `sync_state` stores transactional pipeline
+progress as JSON keyed by pipeline name. Migration 005 adds it; `db/roles.sql`
+grants app_reader SELECT and a matching read policy. A repeated access check
+passed for all six tables. New-table evidence:
+
+```text
+SELECT count(*) FROM public."sync_state";
+  SELECT succeeded; rows: 0
+DELETE FROM public."sync_state" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+INSERT INTO public."sync_state" ("pipeline") SELECT "pipeline" FROM public."sync_state" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+[ok] All 6 tables readable; INSERT and DELETE denied; no changes committed.
+```
+
+The original five-table evidence below is retained as the Part A verification.
+
+Setup status (November 11, 2026): `db/roles.sql` applied to the live database.
+`app_reader` has LOGIN, no elevated role flags, SELECT on all five data tables,
+and a SELECT-only row-level security policy on each table. It has no direct
+INSERT, UPDATE, DELETE, or TRUNCATE table grants. Personal data remains private:
+these policies apply only to the application role, not anonymous API callers.
+The application must still authenticate its users before exposing private notes.
+
+The password must be set separately in the Supabase SQL editor, never in a
+committed file. Store its Session pooler URL only in ignored local `.env` as
+`APP_DATABASE_URL`; `.env.example` already includes the empty variable.
+Use the same host, port, database, and project reference as `DATABASE_URL`,
+with username `app_reader.<project-ref>` and the new role password.
+
+### Login and permission evidence
+
+Verified November 11, 2026, using the configured Session pooler reader login:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/check_db.py --app
+.\.venv\Scripts\python.exe scripts/check_access.py
+```
+
+Actual output (both commands exited successfully):
+
+```text
+[ok] Connected using APP_DATABASE_URL
+     Database user: app_reader
+     Server: PostgreSQL 17.11 on x86_64-pc-linux-gnu
+Database user: app_reader
+SELECT count(*) FROM public."works";
+  SELECT succeeded; rows: 570
+DELETE FROM public."works" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+INSERT INTO public."works" ("title") SELECT "title" FROM public."works" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+SELECT count(*) FROM public."authorships";
+  SELECT succeeded; rows: 1520
+DELETE FROM public."authorships" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+INSERT INTO public."authorships" ("work_id") SELECT "work_id" FROM public."authorships" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+SELECT count(*) FROM public."reading_notes";
+  SELECT succeeded; rows: 18
+DELETE FROM public."reading_notes" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+INSERT INTO public."reading_notes" ("work_id") SELECT "work_id" FROM public."reading_notes" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+SELECT count(*) FROM public."work_assessments";
+  SELECT succeeded; rows: 563
+DELETE FROM public."work_assessments" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+INSERT INTO public."work_assessments" ("work_id") SELECT "work_id" FROM public."work_assessments" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+SELECT count(*) FROM public."work_connections";
+  SELECT succeeded; rows: 140
+DELETE FROM public."work_connections" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+INSERT INTO public."work_connections" ("from_work_id") SELECT "from_work_id" FROM public."work_connections" WHERE false;
+  permission denied (SQLSTATE 42501) [expected]
+[ok] All five tables readable; INSERT and DELETE denied; no changes committed.
+```
+
+Write probes use `WHERE false`
+and rollback, so even incorrectly granted permissions cannot change data.
+The script also checks for unexpected non-SELECT table grants and schema CREATE.
+
+Supabase's postgres login could not SET ROLE app_reader, so actual verification
+used the separate app_reader login rather than impersonation. The initial
+attempt to alter restricted role flags also failed and rolled back; the corrected
+script relies on PostgreSQL's safe new-role defaults and checks existing flags.
+
+### Data API and future tables
+
+Data API disabled status: verified November 11, 2026, from the user's dashboard
+screenshot and confirmation. Integrations > Data API > Overview showed Enable
+Data API off and the notice "No schemas can be queried." The user confirmed no
+setting had been changed and Save was inactive, indicating the disabled state
+was already saved. No dashboard change was necessary.
+For every new data table (starting with `sync_runs`), add an explicit SELECT grant
+and, if RLS is enabled, a SELECT policy to `db/roles.sql`, rerun it as postgres,
+and include the table in `scripts/check_access.py`. Future tables receive no
+automatic app_reader grant.
+
+## Part C: sync_runs (November 12, 2026)
+
+Migration 006 adds the per-run history table with a UUID primary key, start/finish
+timestamps, status CHECK (success/partial/failed), nonnegative fetched/inserted/
+updated counts, safe error_message, and trigger CHECK (manual/schedule). Extra
+fields distinguish dry runs, discovery vs targeted maintenance, and outcomes.
+`db/roles.sql` includes the SELECT grant and policy; both were applied. Owner
+writes only; app_reader SELECT works and INSERT/DELETE both returned permission
+denied (42501). All seven tables passed `scripts/check_access.py`.
+See [actual run evidence and semantics](sync_runs.md) and `db/sync_status.sql`.

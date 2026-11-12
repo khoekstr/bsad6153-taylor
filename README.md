@@ -160,3 +160,45 @@ brief summaries, not independently reviewed linked articles.
 ## Credits
 
 <!-- Your data API's required attribution, plus any open-source code or samples you used. -->
+
+
+## Milestone 3: four-day sync trial
+
+The `Library sync` workflow in `.github/workflows/sync.yml` runs daily at
+**08:37 America/Chicago (14:37 UTC), November 13-16, 2026**. One daily pull fits
+this small personal reading library and limits growth to five new papers per day.
+The maximum is 20 scheduled additions plus at most five from the manual setup run.
+Existing articles, notes, and assessments are not automatically refreshed.
+
+The year/date guard in `scripts/schedule_window.py` prevents scheduled data pulls
+outside that four-day window, including future November cron occurrences. This
+is a finite trial, not an ongoing freshness guarantee. GitHub can delay or drop
+scheduled events; four planned runs span 72 hours, allowing evidence of at least
+three successful scheduled runs spanning 48 hours. Verify actual times, not just
+planned dates. Failed or missed runs are not automatically extended past the trial.
+
+Repository Actions secrets `DATABASE_URL` (Supabase Session pooler, owner) and
+`OPENALEX_API_KEY` enter only the sync step's environment. No secret values are
+stored in the workflow. APP_DATABASE_URL is not required by the scheduled writer.
+No AI API key is configured: collected papers remain assessment-pending and no
+AI assessment charges are incurred by this workflow.
+
+Use Actions -> Library sync -> Run workflow -> main for an explicit manual run.
+Leave dry_run false to save the new papers; true previews them and retains only
+the audit row. Scheduled events always use `--trigger schedule`; manual starts
+use `--trigger manual`. Manual runs do not satisfy the scheduled-run requirement.
+The workflow runs offline tests before using credentials. Failed or partial syncs
+exit nonzero and show a failed job; email delivery depends on GitHub notification
+settings. Raw downloads and personal data are not uploaded as workflow artifacts.
+
+Both scheduled and manual syncs run only from main. Branch pushes to
+milestone-3-sync run secretless validation only. GitHub requires the workflow on
+the default branch before workflow_dispatch can run: validate the branch, merge
+PR 1, then verify a manual main run before the schedule begins. This resolves the
+assignment's conflicting instruction to manually dispatch before the first merge.
+
+Run `python scripts/status.py` locally as app_reader for the last successful
+live discovery, last committed work change, and seven-day counts. See
+[run-history definitions](docs/sync_runs.md), [sync behavior](docs/sync_implementation.md),
+and [search controls](docs/search_preferences.md). Parts E-H and the student's
+final review will be a separate milestone-3 pull request.
