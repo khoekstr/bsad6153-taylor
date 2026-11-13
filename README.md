@@ -164,16 +164,20 @@ brief summaries, not independently reviewed linked articles.
 
 ## Milestone 3: four-day sync trial
 
-The `Library sync` workflow in `.github/workflows/sync.yml` runs daily at
-**08:37 America/Chicago (14:37 UTC), November 13-16, 2026**. One daily pull fits
-this small personal reading library and limits growth to five new papers per day.
+The `Library sync` workflow in `.github/workflows/sync.yml` runs twice daily at
+**08:00 and 14:00 America/Chicago (14:00 and 20:00 UTC), November 13-16, 2026**.
+The afternoon run provides a second opportunity if the morning trigger is missed
+or its sync fails. The existing daily guard permits only one completed discovery
+per UTC day: after a successful morning discovery, the afternoon run records
+`already_completed_today` with zero additions or updates. This preserves the
+limit of five new papers per day for this small personal reading library.
 The maximum is 20 scheduled additions plus at most five from the manual setup run.
 Existing articles, notes, and assessments are not automatically refreshed.
 
 The year/date guard in `scripts/schedule_window.py` prevents scheduled data pulls
 outside that four-day window, including future November cron occurrences. This
 is a finite trial, not an ongoing freshness guarantee. GitHub can delay or drop
-scheduled events; four planned runs span 72 hours, allowing evidence of at least
+scheduled events; eight planned trigger times span 78 hours, allowing evidence of at least
 three successful scheduled runs spanning 48 hours. Verify actual times, not just
 planned dates. Failed or missed runs are not automatically extended past the trial.
 

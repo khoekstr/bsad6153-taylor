@@ -6,8 +6,11 @@ from scripts.schedule_window import allowed
 class WindowTests(unittest.TestCase):
     def test_four_dates_only(self):
         for day in range(12, 18):
-            with self.subTest(day=day):
-                self.assertEqual(allowed('schedule','refs/heads/main',datetime(2026,11,day,14,37,tzinfo=timezone.utc)),13 <= day <= 16)
+            for hour in (14, 20):
+                with self.subTest(day=day, hour=hour):
+                    self.assertEqual(allowed('schedule', 'refs/heads/main',
+                        datetime(2026, 11, day, hour, tzinfo=timezone.utc)),
+                        13 <= day <= 16)
 
     def test_no_annual_restart(self):
         self.assertFalse(allowed('schedule','refs/heads/main',datetime(2027,11,13,tzinfo=timezone.utc)))

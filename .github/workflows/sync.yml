@@ -2,9 +2,9 @@ name: Library sync
 
 on:
   schedule:
-    # 08:37 America/Chicago (CST), November 13-16 only.
+    # 08:00 and 14:00 America/Chicago (CST), November 13-16 only.
     # schedule_window.py restricts the year to 2026; no annual sync restart.
-    - cron: '37 14 13-16 11 *'
+    - cron: '0 14,20 13-16 11 *'
   workflow_dispatch:
     inputs:
       dry_run:
