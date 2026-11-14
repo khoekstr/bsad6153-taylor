@@ -6,7 +6,7 @@ import tempfile
 import unittest
 from unittest.mock import Mock
 
-from evals.check_reference import FIELDS, ROOT, check, read_questions
+from evals.check_reference import FIELDS, ROOT, check, read_questions, compare_reports
 
 
 class ContractTests(unittest.TestCase):
@@ -46,6 +46,21 @@ class ContractTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             check(conn, self.rows)
         self.assertFalse(any(call.kwargs.get('prepare') for call in conn.execute.call_args_list))
+
+    def test_comparison_detects_values_not_just_row_counts(self):
+        from copy import deepcopy
+        before = {'passed': True, 'as_of': 'earlier', 'questions_sha256': 'same',
+                  'results': [{'id':'Q01', 'status':'pass', 'sql_sha256':'same',
+                               'columns':['count'], 'rows': [[5]]}]}
+        after = deepcopy(before)
+        after['as_of'] = 'later'
+        after['results'][0]['rows'] = [(5,)]
+        self.assertEqual(compare_reports(before, after)['unchanged'], ['Q01'])
+        after['results'][0]['rows'] = [(6,)]
+        self.assertEqual(compare_reports(before, after)['changed'], ['Q01'])
+        after['questions_sha256'] = 'different'
+        with self.assertRaises(ValueError):
+            compare_reports(before, after)
 
 
 @unittest.skipUnless(os.getenv('REFERENCE_TEST_DATABASE') == '1', 'opt-in reader database checks')

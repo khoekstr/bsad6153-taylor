@@ -98,12 +98,36 @@ def check(conn, questions):
             'passed': all(r['status'] != 'fail' for r in results)}
 
 
+def compare_reports(baseline, current):
+    """Compare actual answers, not timestamps or the fact a query returned rows."""
+    if not baseline.get('passed') or not current.get('passed'):
+        raise ValueError('Both snapshots must pass before comparing answers.')
+    if baseline.get('questions_sha256') != current.get('questions_sha256'):
+        raise ValueError('Question set changed; do not treat this as a live-data comparison.')
+    old = {r['id']: r for r in baseline['results']}
+    new = {r['id']: r for r in current['results']}
+    if old.keys() != new.keys():
+        raise ValueError('Snapshot question IDs differ.')
+    changed, unchanged = [], []
+    for identifier, result in new.items():
+        prior = old[identifier]
+        if result['status'] == 'not_executed_should_decline':
+            continue
+        if prior.get('sql_sha256') != result.get('sql_sha256'):
+            raise ValueError('Reference SQL changed between snapshots.')
+        canonical = lambda r: json.dumps([r['columns'], r['rows']], sort_keys=True, default=json_value)
+        (unchanged if canonical(prior) == canonical(result) else changed).append(identifier)
+    return {'baseline_as_of': baseline['as_of'], 'current_as_of': current['as_of'],
+            'changed': changed, 'unchanged': unchanged}
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--questions', type=Path, default=ROOT/'evals/golden_questions.csv')
     parser.add_argument('--output', type=Path,
                         help='Optional PRIVATE JSON answer snapshot; existing files are never overwritten.')
     parser.add_argument('--validate-only', action='store_true', help='Check CSV structure without connecting.')
+    parser.add_argument('--compare', type=Path, help='Compare answers with a prior private JSON snapshot.')
     args = parser.parse_args(argv)
     try:
         questions = read_questions(args.questions)
@@ -122,6 +146,11 @@ def main(argv=None):
             report = check(conn, questions)
             conn.rollback()
         report['questions_sha256'] = hashlib.sha256(args.questions.read_bytes()).hexdigest()
+        if args.compare:
+            baseline = json.loads(args.compare.read_text(encoding='utf-8'))
+            report['comparison'] = compare_reports(baseline, report)
+            print('Changed reference answers: ' + (', '.join(report['comparison']['changed']) or 'none'))
+            print('Unchanged reference answers: ' + ', '.join(report['comparison']['unchanged']))
         for result in report['results']:
             suffix = f" ({result['row_count']} rows)" if 'row_count' in result else ''
             if result['status'] == 'fail':
