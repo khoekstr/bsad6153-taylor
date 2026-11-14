@@ -11,6 +11,9 @@ venv/
 # Raw API downloads can be large; commit a small sample to data/sample/ instead
 data/raw/
 
+# Private reference answers can include personal reading notes.
+data/evals/
+
 # Python and editor clutter
 __pycache__/
 *.pyc

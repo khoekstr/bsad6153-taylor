@@ -1,0 +1,161 @@
+id,question,category,reference_sql,correct_behavior,source
+Q01,What are ten articles you rated highly for my interests that I haven’t recorded reading yet?,lookup,"WITH latest_ai AS (
+    SELECT DISTINCT ON (work_id) work_id, value_rating
+    FROM work_assessments WHERE assessed_by = 'ai'
+    ORDER BY work_id, first_seen_at DESC, assessment_id DESC
+)
+SELECT w.title, w.publication_date, a.value_rating AS ai_value_rating
+FROM works w
+JOIN latest_ai a ON a.work_id = w.work_id
+WHERE a.value_rating = 5
+  AND NOT EXISTS (
+      SELECT 1 FROM work_assessments u
+      WHERE u.work_id = w.work_id AND u.assessed_by = 'user'
+        AND u.reading_status IS NOT NULL
+  )
+  AND NOT EXISTS (SELECT 1 FROM reading_notes n WHERE n.work_id = w.work_id)
+ORDER BY w.publication_date DESC NULLS LAST, w.work_id
+LIMIT 10","Use latest AI relevance rating 5/5, not credibility. Show up to ten ordered by publication date, with deterministic ID tie-breaks. Exclude any recorded notes or reading status. No reading recorded does not prove unread.",baseline
+Q02,What are the highest-rated articles in my library published in the last 90 days?,lookup,"WITH latest_ai AS (
+    SELECT DISTINCT ON (work_id) work_id, value_rating
+    FROM work_assessments WHERE assessed_by = 'ai'
+    ORDER BY work_id, first_seen_at DESC, assessment_id DESC
+)
+SELECT w.title, w.publication_date, a.value_rating AS ai_value_rating
+FROM works w
+JOIN latest_ai a ON a.work_id = w.work_id
+WHERE w.publication_date BETWEEN CURRENT_DATE - 89 AND CURRENT_DATE
+  AND a.value_rating IS NOT NULL
+ORDER BY a.value_rating DESC, w.publication_date DESC, w.work_id
+LIMIT 10","Show up to ten titles, dates, and latest AI relevance ratings. Window includes today and the preceding 89 Central calendar dates. Exclude future/unknown dates and missing ratings; recently added is not recently published.",baseline
+Q03,Find the articles I’ve written notes on and show me what I said.,lookup,"SELECT w.work_id,w.title,n.note_id,n.notes,n.reading_status,n.read_at
+FROM reading_notes n JOIN works w USING(work_id)
+WHERE nullif(btrim(n.notes),'') IS NOT NULL
+ORDER BY w.work_id,n.note_id","For the authenticated owner only, return actual notes linked to their articles; distinguish quoted personal words from AI commentary. Do not infer complete reading from a note. Public visitors must not receive private notes.",baseline
+Q04,"What articles connect to something I’ve already written about, and what is the suggested connection?",compare,"WITH latest_ai AS (
+    SELECT DISTINCT ON (work_id) work_id, value_rating
+    FROM work_assessments WHERE assessed_by = 'ai'
+    ORDER BY work_id, first_seen_at DESC, assessment_id DESC
+), noted AS (
+    SELECT work_id, jsonb_agg(jsonb_build_object('note_id',note_id,'notes',notes) ORDER BY note_id) AS personal_notes FROM reading_notes
+    WHERE NULLIF(btrim(notes), '') IS NOT NULL GROUP BY work_id
+)
+SELECT original.title AS article_with_my_notes, n.personal_notes,
+       related.title AS connected_article,
+       a.value_rating AS connected_ai_value_rating,
+       c.connection_type, c.explanation, c.proposed_by,
+       c.from_work_id, c.to_work_id
+FROM noted n
+JOIN works original ON original.work_id = n.work_id
+JOIN work_connections c ON n.work_id IN (c.from_work_id, c.to_work_id)
+JOIN works related ON related.work_id = CASE
+    WHEN c.from_work_id = n.work_id THEN c.to_work_id ELSE c.from_work_id END
+LEFT JOIN latest_ai a ON a.work_id = related.work_id
+WHERE c.review_status <> 'rejected'
+ORDER BY a.value_rating DESC NULLS LAST, related.publication_date DESC NULLS LAST,
+         related.work_id, original.work_id, c.connection_id
+LIMIT 10","For the authenticated owner, show up to ten noted-article/connection pairs, actual notes, related titles and stored explanations. Label AI suggestions and retain from/to direction for supports/challenges; traversing from the other endpoint must not reverse the claim. No repeated rows merely because there are multiple notes.",baseline
+Q05,Which topics have the most and least material in my library?,aggregate,"WITH latest_ai AS (
+ SELECT DISTINCT ON (work_id) work_id,value_rating,categories
+ FROM work_assessments WHERE assessed_by='ai'
+ ORDER BY work_id,first_seen_at DESC,assessment_id DESC
+)
+, category_list(category) AS (
+ VALUES ('Learning'),('Work'),('Information'),('Society'),('Technology'),('Discovery')
+)
+SELECT c.category,count(DISTINCT a.work_id) AS work_count
+FROM category_list c LEFT JOIN latest_ai a ON c.category=ANY(a.categories)
+GROUP BY c.category ORDER BY work_count DESC,c.category",Use the six AI-assigned library categories and latest AI assessment. Include zero-count categories and ties. Multi-category articles count in each category; totals overlap. Category size is not a measure of personal preference or global research activity.,baseline
+Q06,Which authors have the most articles you rated 5/5 for relevance to me?,aggregate,"WITH latest_ai AS (
+    SELECT DISTINCT ON (work_id) work_id, value_rating
+    FROM work_assessments WHERE assessed_by = 'ai'
+    ORDER BY work_id, first_seen_at DESC, assessment_id DESC
+)
+SELECT min(au.author_name) AS author,
+       count(DISTINCT au.work_id) AS articles_rated_5
+FROM authorships au
+JOIN latest_ai a ON a.work_id = au.work_id
+WHERE a.value_rating = 5
+GROUP BY coalesce(au.author_openalex_id, 'name:' || lower(btrim(au.author_name)))
+ORDER BY articles_rated_5 DESC, author,
+         coalesce(au.author_openalex_id, 'name:' || lower(btrim(au.author_name)))
+LIMIT 10","Show the ten author rows and distinct 5/5 article counts returned by SQL, using latest AI ratings. Prefer OpenAlex author IDs, falling back to normalized names; name-only identities may be ambiguous. Counts apply to this library, not reputation.",baseline
+Q07,Which authors appear more than once in my library?,aggregate,"WITH author_counts AS (
+    SELECT coalesce(author_openalex_id, 'name:' || lower(btrim(author_name))) AS author_key,
+           min(author_name) AS author,
+           count(DISTINCT work_id) AS work_count
+    FROM authorships
+    GROUP BY coalesce(author_openalex_id, 'name:' || lower(btrim(author_name)))
+    HAVING count(DISTINCT work_id) > 1
+)
+SELECT author, work_count, count(*) OVER () AS authors_with_multiple_works
+FROM author_counts
+ORDER BY work_count DESC, author, author_key","List every qualifying author and distinct-work count, with total qualifying authors. Use source IDs where available; disclose name-only matching limitations.",baseline
+Q08,Show me the articles by the author who appears most often in my library.,lookup,"WITH author_counts AS (
+    SELECT coalesce(author_openalex_id, 'name:' || lower(btrim(author_name))) AS author_key,
+           min(author_name) AS author,
+           count(DISTINCT work_id) AS work_count
+    FROM authorships
+    GROUP BY coalesce(author_openalex_id, 'name:' || lower(btrim(author_name)))
+), top_authors AS (
+    SELECT * FROM author_counts
+    WHERE work_count = (SELECT max(work_count) FROM author_counts)
+), author_works AS (
+    SELECT DISTINCT coalesce(author_openalex_id, 'name:' || lower(btrim(author_name))) AS author_key,
+           work_id
+    FROM authorships
+), latest_ai AS (
+    SELECT DISTINCT ON (work_id) work_id, value_rating
+    FROM work_assessments WHERE assessed_by = 'ai'
+    ORDER BY work_id, first_seen_at DESC, assessment_id DESC
+)
+SELECT t.author, t.work_count AS author_total_works,
+       w.work_id, w.title, w.publication_date, a.value_rating AS ai_value_rating
+FROM top_authors t
+JOIN author_works aw ON aw.author_key = t.author_key
+JOIN works w ON w.work_id = aw.work_id
+LEFT JOIN latest_ai a ON a.work_id = w.work_id
+ORDER BY t.author, t.author_key, w.publication_date DESC NULLS LAST, w.work_id","Include ALL tied leading authors, their library totals, titles, dates, and latest AI relevance ratings where available. Missing ratings are unknown. A coauthored paper can appear under each author.",baseline
+Q09,Which five articles in my library have been cited by the most other scholarly works?,lookup,"SELECT work_id,title,publication_date,cited_by_count,publication_name,is_retracted,metadata_checked_at
+FROM works WHERE cited_by_count IS NOT NULL
+ORDER BY cited_by_count DESC,publication_date DESC NULLS LAST,work_id LIMIT 5","Rank incoming citations, not the number of references inside a paper. Show dates, venue, known retraction flags, and snapshot check dates. Missing check dates mean freshness unknown. Exclude unknown counts rather than treating them as zero. Citations indicate scholarly attention, not agreement or verified quality; older papers had longer to accumulate them.",other
+Q10,Which AI topics are becoming more common in the recent research in my library?,trend,"WITH periods AS (
+ SELECT current_date-89 AS recent_start,current_date AS recent_end,
+        current_date-179 AS prior_start,current_date-90 AS prior_end
+), eligible AS (
+ SELECT w.work_id,nullif(btrim(w.openalex_topic),'') AS topic,
+        w.publication_date>=p.recent_start AS recent
+ FROM works w CROSS JOIN periods p
+ WHERE w.publication_date BETWEEN p.prior_start AND p.recent_end
+), totals AS (
+ SELECT count(*) FILTER(WHERE recent) AS recent_total,
+        count(*) FILTER(WHERE NOT recent) AS prior_total,
+        count(*) FILTER(WHERE recent AND topic IS NULL) AS recent_unknown_topic,
+        count(*) FILTER(WHERE NOT recent AND topic IS NULL) AS prior_unknown_topic
+ FROM eligible
+), counts AS (
+ SELECT topic,count(*) FILTER(WHERE recent) AS recent_count,
+        count(*) FILTER(WHERE NOT recent) AS prior_count
+ FROM eligible WHERE topic IS NOT NULL GROUP BY topic
+), comparison AS (
+ SELECT c.*,round(100.0*recent_count/nullif(recent_total,0),2) AS recent_percent,
+        round(100.0*prior_count/nullif(prior_total,0),2) AS prior_percent,
+        round(100.0*recent_count/nullif(recent_total,0)-100.0*prior_count/nullif(prior_total,0),2) AS percentage_point_change,
+        t.*,p.* FROM counts c CROSS JOIN totals t CROSS JOIN periods p
+)
+SELECT * FROM comparison ORDER BY percentage_point_change DESC NULLS LAST,recent_count DESC,topic","Compare the latest 90 Central calendar dates against the preceding nonoverlapping 90 days, using publication date and OpenAlex primary topics, not collection dates or AI categories. Report period bounds, counts, proportions, percentage-point changes and missing-topic coverage. Denominator includes all dated library papers in each period. A positive share change indicates increased representation only in this curated library, not a global trend or statistical significance. Small counts are weak evidence; no prior papers means comparison unavailable.",other
+Q11,Are there any articles in my library that haven’t been assessed yet?,lookup,"WITH pending AS (
+ SELECT w.work_id,w.title,w.first_seen_at
+ FROM works w WHERE NOT EXISTS (
+  SELECT 1 FROM work_assessments a WHERE a.work_id=w.work_id AND a.assessed_by='ai')
+)
+SELECT count(*) AS unassessed_count,
+       coalesce(jsonb_agg(to_jsonb(p) ORDER BY p.first_seen_at,p.work_id),'[]'::jsonb) AS articles
+FROM pending p",List all articles with no AI assessment; no arbitrary recent-ten limit. A zero count and empty list explicitly mean none remain. A user assessment alone does not satisfy the AI-assessment check. Missing assessment is not low relevance.,other
+Q12,"When did the library last successfully collect new papers, and what did that run add?",lookup,"SELECT run_id,started_at,finished_at,trigger,records_fetched,records_inserted,records_updated
+FROM sync_runs WHERE status='success' AND NOT dry_run AND mode='discovery_only'
+ AND outcome='completed' AND records_inserted>0 AND finished_at IS NOT NULL
+ORDER BY finished_at DESC,run_id LIMIT 1","Identify the last completed successful discovery with actual additions and its inserted/updated counts, with times shown in Central. Exclude previews, failures, and same-day no-ops. This query proves counts, not the exact titles inserted: run history does not preserve a durable per-run list of article IDs. Do not invent that list.",other
+Q13,Which author in my library is the most trustworthy expert on AI?,should_decline,,"Decline to rank trustworthiness from this database. Author frequency, citation counts, venue, retraction flags and personal-relevance ratings do not establish expertise or reliability. Offer scoped available facts without converting them into a credibility score.",other
+Q14,Which articles in my library have received the most news or social-media attention?,should_decline,,Explain that this database does not track news or social-media coverage. Do not substitute scholarly citations for media attention or invent popularity rankings.,other
+Q15,"Based on this library, what does AI research worldwide agree about AI improving learning?",should_decline,,"Decline to claim worldwide consensus from a curated, largely English/open-access collection with uneven coverage. Offer a scoped summary of the available evidence, disagreements and missing perspectives; do not generalize gaps into absence of research.",other
