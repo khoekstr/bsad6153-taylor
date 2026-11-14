@@ -69,9 +69,6 @@ erDiagram
         boolean come_back_to_it
         text summary
         text relevance_reason
-        integer novelty_rating
-        text novelty_reason
-        text evidence_assessment
         integer estimated_reading_minutes
         text review_basis
         text assessment_context

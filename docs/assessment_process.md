@@ -70,3 +70,13 @@ ratings, since the schema allows assessment history. Count missing assessments
 separately, and avoid multiplying assessment rows by author credits in joins.
 An AI suggestion is distinct from a user's own assessment. See
 `load_verification.md` for live import and rerun evidence.
+
+## Assessment simplification — November 14, 2026
+
+Migration 007 removes novelty_rating, novelty_reason, and evidence_assessment.
+Existing evidence qualifications are appended to summaries; existing novelty
+explanations are preserved as historical assessment context, not new ratings.
+The importer accepts older saved batches and folds their narrative fields into
+summary/context. New assessments need only relevance/value, explanation,
+categories, summary (with relevant qualifications), and optional reading time.
+Review basis, model, reason, and timestamps remain for traceability.
