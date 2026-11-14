@@ -117,7 +117,7 @@ the provider's first/middle/last label and affiliation information.
 The other three tables are `reading_notes`, `work_assessments`, and `work_connections`.
 A work has multiple editable notes, at most one editable user assessment, and a history
 of AI assessments. Personal value rating, favorite, current reading status, and revisit
-intention live on the user assessment. AI rows store predicted value, novelty, summaries,
+intention live on the user assessment. AI rows store predicted value, summaries,
 and explanations. Multiple categories are a controlled text list on assessments; user
 choices override AI suggestions. Connections reference two different works. See
 `schema.md` for the complete diagram, types, constraints, and privacy boundaries.
@@ -220,11 +220,9 @@ planned, not yet implemented.
 ## 8. Future personal fields are not API facts
 
 Reading status, the combined personal value rating, notes, quotations, pins, and collections
-will be private user-generated records linked to works. Relevance, novelty, credibility
-assessments, and plain-language summaries will be separately labeled AI outputs with
+will be private user-generated records linked to works. Relevance assessments and plain-language summaries will be separately labeled AI outputs with
 an explanation, evidence basis, and timestamp; none exists in the imported metadata.
-Novelty requires actual reading history, and discussing a paper does not establish that
-it was fully read. The two personal essays remain planned manual additions.
+Discussing a paper does not establish that it was fully read. The two personal essays remain planned manual additions.
 
 
 ## Part B sync progress (November 11, 2026)
@@ -254,3 +252,31 @@ counts, including proposed counts for previews. See [field definitions](sync_run
 Lineage: sync entry point -> durable started row -> transactional discovery/data/
 progress + successful final row; on failure data rolls back and the error row
 is finalized separately. app_reader reads this table through scripts/status.py.
+
+## Source signals — November 14, 2026
+
+Migration 008 exposes saved OpenAlex metadata on works:
+
+- cited_by_count: the number of other works citing this paper, not its reference count. Missing/invalid values remain NULL; zero is a known zero.
+- publication_name: the primary source name (journal, conference, or repository), not an endorsement.
+- is_retracted: OpenAlex's reported retraction flag; NULL means unknown, and false is not proof of reliability.
+- metadata_checked_at: when a live sync saved the source snapshot. Existing snapshots and historical-file imports have unknown check dates (NULL). This is not the date the source last changed.
+
+The first three values are derived from works.raw, preventing duplicate metadata
+from drifting apart. Live discovery and changed-record targeted refreshes stamp
+the date checked. No-change reruns preserve it. Routine discovery still does not
+refresh existing papers; these are dated snapshots, not current credibility scores.
+No source requests or manual sync are needed for the migration.
+
+Novelty and separate evidence assessments are retired. AI summaries retain useful
+qualifications; personal relevance/value remains the rating. Historical novelty
+explanations are retained in assessment_context rather than active score fields.
+
+Verification on November 14: migrations 007/008 were rehearsed on temporary
+copies, then applied together in a transaction. All 568 assessment rows retained
+their prior summaries and narrative notes. Of 581 works, 514 have citation counts,
+512 publication names, and 514 retraction flags; all legacy check dates remain
+unknown. app_reader can SELECT the new fields. The 35-test combined suite passed,
+including temporary-table sync checks. An additional importer integration check
+passed for current/legacy formats and duplicate reruns. No live sync was invoked.
+The date stamp starts for new live snapshots after the sync-code PR is merged.

@@ -31,6 +31,10 @@ erDiagram
         text file_path
         boolean is_open_access
         jsonb raw
+        bigint cited_by_count
+        text publication_name
+        boolean is_retracted
+        timestamptz metadata_checked_at
         timestamptz first_seen_at
         timestamptz last_updated_at
     }

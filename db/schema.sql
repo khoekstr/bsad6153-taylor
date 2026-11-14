@@ -11,6 +11,16 @@ CREATE TABLE works (
  language text, abstract text, openalex_topic text,
  source_url text, pdf_url text, file_path text, is_open_access boolean,
  raw jsonb,
+ cited_by_count bigint GENERATED ALWAYS AS (
+   CASE WHEN source = 'openalex' AND jsonb_typeof(raw->'cited_by_count') = 'number'
+     AND raw->>'cited_by_count' ~ '^[0-9]{1,18}$'
+     THEN (raw->>'cited_by_count')::bigint END) STORED,
+ publication_name text GENERATED ALWAYS AS (
+   CASE WHEN source = 'openalex' THEN nullif(btrim(raw#>>'{primary_location,source,display_name}'),'') END) STORED,
+ is_retracted boolean GENERATED ALWAYS AS (
+   CASE WHEN source = 'openalex' AND jsonb_typeof(raw->'is_retracted') = 'boolean'
+     THEN (raw->>'is_retracted')::boolean END) STORED,
+ metadata_checked_at timestamptz,
  first_seen_at timestamptz NOT NULL DEFAULT now(),
  last_updated_at timestamptz NOT NULL DEFAULT now(),
  CHECK (source <> 'openalex' OR openalex_id IS NOT NULL),
