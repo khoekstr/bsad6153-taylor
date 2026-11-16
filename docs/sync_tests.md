@@ -1,8 +1,8 @@
 # Part G: sync safety tests and golden-reference comparison
 
-Executed November 14, 2026. Three controlled scenarios passed. The required
-comparison after two additional scheduled syncs is **pending**; today's immediate
-golden-reference recheck is not a substitute.
+Safety scenarios executed November 14, 2026; all three passed. The required
+post-scheduled-sync golden-reference comparison completed November 16, 2026,
+at 09:35:07 Central. All twelve reference queries passed.
 
 ## Scope and reproduction
 
@@ -79,7 +79,7 @@ the harness. All three scenarios then passed. No production sync fix was needed.
 
 ## Actual scheduled runs, separate from simulations
 
-Both recorded scheduled runs occurred before the Part F baseline:
+These two scheduled runs occurred before the Part F baseline:
 
 | GitHub run | Database run ID | Database start (Central) | Outcome | Fetched / inserted / updated |
 |---|---|---|---|---|
@@ -93,7 +93,7 @@ it is not a back-to-back test or a post-baseline run.
 ## Golden-question comparison
 
 Baseline: `data/evals/reference_baseline.json`, November 14 at 14:01:49 Central.
-Today's follow-up: `data/evals/reference_2026-11-14_part_g.json` (exact time below).
+Initial follow-up: `data/evals/reference_2026-11-14_part_g.json` (exact time below).
 Both used app_reader and read-only, consistent snapshots. All 12 queries passed.
 
 **Changed answers: none. Unchanged: Q01–Q12.** Q13–Q15 are decline cases and were
@@ -115,19 +115,56 @@ the queries, checker, harness, and this evidence summary are committed.
 python evals/check_reference.py --compare data/evals/reference_baseline.json --output data/evals/reference_2026-11-16.json
 ```
 
-## Monday completion gate
+## November 16: required post-sync comparison completed
 
-1. Verify at least two more scheduled syncs after **2026-11-14 14:01:49 Central**
-   using Actions event provenance and database audit rows. Distinguish additions
-   from successful no-ops. If fewer than two occurred, leave this requirement pending.
-2. Run the command above, preserving the original baseline and unchanged queries.
-3. Record changed IDs and causes: new papers, new assessments, or date-window
-   changes. Investigate unexpectedly unchanged ingestion-sensitive answers.
-4. Confirm every SQL query still passes. Document the results here, separately
-   from future chatbot refusal evaluation.
+**Prediction:** All reference queries should still succeed. New discoveries should
+change the pending-assessment queue and latest addition-producing run. Rankings
+based on existing assessments or citations may stay unchanged. Calendar-based
+questions may change independently of ingestion.
 
-**Status:** Three controlled safety scenarios and today's golden recheck passed.
-The required post-two-scheduled-sync comparison is **not yet complete**.
+Three successful scheduled runs occurred after the baseline and before this
+comparison. GitHub identifies each event as `schedule`; the corresponding live
+`sync_runs` rows distinguish actual additions from daily-guard no-ops:
+
+| GitHub run | Database run ID | Started (Central) | Finished (Central) | Status / outcome | Fetched / inserted / updated |
+|---|---|---|---|---|---|
+| [43654472235](https://github.com/khoekstr/bsad6153-taylor/actions/runs/43654472235) | `22932883-bd0a-4130-945f-7fb0c5b6cadc` | Nov 14, 17:41:42 | Nov 14, 17:41:43 | success / already_completed_today | 0 / 0 / 0 |
+| [43753347979](https://github.com/khoekstr/bsad6153-taylor/actions/runs/43753347979) | `9a2e8cf7-898f-4feb-aa54-1a0e9563de28` | Nov 15, 13:36:43 | Nov 15, 13:36:51 | success / completed | 200 / 5 / 0 |
+| [43776753671](https://github.com/khoekstr/bsad6153-taylor/actions/runs/43776753671) | `c1e1627a-e0f0-4f94-9bec-de419c0f275c` | Nov 15, 17:48:26 | Nov 15, 17:48:26 | success / already_completed_today | 0 / 0 / 0 |
+
+All dates in this table are in 2026. All three rows have `trigger=schedule` and
+`dry_run=false`. Only the middle run added papers; successful no-ops are not
+represented as data changes. The comparison therefore follows more than the
+required two additional scheduled executions, including an actual addition.
+
+Executed the comparison command above using `app_reader`, a read-only consistent
+snapshot, and the unchanged golden-question CSV and reference SQL. Saved private
+answers to `data/evals/reference_2026-11-16.json` at
+**2026-11-16T09:35:07.307158-06:00**. The original baseline remains unchanged.
+
+**Result: all 12 SQL queries passed and returned non-empty results.**
+
+| Question | Baseline to follow-up | Interpretation |
+|---|---|---|
+| Q02: highest-rated recent articles | Still 10 rows, but one article left and another entered | The August 18 article aged out when the inclusive 90-day cutoff advanced from August 17 to August 19. The October 15 article moved into the top ten. This is a calendar-window change, not evidence of a new ingestion. |
+| Q10: topic trends | 55 to 58 topic rows; recent-period works 60 to 63; prior-period works 59 to 58 | Counts and shares changed while both comparison windows advanced two days. New papers and moving date boundaries can both affect this result; do not attribute the whole difference to sync. |
+| Q11: awaiting AI assessment | 30 to 35 works | Five work IDs were added to the pending list and none removed. All five have first_seen_at `2026-11-15T13:36:43.744081-06:00`, within the addition-producing scheduled run. This confirms new live data reached the reference answer. |
+| Q12: last run that added papers | Nov 13, 18:44 to Nov 15, 13:36 Central | The answer now identifies run `9a2e8cf7-898f-4feb-aa54-1a0e9563de28`, which fetched 200, inserted 5, and updated 0. The later no-op correctly does not replace it. |
+
+**Unchanged:** Q01, Q03, Q04, Q05, Q06, Q07, Q08, Q09. These cover existing
+ratings, notes, connections, category counts, author results, and the top-cited
+list. Unchanged top results do not mean ingestion stopped: Q11 and Q12 directly
+show the new discoveries. The incoming papers still await AI assessment, and
+ordinary discovery does not refresh citation counts on existing works.
+
+Q13–Q15 remain `should_decline` cases with no reference SQL; they were intentionally
+not executed. This verifies database references, not future chatbot refusal behavior.
+No live manual sync or database mutation was performed for this comparison.
+
+**Part G status:** Three isolated safety scenarios are documented with their actual
+temporary audit rows, and the required live-reference comparison after additional
+scheduled runs is complete. The separate milestone-wide requirement for automatic
+runs spanning at least 48 hours is not established by this comparison.
 
 ## Captured temporary sync_runs evidence
 
