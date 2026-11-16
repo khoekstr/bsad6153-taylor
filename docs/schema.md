@@ -53,7 +53,6 @@ erDiagram
         bigint work_id FK
         text reading_status
         text notes
-        text questions
         text key_references
         text stopped_reason
         timestamptz read_at
@@ -74,6 +73,7 @@ erDiagram
         text summary
         text relevance_reason
         integer estimated_reading_minutes
+        text estimated_reading_basis
         text review_basis
         text assessment_context
         text assessment_reason
@@ -227,7 +227,6 @@ row counts. Live setup and duplicate-free loading are now documented in
 `load_verification.md`. Seven business queries now run successfully; results and
 interpretation are in `questions.md`. Future application-role permissions and
 the student's final submission review remain separate work.
-
 
 ## Access roles
 

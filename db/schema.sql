@@ -42,7 +42,7 @@ CREATE TABLE reading_notes (
  import_key text UNIQUE, -- Original chat/message identity for duplicate-free note recovery.
  work_id bigint NOT NULL REFERENCES works(work_id),
  reading_status text CHECK (reading_status IN ('not_started', 'abstract_only', 'partial', 'complete')),
- notes text, questions text, key_references text, stopped_reason text,
+ notes text, key_references text, stopped_reason text,
  read_at timestamptz,
  first_seen_at timestamptz NOT NULL DEFAULT now(),
  last_updated_at timestamptz NOT NULL DEFAULT now()
@@ -64,6 +64,7 @@ CREATE TABLE work_assessments (
  summary text,
  relevance_reason text,
  estimated_reading_minutes integer CHECK (estimated_reading_minutes > 0),
+ estimated_reading_basis text, -- Full-article length source and estimation method.
  review_basis text CHECK (review_basis IN ('metadata', 'abstract', 'excerpt', 'full_text')),
  assessment_context text,
  assessment_reason text CHECK (length(btrim(assessment_reason)) > 0),

@@ -30,8 +30,9 @@ individually reviewed by the user.
   4 = strong fit, 5 = directly central to the user's questions.
 - Each assessment includes categories, a summary, a relevance/value explanation,
   evidence limitations, review basis, context, reason, and model provenance.
-- Novelty ratings and estimated full-paper reading times remain null because
-  the available evidence does not support them. Personal reading status,
+- Novelty ratings and explanations are retired. Qualifications belong in summaries,
+  not a separate evidence-assessment field. Full-paper reading times were initially left null; the November 9
+  page-range estimates described below supplement that initial pass. Personal reading status,
   favorites, return flags, and notes are not inferred. Work connections were
   generated in a separate authorized comparison pass; see `connections.md`.
 
@@ -70,6 +71,30 @@ ratings, since the schema allows assessment history. Count missing assessments
 separately, and avoid multiplying assessment rows by author credits in joins.
 An AI suggestion is distinct from a user's own assessment. See
 `load_verification.md` for live import and rerun evidence.
+
+## Full-article reading-time estimates — November 9, 2026
+
+`estimated_reading_minutes` means the full article, not its abstract. The user
+requested estimates where length is available and unknown values otherwise.
+`scripts/estimate_reading_time.py` fills missing AI values using ascending numeric
+OpenAlex page ranges of 2–100 pages, inclusive. Equal endpoints, missing values,
+article identifiers, prefixed page labels, reversed ranges, and larger ranges
+remain unknown rather than being guessed. This conservative filter can exclude
+valid single-page or unusually long articles.
+
+The chosen planning assumption is 500 words per page at 250 words per minute,
+or 2 minutes per page. This is a rough estimate, not a measured reading speed:
+figures, references, layout, and close study can change the actual time.
+`estimated_reading_basis` records the page range and assumptions alongside every
+estimate. Assessment `review_basis` still describes the original AI assessment;
+a page-based time does not mean the AI read the full article.
+
+Apply `db/migrations/003_reading_time_basis.sql` to an existing database, then run
+`python scripts/estimate_reading_time.py` to preview or add `--apply` to save.
+The script preserves existing estimates and user assessments, uses bound query
+parameters, and can be rerun without changing already populated values. New
+assessment imports can be followed by this same enrichment step. No full text
+is downloaded and no AI API is called.
 
 ## Assessment simplification — November 14, 2026
 
