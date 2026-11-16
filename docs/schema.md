@@ -31,6 +31,10 @@ erDiagram
         text file_path
         boolean is_open_access
         jsonb raw
+        bigint cited_by_count
+        text publication_name
+        boolean is_retracted
+        timestamptz metadata_checked_at
         timestamptz first_seen_at
         timestamptz last_updated_at
     }
@@ -49,7 +53,6 @@ erDiagram
         bigint work_id FK
         text reading_status
         text notes
-        text questions
         text key_references
         text stopped_reason
         timestamptz read_at
@@ -69,10 +72,8 @@ erDiagram
         boolean come_back_to_it
         text summary
         text relevance_reason
-        integer novelty_rating
-        text novelty_reason
-        text evidence_assessment
         integer estimated_reading_minutes
+        text estimated_reading_basis
         text review_basis
         text assessment_context
         text assessment_reason
@@ -226,7 +227,6 @@ row counts. Live setup and duplicate-free loading are now documented in
 `load_verification.md`. Seven business queries now run successfully; results and
 interpretation are in `questions.md`. Future application-role permissions and
 the student's final submission review remain separate work.
-
 
 ## Access roles
 

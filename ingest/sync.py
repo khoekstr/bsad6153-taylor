@@ -150,15 +150,15 @@ def upsert_rows(conn, records, *, allow_updates=False):
     # to library content. All other raw source changes are retained and counted.
     left = sql.SQL(',').join(sql.SQL('works.{}').format(sql.Identifier(c)) for c in COLUMNS[1:-1])
     right = sql.SQL(',').join(sql.SQL('EXCLUDED.{}').format(sql.Identifier(c)) for c in COLUMNS[1:-1])
-    statement = sql.SQL('''INSERT INTO works AS works ({cols},source)
-        VALUES ({args},'openalex') ON CONFLICT (openalex_id) DO UPDATE SET {updates}
+    statement = sql.SQL('''INSERT INTO works AS works ({cols},source,metadata_checked_at)
+        VALUES ({args},'openalex',clock_timestamp()) ON CONFLICT (openalex_id) DO UPDATE SET {updates}, metadata_checked_at=EXCLUDED.metadata_checked_at
         WHERE works.source='openalex' AND
         ROW({left}, works.raw - 'updated_date' - 'relevance_score') IS DISTINCT FROM
         ROW({right}, EXCLUDED.raw - 'updated_date' - 'relevance_score')
         RETURNING work_id''').format(
         cols=cols, args=sql.SQL(',').join([sql.Placeholder()] * len(COLUMNS)), updates=updates, left=left, right=right)
     if not allow_updates:
-        statement = sql.SQL('''INSERT INTO works ({cols},source) VALUES ({args},'openalex')
+        statement = sql.SQL('''INSERT INTO works ({cols},source,metadata_checked_at) VALUES ({args},'openalex',clock_timestamp())
             ON CONFLICT (openalex_id) DO NOTHING RETURNING work_id''').format(
                 cols=cols, args=sql.SQL(',').join([sql.Placeholder()] * len(COLUMNS)))
     for record in records:

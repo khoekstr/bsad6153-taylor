@@ -11,6 +11,16 @@ CREATE TABLE works (
  language text, abstract text, openalex_topic text,
  source_url text, pdf_url text, file_path text, is_open_access boolean,
  raw jsonb,
+ cited_by_count bigint GENERATED ALWAYS AS (
+   CASE WHEN source = 'openalex' AND jsonb_typeof(raw->'cited_by_count') = 'number'
+     AND raw->>'cited_by_count' ~ '^[0-9]{1,18}$'
+     THEN (raw->>'cited_by_count')::bigint END) STORED,
+ publication_name text GENERATED ALWAYS AS (
+   CASE WHEN source = 'openalex' THEN nullif(btrim(raw#>>'{primary_location,source,display_name}'),'') END) STORED,
+ is_retracted boolean GENERATED ALWAYS AS (
+   CASE WHEN source = 'openalex' AND jsonb_typeof(raw->'is_retracted') = 'boolean'
+     THEN (raw->>'is_retracted')::boolean END) STORED,
+ metadata_checked_at timestamptz,
  first_seen_at timestamptz NOT NULL DEFAULT now(),
  last_updated_at timestamptz NOT NULL DEFAULT now(),
  CHECK (source <> 'openalex' OR openalex_id IS NOT NULL),
@@ -32,7 +42,7 @@ CREATE TABLE reading_notes (
  import_key text UNIQUE, -- Original chat/message identity for duplicate-free note recovery.
  work_id bigint NOT NULL REFERENCES works(work_id),
  reading_status text CHECK (reading_status IN ('not_started', 'abstract_only', 'partial', 'complete')),
- notes text, questions text, key_references text, stopped_reason text,
+ notes text, key_references text, stopped_reason text,
  read_at timestamptz,
  first_seen_at timestamptz NOT NULL DEFAULT now(),
  last_updated_at timestamptz NOT NULL DEFAULT now()
@@ -53,10 +63,8 @@ CREATE TABLE work_assessments (
  come_back_to_it boolean,
  summary text,
  relevance_reason text,
- novelty_rating integer CHECK (novelty_rating BETWEEN 1 AND 5),
- novelty_reason text,
- evidence_assessment text,
  estimated_reading_minutes integer CHECK (estimated_reading_minutes > 0),
+ estimated_reading_basis text, -- Full-article length source and estimation method.
  review_basis text CHECK (review_basis IN ('metadata', 'abstract', 'excerpt', 'full_text')),
  assessment_context text,
  assessment_reason text CHECK (length(btrim(assessment_reason)) > 0),

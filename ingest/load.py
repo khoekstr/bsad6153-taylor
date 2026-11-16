@@ -127,6 +127,19 @@ def prepare_assessments(path, rows):
     return result
 
 
+def assessment_text(a):
+    """Preserve qualifications from legacy batches without retired columns."""
+    summary = a.get('summary') or ''
+    evidence = (a.get('evidence_assessment') or '').strip()
+    if evidence and evidence not in summary:
+        summary += ('\n\n' if summary else '') + 'Qualifications: ' + evidence
+    context = a.get('assessment_context') or ''
+    novelty = (a.get('novelty_reason') or '').strip()
+    if novelty and novelty not in context:
+        context += ('\n\n' if context else '') + 'Historical novelty note: ' + novelty
+    return summary or None, context or None
+
+
 def load_assessments(conn, assessments):
     added = 0
     for import_key, source_id, abstract_hash, a in assessments:
@@ -134,16 +147,17 @@ def load_assessments(conn, assessments):
                             (source_id,)).fetchone()
         if not work or not work[1] or hashlib.sha256(work[1].encode()).hexdigest() != abstract_hash:
             raise ValueError('Stored work does not match reviewed abstract')
+        summary, context = assessment_text(a)
         inserted = conn.execute('''INSERT INTO work_assessments
             (import_key,work_id,assessed_by,categories,value_rating,value_reason,summary,
-             relevance_reason,novelty_rating,novelty_reason,evidence_assessment,
+             relevance_reason,
              estimated_reading_minutes,review_basis,assessment_context,assessment_reason,model_used)
-            VALUES (%s,%s,'ai',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            VALUES (%s,%s,'ai',%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
             ON CONFLICT (import_key) DO NOTHING RETURNING assessment_id''',
             (import_key,work[0],a['categories'],a['value_rating'],a['value_reason'],
-             a['summary'],a['relevance_reason'],a['novelty_rating'],a['novelty_reason'],
-             a['evidence_assessment'],a['estimated_reading_minutes'],a['review_basis'],
-             a['assessment_context'],a['assessment_reason'],a['model_used'])).fetchone()
+             summary,a['relevance_reason'],
+             a.get('estimated_reading_minutes'),a['review_basis'],
+             context,a['assessment_reason'],a['model_used'])).fetchone()
         added += bool(inserted)
     return added
 
