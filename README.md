@@ -2,7 +2,13 @@
 
 **Student:** Kara Taylor
 **My decision:** What AI material should I read or watch next, given my available time, learning interests, and what I have already consumed?
-**Website:** &lt;your domain, from Week 4&gt;
+**Website:** [AI Research Discovery](https://karataylor.live)
+
+To run locally, open a terminal in the repository root, activate your Python 3.12
+virtual environment, and run `python -m pip install -r requirements.txt`.
+Configure the public reader's `APP_DATABASE_URL` in the ignored `app/.env` as
+described in [app setup](app/README.md). Run `python -m streamlit run app/streamlit_app.py`
+and open the local URL printed in the terminal.
 
 This repository is one complete AI system, built over eight weeks: a real API, synced on a schedule into a
 PostgreSQL database, shown on a public website, with a chatbot and an agent that answer and act from your
@@ -162,7 +168,11 @@ brief summaries, not independently reviewed linked articles.
 
 ## Credits
 
-<!-- Your data API's required attribution, plus any open-source code or samples you used. -->
+Scholarly metadata comes from [OpenAlex](https://openalex.org/), which releases its
+dataset under [CC0](https://help.openalex.org/data/how-its-built/). The site links
+to original publications for authors' text and labels its own AI summaries and
+interest scores. Public browsing uses saved assessments. Any Milestone 5 chatbot
+or agent that spends LLM credit must require sign-in before making model calls.
 
 
 ## Ongoing collection updates

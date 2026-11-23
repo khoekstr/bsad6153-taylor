@@ -69,7 +69,7 @@ ORDER BY lower(topic), topic
 PAPERS_SQL = PUBLIC_LIBRARY + """
 SELECT w.work_id, w.title, w.publication_date, w.first_seen_at,
        w.openalex_topic, w.source, w.source_url, w.doi, w.openalex_id,
-       w.abstract, a.value_rating, a.summary, a.value_reason,
+       a.value_rating, a.summary, a.value_reason,
        a.relevance_reason, a.review_basis, a.categories,
        count(*) OVER () AS matching_papers
 FROM public_works w
@@ -205,17 +205,13 @@ def article_card(paper):
             st.caption(f"AI-predicted interest for Kara · {rating}/5 · Based on {basis}")
 
         summary = paper["summary"]
-        abstract = paper["abstract"]
         if summary:
             st.markdown("**AI summary**")
             st.markdown(markdown_text(summary))
             if rating is None:
                 st.caption("Summary assessment basis · " + basis)
-        elif abstract:
-            st.markdown("**Original abstract**")
-            st.markdown(markdown_text(abstract))
         else:
-            st.caption("A summary and abstract are unavailable for this paper.")
+            st.caption("No AI summary yet. Follow the source link to read the original.")
 
         reason = paper["relevance_reason"] or paper["value_reason"]
         if reason:
@@ -224,9 +220,6 @@ def article_card(paper):
         elif rating is not None:
             st.caption("A recommendation explanation is unavailable.")
 
-        if summary and abstract:
-            with st.expander("Read the original abstract"):
-                st.markdown(markdown_text(abstract))
         with st.expander("Source details"):
             source_name = "OpenAlex" if paper["source"] == "openalex" else "Manually added reference"
             st.caption("Source · " + source_name)
@@ -422,25 +415,18 @@ def discover_view(today):
 def about_section():
     with st.expander("About this research library"):
         st.write(
-            "A student project for BSAD 6153 at Newman University. This curated collection "
-            "uses OpenAlex scholarly metadata and publicly linked references added separately. "
-            "It represents a selection of research, with gaps in coverage and metadata."
+            "AI Research Discovery is Kara Taylor's student project for BSAD 6153 at Newman University. "
+            "It brings together research records from OpenAlex and references Kara collected separately."
         )
         st.link_button("Learn about OpenAlex", "https://openalex.org/")
         st.write(
-            "AI interest scores estimate Kara's interests. They do not establish research "
-            "credibility, expert endorsement, or agreement with a paper. Summaries and "
-            "explanations are based on the labeled material and may contain errors. "
-            "Use source links to review the original research."
+            "AI summaries describe the material named on each card. Scores estimate how interesting "
+            "a paper might be to Kara. Follow the source link to read the authors' own work."
         )
         st.write(
-            "The planned update schedule is Monday and Thursday at 08:15 Central. A warning "
-            "appears after four days without a confirmed successful discovery. Stored paper metadata "
-            "and AI assessments can be older than the last collection update."
-        )
-        st.write(
-            "Kara can sign in to save private reading notes and passages. "
-            "Recommendation reassessments happen separately when she requests one."
+            "The collection checks for new papers on Mondays and Thursdays at 8:15 a.m. Central. "
+            "The banner shows the last successful check and warns after four days. "
+            "Individual records and AI assessments can be older."
         )
         st.caption(
             "Public data results are cached for up to 15 minutes. On Render's free tier, "
