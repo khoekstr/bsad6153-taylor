@@ -419,6 +419,7 @@ def about_section():
             "It brings together research records from OpenAlex and references Kara collected separately."
         )
         st.link_button("Learn about OpenAlex", "https://openalex.org/")
+        st.link_button("Privacy policy", "https://karataylor.live/?page=privacy")
         st.write(
             "AI summaries describe the material named on each card. Scores estimate how interesting "
             "a paper might be to Kara. Follow the source link to read the authors' own work."
@@ -451,6 +452,10 @@ def main():
         </style>
     """)
     st.title("AI Research Discovery")
+    if st.query_params.get("page") == "privacy":
+        st.markdown((ROOT / "app" / "privacy.md").read_text(encoding="utf-8"))
+        st.link_button("Back to research library", "https://karataylor.live/")
+        return
     freshness_banner()
     account_controls()
     views = ["Discover", "Explore"]
