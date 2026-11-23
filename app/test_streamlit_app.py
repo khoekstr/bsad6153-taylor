@@ -156,11 +156,12 @@ class PublicViewTests(unittest.TestCase):
     def app(self):
         return AppTest.from_string("from app.streamlit_app import main\nmain()", default_timeout=10).run()
 
-    def test_discover_and_expandable_abstract(self):
+    def test_discover_keeps_original_abstract_off_public_card(self):
         app = self.app()
         self.assertFalse(app.exception)
         self.assertEqual(app.subheader[0].value, "AI and learning")
-        self.assertIn("Read the original abstract", [item.label for item in app.expander])
+        self.assertNotIn("Read the original abstract", [item.label for item in app.expander])
+        self.assertFalse(any("Original abstract" in item.value for item in app.markdown))
         self.assertTrue(app.success)
 
     def test_stale_and_missing_history_render_warning(self):
