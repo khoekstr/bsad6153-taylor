@@ -12,11 +12,9 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: "3.12.4"
-      - key: FRESHNESS_HOURS
-        value: "24"
       - key: APP_DATABASE_URL
         sync: false
-      - key: ANTHROPIC_API_KEY
+      - key: NOTEBOOK_DATABASE_URL
         sync: false
-      - key: APP_PASSWORD
+      - key: NOTEBOOK_GOOGLE_SUB
         sync: false

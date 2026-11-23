@@ -59,7 +59,10 @@ every command before you approve it, and keep auto-approve off.
 | Secret | On your computer | On Render (website) | In GitHub Actions (sync) |
 |---|---|---|---|
 | `DATABASE_URL` (owner) | `.env` | **never** | Actions secret |
-| `APP_DATABASE_URL` (read-only) | `.env` | environment setting | if your checks need it |
+| `APP_DATABASE_URL` (course checks as `app_reader`) | root `.env` | never | if course checks need it |
+| `APP_DATABASE_URL` (website as `library_web_reader`) | `app/.env` | environment setting | no |
+| `NOTEBOOK_DATABASE_URL`, `NOTEBOOK_GOOGLE_SUB` | `app/.env` | environment settings | no |
+| Google sign-in client and cookie secret | `.streamlit/secrets.toml` | secret file | no |
 | `AGENT_DATABASE_URL` | `.env` | environment setting | no |
 | LLM key, `APP_PASSWORD` | `.env` | environment setting | no |
 | Data API key | `.env` | no | Actions secret |
@@ -75,7 +78,7 @@ every command before you approve it, and keep auto-approve off.
    (`render.yaml` describes the service.) Or create a **Web Service** by hand with:
    - Build command: `pip install -r requirements.txt`
    - Start command: `streamlit run app/streamlit_app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true`
-   - Environment variables: `PYTHON_VERSION=3.12.4`, `APP_DATABASE_URL`, and later your LLM key and `APP_PASSWORD`
+   - Set `PYTHON_VERSION=3.12.4`, both website database URLs and the notebook owner ID. Configure the Google secret file as described in [app setup](app/README.md).
 3. Under **Settings &gt; Custom Domains**, add your domain, then add the DNS records Render shows you at your
    registrar. Ask your agent to explain each record before you add it. HTTPS turns on automatically.
 4. Free services sleep when idle and take about a minute to wake. Say so on your site.
@@ -162,9 +165,42 @@ brief summaries, not independently reviewed linked articles.
 <!-- Your data API's required attribution, plus any open-source code or samples you used. -->
 
 
-## Milestone 3: four-day sync trial
+## Ongoing collection updates
 
-The `Library sync` workflow in `.github/workflows/sync.yml` runs twice daily at
+The updated `Library sync` workflow is configured for **Monday and Thursday at
+08:15 America/Chicago**, using `15 8 * * 1,4` with the IANA timezone setting.
+This keeps the same local time across daylight saving changes. The minute was
+chosen away from the start of the hour to reduce exposure to busy trigger times.
+The schedule becomes active after these changes reach the default branch, `main`.
+
+`scripts/schedule_window.py` permits scheduled and explicit manual runs on main.
+The expired November date gate has been removed. Cron owns the cadence, so a
+delayed scheduled event can still run. The daily completion guard, five-paper
+limit, bounded requests, transaction safety, and separate AI assessment workflow
+continue to apply. A successful twice-weekly schedule can add up to ten papers
+per week. Manual runs can add more on other days.
+
+The public app warns after more than four days without a completed successful
+live discovery. This is a monitoring threshold. The curated library has no finite
+worst-case guarantee of new-paper coverage or current metadata for every stored
+paper. Previews, same-day skips, and targeted maintenance do not advance discovery
+freshness. AI assessments and personal feedback updates remain separate.
+
+For the public app, run `streamlit run app/streamlit_app.py` from this folder.
+Public SELECT results use a 15-minute `st.cache_data` TTL, shorter than the
+three/four-day update gaps. This balances timely changes with repeated database
+load. Kara can sign in with Google to save private notes, quotations, references,
+and reading progress. Saving a note never triggers a recommendation update.
+The website uses separate public and notebook database logins. See the
+[app setup and verification instructions](app/README.md).
+
+GitHub's scheduling behavior and timezone syntax were checked against the
+[official workflow documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#onschedule)
+and [schedule event documentation](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+
+## Milestone 3: four-day sync trial (historical)
+
+The original `Library sync` workflow requested runs twice daily at
 **08:00 and 14:00 America/Chicago (14:00 and 20:00 UTC), November 13-16, 2026**.
 The afternoon run provides a second opportunity if the morning trigger is missed
 or its sync fails. The existing daily guard permits only one completed discovery

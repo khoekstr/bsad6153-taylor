@@ -1,0 +1,5 @@
+[secrets]
+files = [".streamlit/secrets.toml", "/etc/secrets/secrets.toml"]
+
+[client]
+showErrorDetails = "none"

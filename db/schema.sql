@@ -42,7 +42,7 @@ CREATE TABLE reading_notes (
  import_key text UNIQUE, -- Original chat/message identity for duplicate-free note recovery.
  work_id bigint NOT NULL REFERENCES works(work_id),
  reading_status text CHECK (reading_status IN ('not_started', 'abstract_only', 'partial', 'complete')),
- notes text, key_references text, stopped_reason text,
+ notes text, quoted_passage text, key_references text, stopped_reason text,
  read_at timestamptz,
  first_seen_at timestamptz NOT NULL DEFAULT now(),
  last_updated_at timestamptz NOT NULL DEFAULT now()
