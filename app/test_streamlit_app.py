@@ -60,13 +60,37 @@ class FreshnessTests(unittest.TestCase):
 
 
 class AccessTests(unittest.TestCase):
+    def test_public_favorites_page_reads_five_through_reader(self):
+        with patch.object(library, "reader_connection") as reader, patch.object(library, "st") as ui, \
+                patch.object(library, "public_article_card") as card:
+            ui.session_state = {"favorite_page": 2}
+            ui.columns.return_value = (ui, ui)
+            article = paper(matching_papers=6)
+            conn = reader.return_value.__enter__.return_value
+            conn.execute.return_value.fetchall.return_value = [article]
+            library.favorite_reads()
+            conn.execute.assert_called_once_with(library.FAVORITES_SQL, (5,))
+            self.assertIn("ORDER BY f.position", library.FAVORITES_SQL)
+            self.assertIn("LIMIT 5", library.FAVORITES_SQL)
+            card.assert_called_once_with(article)
+
+    def test_removing_favorite_only_updates_owner_flag(self):
+        with patch.object(library.access, "database_connection") as database:
+            library.access.remove_favorite(42)
+        database.assert_called_once_with(notebook=True)
+        sql, params = database.return_value.__enter__.return_value.execute.call_args.args
+        self.assertIn("SET is_favorite = false", sql)
+        self.assertIn("assessed_by = 'user'", sql)
+        self.assertNotIn("value_rating", sql)
+        self.assertEqual(params, (42,))
+
     def test_filter_values_are_bound(self):
         keyword = "%' OR 1=1; DROP TABLE works; --"
         with patch.object(library, "select_rows", return_value=[]) as query:
-            library.fetch_papers(search=keyword, topic="Learning", minimum=4)
+            library.fetch_papers(search=keyword, topic="Education", category="Learning", minimum=4)
         statement, values = query.call_args.args
         self.assertNotIn(keyword, statement)
-        self.assertEqual(values[:5], (keyword, keyword, "Learning", "Learning", "Learning"))
+        self.assertEqual(values[:6], (keyword, keyword, "Education", "Education", "Learning", "Learning"))
         self.assertEqual(values[-4:], (4, 4, library.PAGE_SIZE, 0))
         self.assertEqual(statement.count("%s"), len(values))
 
@@ -156,13 +180,84 @@ class PublicViewTests(unittest.TestCase):
     def app(self):
         return AppTest.from_string("from app.streamlit_app import main\nmain()", default_timeout=10).run()
 
+    def owner_app(self):
+        for name, value in (("owner_signed_in", True), ("read_assessments", []),
+                            ("feedback_snapshot", []), ("read_notes", [])):
+            mocked = patch.object(library.access, name, return_value=value)
+            mocked.start()
+            self.addCleanup(mocked.stop)
+        return self.app()
+
     def test_discover_keeps_original_abstract_off_public_card(self):
         app = self.app()
         self.assertFalse(app.exception)
-        self.assertEqual(app.subheader[0].value, "AI and learning")
+        self.assertIn("AI and learning", [heading.value for heading in app.subheader])
         self.assertNotIn("Read the original abstract", [item.label for item in app.expander])
         self.assertFalse(any("Original abstract" in item.value for item in app.markdown))
         self.assertTrue(app.success)
+        self.assertEqual(app.radio(key="public_view").options, ["Discover", "Explore", "Kara's favorite reads"])
+        self.assertFalse(any(b.label in ("Open article", "Five more recommendations", "Kara's favorite reads") for b in app.button))
+
+    def test_visitor_can_open_favorites(self):
+        with patch.object(library, "reader_connection") as reader:
+            conn = reader.return_value.__enter__.return_value
+            conn.execute.return_value.fetchall.return_value = [paper(title="A favorite")]
+            app = self.app()
+            app.radio(key="public_view").set_value("Kara's favorite reads").run()
+            self.assertIn("A favorite", [heading.value for heading in app.subheader])
+            self.assertFalse(any(b.label == "My notes and reading details" for b in app.button))
+
+    def test_more_recommendations_and_scope_reset(self):
+        self.papers = [paper(work_id=i, title=f"Paper {i}", matching_papers=12) for i in range(12)]
+        app = self.owner_app()
+        next(b for b in app.button if b.label == "Five more recommendations").click().run()
+        calls = [c for c in self.query_mock.call_args_list if c.args[0] == library.PAPERS_SQL]
+        self.assertIn("Paper 5", [h.value for h in app.subheader])
+        self.assertEqual(calls[-1].args[1][-4:-2], (3, 3))
+        app.selectbox(key="discover_scope").set_value("Any publication date").run()
+        calls = [c for c in self.query_mock.call_args_list if c.args[0] == library.PAPERS_SQL]
+        self.assertEqual(calls[-1].args[1][6:10], (None, None, None, None))
+        self.assertEqual(calls[-1].args[1][-1], 0)
+        self.assertFalse(app.exception)
+
+    def test_return_from_collection_to_recommendations(self):
+        app = self.owner_app()
+        app.radio(key="library_view").set_value("Explore").run()
+        self.assertIn("Explore the collection", [h.value for h in app.header])
+        app.radio(key="library_view").set_value("Discover").run()
+        self.assertIn("Worth reading next", [h.value for h in app.header])
+        self.assertFalse(app.exception)
+
+    def test_discover_reset_in_every_publication_window(self):
+        self.papers = [paper(work_id=i, title=f"Paper {i}") for i in range(8)]
+        app = self.owner_app()
+        for scope in app.selectbox(key="discover_scope").options:
+            app.selectbox(key="discover_scope").set_value(scope).run()
+            self.assertTrue(app.button(key="reset_recommendations").disabled)
+            next(b for b in app.button if b.label == "Five more recommendations").click().run()
+            app.button(key="reset_recommendations").click().run()
+            self.assertEqual(app.selectbox(key="discover_scope").value, scope)
+            self.assertEqual([h.value for h in app.subheader], [f"Paper {i}" for i in range(5)])
+
+    def test_more_after_two_recent_matches_opens_older_articles(self):
+        def query(statement, parameters=()):
+            if statement == library.PAPERS_SQL and parameters[6] is None:
+                self.assertEqual(parameters[8], datetime.now(timezone.utc).date() - timedelta(days=30))
+                return [paper(work_id=i, title=f"Older {i}") for i in range(10, 16)]
+            return self.query(statement, parameters)
+        self.papers = [paper(work_id=i, title=f"Recent {i}") for i in range(2)]
+        self.query_mock.side_effect = query
+        app = self.owner_app()
+        next(b for b in app.button if b.label == "Five more recommendations").click().run()
+        self.assertEqual([h.value for h in app.subheader], [f"Older {i}" for i in range(10, 15)])
+        next(b for b in app.button if b.label == "Five more recommendations").click().run()
+        self.assertEqual([h.value for h in app.subheader], ["Older 15"])
+        for expected in ([f"Older {i}" for i in range(10, 15)], ["Recent 0", "Recent 1"]):
+            previous = next(b for b in app.button if b.label == "Previous five")
+            self.assertFalse(previous.disabled)
+            previous.click().run()
+            self.assertEqual([h.value for h in app.subheader], expected)
+        self.assertTrue(next(b for b in app.button if b.label == "Previous five").disabled)
 
     def test_stale_and_missing_history_render_warning(self):
         for timestamp in (None, datetime.now(timezone.utc) - timedelta(days=5)):
@@ -173,16 +268,17 @@ class PublicViewTests(unittest.TestCase):
                 self.assertTrue(app.warning)
 
     def test_explore_controls_change_query_parameters(self):
-        app = self.app()
+        app = self.owner_app()
         app.radio(key="library_view").set_value("Explore").run()
-        app.text_input(key="explore_search").set_value("motivation").run()
-        app.selectbox(key="explore_topic").set_value("Learning").run()
-        app.selectbox(key="explore_minimum").set_value(4).run()
+        app.text_input(key="public_explore_search").set_value("motivation").run()
+        app.selectbox(key="public_explore_topic").set_value("Learning").run()
+        app.selectbox(key="public_explore_category").set_value("Society").run()
+        app.selectbox(key="public_explore_minimum").set_value(4).run()
         self.assertFalse(app.exception)
         calls = self.query_mock.call_args_list
         paper_calls = [call for call in calls if call.args[0] == library.PAPERS_SQL]
         values = paper_calls[-1].args[1]
-        self.assertEqual(values[:5], ("motivation", "motivation", "Learning", "Learning", "Learning"))
+        self.assertEqual(values[:6], ("motivation", "motivation", "Learning", "Learning", "Society", "Society"))
         self.assertEqual(values[-4:-2], (4, 4))
 
     def test_empty_results_and_unknown_score(self):
@@ -191,7 +287,7 @@ class PublicViewTests(unittest.TestCase):
         self.assertFalse(app.exception)
         self.assertTrue(app.info)
         self.papers = [paper(value_rating=None, summary=None, publication_date=None)]
-        app.radio(key="library_view").set_value("Explore").run()
+        app.radio(key="public_view").set_value("Explore").run()
         self.assertFalse(app.exception)
         captions = " ".join(item.value for item in app.caption)
         self.assertIn("Interest is unknown", captions)
@@ -200,16 +296,16 @@ class PublicViewTests(unittest.TestCase):
     def test_date_bounds_and_filter_changes_reset_pagination(self):
         self.papers = [paper(matching_papers=25)]
         app = self.app()
-        app.radio(key="library_view").set_value("Explore").run()
-        app.number_input(key="explore_page").set_value(2).run()
+        app.radio(key="public_view").set_value("Explore").run()
+        app.number_input(key="public_explore_page").set_value(2).run()
         paper_calls = [call for call in self.query_mock.call_args_list if call.args[0] == library.PAPERS_SQL]
         self.assertEqual(paper_calls[-1].args[1][-1], library.PAGE_SIZE)
         start, end = NOW.date() - timedelta(days=10), NOW.date()
-        app.date_input(key="explore_dates").set_value((start, end)).run()
+        app.date_input(key="public_explore_dates").set_value((start, end)).run()
         self.assertFalse(app.exception)
         paper_calls = [call for call in self.query_mock.call_args_list if call.args[0] == library.PAPERS_SQL]
         values = paper_calls[-1].args[1]
-        self.assertEqual(values[5:9], (start, start, end, end))
+        self.assertEqual(values[6:10], (start, start, end, end))
         self.assertEqual(values[-1], 0)
 
     def test_failure_does_not_render_exception_or_details(self):

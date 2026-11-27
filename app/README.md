@@ -41,6 +41,18 @@ Only the notebook role can append notebook entries from the app. Its grants excl
 
 ## Verification and deployment
 
+### Kara's favorite reads
+
+Apply `db/migrations/012_public_favorites.sql` in the Supabase SQL Editor after
+migrations 010 and 011. The public favorites view exposes the article ID and
+display order for eligible, AI-summarized articles starred by Kara. Visitors
+can browse five per page. New stars appear first. Older stars with unknown
+dates follow in descending publication order.
+
+To add or restore a favorite, sign in, open the article notebook, check
+**★ Favorite**, and save the assessment. Under **My library → Favorites**, use
+**Remove from favorites** to take an article off the list.
+
 Run the focused offline tests from the repository root.
 
 ```powershell
