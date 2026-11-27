@@ -16,6 +16,20 @@ IDENTITY = {"is_logged_in": True, "iss": "https://accounts.google.com",
 
 
 class NotebookAccessTests(unittest.TestCase):
+    def test_unchecking_saved_for_later_persists_immediately(self):
+        article = {"come_back_to_it": True}
+        script = "from app.owner_workspace import reading_details\nreading_details(42, article)"
+        def save(work_id, selected):
+            article["come_back_to_it"] = selected
+        with patch.object(access, "set_saved_for_later", side_effect=save) as write:
+            app = AppTest.from_string("import streamlit as st\narticle = st.session_state.article\n" + script)
+            app.session_state.article = article
+            app.run().checkbox[0].uncheck().run()
+            write.assert_called_once_with(42, False)
+            self.assertFalse(app.exception)
+            self.assertEqual(app.success[0].value, "Removed from Saved for later.")
+            self.assertFalse(app.checkbox[0].value)
+
     def test_only_configured_google_identity_can_use_either_private_operation(self):
         with patch.dict(os.environ, {"NOTEBOOK_GOOGLE_SUB": "owner-id"}):
             for changes in ({"is_logged_in": False}, {"sub": "someone-else"},
@@ -81,6 +95,8 @@ class NotebookViewTests(unittest.TestCase):
         def public_sql(statement, parameters=()):
             if statement == library.FRESHNESS_SQL:
                 return [{"finished_at": NOW}]
+            if statement == library.TOPICS_SQL:
+                return []
             if statement == library.STATS_SQL:
                 return [{"total_papers": 1, "recent_papers": 1, "awaiting_assessment": 0}]
             return [paper()]
@@ -88,21 +104,24 @@ class NotebookViewTests(unittest.TestCase):
         def store(work_id, key, note, passage, location, progress):
             saved.append(paper(note_id=1, work_id=work_id, notes=note, quoted_passage=passage,
                                key_references=location, reading_status=progress, stopped_reason=None,
-                               noted_at=NOW))
+                               noted_at=NOW, last_updated_at=NOW, deleted_at=None))
         script = "from app.streamlit_app import main\nmain()"
         with (patch.dict(os.environ, {"NOTEBOOK_GOOGLE_SUB": "owner-id"}),
               patch.object(library.st, "user", IDENTITY),
               patch.object(library, "select_rows", side_effect=public_sql),
               patch.object(access, "read_notes", side_effect=lambda work_id=None: saved) as read,
+              patch.object(access, "read_assessments", return_value=[]),
+              patch.object(access, "feedback_snapshot", return_value=[]),
+              patch.object(access, "connections", return_value=[]),
+              patch.object(access, "note_history", return_value=[]),
               patch.object(access, "save_note") as save):
             app = AppTest.from_string(script).run()
             app.button(key="notes_1").click().run()
             self.assertFalse(app.exception)
-            self.assertEqual(app.radio(key="library_view").value, "My notes")
+            self.assertEqual(app.radio(key="library_view").value, "Discover")
             app.text_area[0].set_value("  private comment  ")
             app.text_area[1].set_value("exact passage")
             app.text_input[0].set_value("p. 7")
-            app.selectbox[0].set_value("partial")
             save.side_effect = access.LibraryUnavailable("Please try again.")
             next(b for b in app.button if b.label == "Save note").click().run()
             self.assertEqual(app.text_area[0].value, "  private comment  ")
@@ -115,18 +134,55 @@ class NotebookViewTests(unittest.TestCase):
             self.assertEqual(app.text_area[0].value, "")
             self.assertIn("exact passage", [t.value for t in app.text])
             new_session = AppTest.from_string(script).run()
-            new_session.radio(key="library_view").set_value("My notes").run()
-            self.assertEqual(saved[0]["notes"], "  private comment  ")
+            new_session.radio(key="library_view").set_value("My reading").run()
             self.assertIn("private comment", [t.value for t in new_session.text])
-            new_session.button(key="notebook_open_1").click().run()
-            self.assertEqual(new_session.subheader[0].value, "AI and learning")
+            self.assertEqual(saved[0]["notes"], "  private comment  ")
+            new_session.button(key="library_open_1").click().run()
+            self.assertIn("AI and learning", [h.value for h in new_session.header])
             with patch.object(library.st, "user", IDENTITY | {"sub": "someone-else"}):
                 read.reset_mock()
                 app.run()
                 self.assertFalse(app.exception)
-                self.assertNotIn("My notes", app.radio[0].options)
+                self.assertFalse(any(r.key == "library_view" for r in app.radio))
                 self.assertFalse(app.text_area)
                 read.assert_not_called()
+
+    def test_star_from_article_and_remove_from_my_reading(self):
+        item = paper(is_favorite=False, reading_status=None, last_updated_at=NOW)
+
+        def public_sql(statement, parameters=()):
+            if statement == library.FRESHNESS_SQL:
+                return [{"finished_at": NOW}]
+            if statement == library.TOPICS_SQL:
+                return []
+            if statement == library.STATS_SQL:
+                return [{"total_papers": 1, "recent_papers": 1, "awaiting_assessment": 0}]
+            return [paper()]
+
+        script = "from app.streamlit_app import main\nmain()"
+        with (patch.dict(os.environ, {"NOTEBOOK_GOOGLE_SUB": "owner-id"}),
+              patch.object(library.st, "user", IDENTITY),
+              patch.object(library, "select_rows", side_effect=public_sql),
+              patch.object(access, "read_notes", return_value=[]),
+              patch.object(access, "read_assessments", return_value=[item]),
+              patch.object(access, "feedback_snapshot", return_value=[]),
+              patch.object(access, "connections", return_value=[]),
+              patch.object(access, "add_favorite", side_effect=lambda _: item.update(is_favorite=True)) as add,
+              patch.object(access, "remove_favorite", side_effect=lambda _: item.update(is_favorite=False)) as remove):
+            app = AppTest.from_string(script).run()
+            app.button(key="notes_1").click().run()
+            app.text_area[0].set_value("Unfinished note")
+            app.button(key="article_star").click().run()
+            self.assertEqual(app.text_area[0].value, "Unfinished note")
+            add.assert_called_once_with(1)
+            self.assertIn("★ Starred", [item.value for item in app.caption])
+            app.radio(key="library_view").set_value("My reading").run()
+            app.selectbox(key="notebook_filter").set_value("Starred").run()
+            self.assertIn("★ Starred", [item.value for item in app.caption])
+            app.button(key="unstar_1").click().run()
+            remove.assert_called_once_with(1)
+            self.assertTrue(app.info)
+            self.assertFalse(app.error)
 
 
 if __name__ == "__main__":

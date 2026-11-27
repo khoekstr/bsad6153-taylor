@@ -16,14 +16,15 @@ SELECT count(*) AS total,
        count(*) FILTER (WHERE w.publication_date BETWEEN
            (now() AT TIME ZONE 'UTC')::date - 29 AND
            (now() AT TIME ZONE 'UTC')::date) AS recent,
-       count(*) FILTER (WHERE (
-           SELECT a.value_rating FROM public.work_assessments a
-           WHERE a.work_id = w.work_id AND a.assessed_by = 'ai'
-           ORDER BY a.first_seen_at DESC, a.assessment_id DESC LIMIT 1
-       ) IS NULL) AS awaiting
+       count(*) FILTER (WHERE latest.value_rating IS NULL) AS awaiting
 FROM public.works w
-WHERE w.source = 'openalex'
-   OR (w.source = 'upload' AND w.source_url ~* '^https?://')
+JOIN LATERAL (
+    SELECT a.summary, a.value_rating FROM public.work_assessments a
+    WHERE a.work_id = w.work_id AND a.assessed_by = 'ai'
+    ORDER BY a.first_seen_at DESC, a.assessment_id DESC LIMIT 1
+) latest ON true
+WHERE (w.source = 'openalex' OR (w.source = 'upload' AND w.source_url ~* '^https?://'))
+  AND latest.summary ~ '[^[:space:]]'
 """.strip()
 
 
